@@ -7,7 +7,7 @@ import {
 import adminScreenshot from './assets/admin-screenshot.png';
 import { AIIcon } from '@page-chatbot/ui';
 
-const slideViewportClass = 'min-h-screen md:h-full py-16 sm:py-20 md:py-0';
+const slideViewportClass = 'min-h-[100svh] md:h-full py-16 sm:py-20 md:py-0';
 
 const slides = [
     {
@@ -341,6 +341,7 @@ function ReviewBadge({ text }: { text: string }) {
 export default function App() {
     const [currentSlide, setCurrentSlide] = useState(0);
     const containerRef = useRef<HTMLDivElement>(null);
+    const touchStartRef = useRef<{ x: number; y: number } | null>(null);
 
     useEffect(() => {
         const handleKeyDown = (e: KeyboardEvent) => {
@@ -357,6 +358,29 @@ export default function App() {
     useLayoutEffect(() => {
         containerRef.current?.scrollTo({ top: 0, left: 0, behavior: 'auto' });
     }, [currentSlide]);
+
+    const handleTouchStart = (e: React.TouchEvent<HTMLDivElement>) => {
+        const touch = e.changedTouches[0];
+        touchStartRef.current = { x: touch.clientX, y: touch.clientY };
+    };
+
+    const handleTouchEnd = (e: React.TouchEvent<HTMLDivElement>) => {
+        if (!touchStartRef.current) return;
+
+        const touch = e.changedTouches[0];
+        const deltaX = touch.clientX - touchStartRef.current.x;
+        const deltaY = touch.clientY - touchStartRef.current.y;
+        touchStartRef.current = null;
+
+        if (Math.abs(deltaX) < 50 || Math.abs(deltaY) > 80) return;
+
+        if (deltaX < 0) {
+            setCurrentSlide(p => Math.min(slides.length - 1, p + 1));
+            return;
+        }
+
+        setCurrentSlide(p => Math.max(0, p - 1));
+    };
 
     const slide = slides[currentSlide];
 
@@ -388,6 +412,8 @@ export default function App() {
                         exit={{ opacity: 0, scale: 1.05, y: -20 }}
                         transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
                         className="w-full min-h-full md:h-full pb-28 sm:pb-24 md:pb-20"
+                        onTouchStart={handleTouchStart}
+                        onTouchEnd={handleTouchEnd}
                     >
                         {slide.content}
                     </motion.div>
