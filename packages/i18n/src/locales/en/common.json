@@ -1,0 +1,72 @@
+{
+  "navigation": {
+    "dashboard": "Dashboard",
+    "chatbots": "Chatbots",
+    "conversations": "Conversations",
+    "knowledgeBases": "Knowledge Bases",
+    "analytics": "Analytics",
+    "settings": "Settings",
+    "billing": "Billing",
+    "team": "Team"
+  },
+  "actions": {
+    "create": "Create",
+    "edit": "Edit",
+    "delete": "Delete",
+    "save": "Save",
+    "cancel": "Cancel",
+    "confirm": "Confirm",
+    "search": "Search",
+    "filter": "Filter",
+    "export": "Export",
+    "import": "Import",
+    "upload": "Upload",
+    "download": "Download",
+    "refresh": "Refresh",
+    "back": "Back",
+    "next": "Next",
+    "submit": "Submit",
+    "close": "Close"
+  },
+  "errors": {
+    "generic": "Something went wrong. Please try again.",
+    "notFound": "The requested resource was not found.",
+    "unauthorized": "You are not authorized to perform this action.",
+    "forbidden": "Access denied.",
+    "networkError": "Network error. Please check your connection.",
+    "validationFailed": "Please fix the errors below.",
+    "sessionExpired": "Your session has expired. Please log in again."
+  },
+  "forms": {
+    "email": "Email",
+    "password": "Password",
+    "name": "Name",
+    "description": "Description",
+    "required": "This field is required",
+    "invalidEmail": "Please enter a valid email address",
+    "passwordTooShort": "Password must be at least 8 characters",
+    "confirmPassword": "Confirm Password",
+    "passwordMismatch": "Passwords do not match"
+  },
+  "common": {
+    "loading": "Loading...",
+    "noResults": "No results found",
+    "showMore": "Show more",
+    "showLess": "Show less",
+    "all": "All",
+    "none": "None",
+    "yes": "Yes",
+    "no": "No",
+    "or": "or",
+    "and": "and"
+  },
+  "auth": {
+    "login": "Log in",
+    "logout": "Log out",
+    "signup": "Sign up",
+    "forgotPassword": "Forgot password?",
+    "resetPassword": "Reset password",
+    "welcomeBack": "Welcome back",
+    "createAccount": "Create your account"
+  }
+}

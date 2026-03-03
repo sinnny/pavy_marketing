@@ -1,0 +1,11 @@
+{
+  "name": "@page-chatbot/tailwind-config",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "main": "preset.js",
+  "exports": {
+    ".": "./preset.js",
+    "./preset": "./preset.js"
+  }
+}

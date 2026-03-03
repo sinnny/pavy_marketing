@@ -1,0 +1,20 @@
+{
+  "name": "@page-chatbot/tsconfig",
+  "private": true,
+  "version": "0.0.0",
+  "files": [
+    "base.json",
+    "react.json",
+    "library.json"
+  ],
+  "exports": {
+    ".": "./base.json",
+    "./package.json": "./package.json",
+    "./base.json": "./base.json",
+    "./react.json": "./react.json",
+    "./library.json": "./library.json",
+    "./base": "./base.json",
+    "./react": "./react.json",
+    "./library": "./library.json"
+  }
+}

@@ -1,0 +1,72 @@
+{
+  "navigation": {
+    "dashboard": "ダッシュボード",
+    "chatbots": "チャットボット",
+    "conversations": "会話",
+    "knowledgeBases": "ナレッジベース",
+    "analytics": "アナリティクス",
+    "settings": "設定",
+    "billing": "請求",
+    "team": "チーム"
+  },
+  "actions": {
+    "create": "作成",
+    "edit": "編集",
+    "delete": "削除",
+    "save": "保存",
+    "cancel": "キャンセル",
+    "confirm": "確認",
+    "search": "検索",
+    "filter": "フィルター",
+    "export": "エクスポート",
+    "import": "インポート",
+    "upload": "アップロード",
+    "download": "ダウンロード",
+    "refresh": "更新",
+    "back": "戻る",
+    "next": "次へ",
+    "submit": "送信",
+    "close": "閉じる"
+  },
+  "errors": {
+    "generic": "問題が発生しました。もう一度お試しください。",
+    "notFound": "リクエストされたリソースが見つかりませんでした。",
+    "unauthorized": "この操作を実行する権限がありません。",
+    "forbidden": "アクセスが拒否されました。",
+    "networkError": "ネットワークエラーです。接続を確認してください。",
+    "validationFailed": "以下のエラーを修正してください。",
+    "sessionExpired": "セッションが期限切れです。再度ログインしてください。"
+  },
+  "forms": {
+    "email": "メールアドレス",
+    "password": "パスワード",
+    "name": "名前",
+    "description": "説明",
+    "required": "この項目は必須です",
+    "invalidEmail": "有効なメールアドレスを入力してください",
+    "passwordTooShort": "パスワードは8文字以上である必要があります",
+    "confirmPassword": "パスワード確認",
+    "passwordMismatch": "パスワードが一致しません"
+  },
+  "common": {
+    "loading": "読み込み中...",
+    "noResults": "結果が見つかりませんでした",
+    "showMore": "もっと見る",
+    "showLess": "閉じる",
+    "all": "すべて",
+    "none": "なし",
+    "yes": "はい",
+    "no": "いいえ",
+    "or": "または",
+    "and": "および"
+  },
+  "auth": {
+    "login": "ログイン",
+    "logout": "ログアウト",
+    "signup": "新規登録",
+    "forgotPassword": "パスワードをお忘れですか？",
+    "resetPassword": "パスワードリセット",
+    "welcomeBack": "おかえりなさい",
+    "createAccount": "アカウント作成"
+  }
+}

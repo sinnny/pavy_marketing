@@ -1,0 +1,369 @@
+{
+  "header": {
+    "logo": "Pavy.ai",
+    "nav": {
+      "products": "서비스",
+      "chatbot": "AI 챗봇",
+      "chatbotDesc": "AI 고객 응대 자동화",
+      "admin": "어드민",
+      "adminDesc": "분석 & 운영 관라",
+      "liveDemo": "라이브 데모",
+      "liveDemoDesc": "실시간 체험하기",
+      "userGuide": "이용 가이드",
+      "demo": "데모"
+    },
+    "cta": {
+      "login": "로그인",
+      "getDemo": "DEMO"
+    }
+  },
+  "hero": {
+    "badge": "망설임을 확신으로 바꾸는 AI",
+    "headline1": "고객의 마지막 질문에 답하는 순간,",
+    "headline2": "구매가 일어납니다.",
+    "subheading": "구매를 망설이는 고객에게 필요한 건 할인이 아닌 확신입니다. Pavy.ai는 상품의 모든 정보를 이해하고, 3초 안에 답합니다.",
+    "emailPlaceholder": "업무용 이메일 주소",
+    "startBuilding": "DEMO Request",
+    "product": {
+      "title": "Aero Pro Wireless",
+      "description": "Experience the future of high-fidelity audio. Designed with acoustic precision, supreme comfort, and AI-optimized noise cancellation to elevate every beat.",
+      "addToCart": "Add to Cart - $299",
+      "highlights": "Highlights",
+      "battery": "40-hour Battery Life",
+      "spatialAudio": "Spatial Audio Support"
+    },
+    "chatbot": {
+      "name": "Pavy.ai",
+      "status": "ONLINE",
+      "userMsg1": "이어컵 사이즈가 어떻게 되나요? 머리가 좀 큰 편인데요.",
+      "botMsg1": "Aero Pro는 52~62cm 머리둘레에 자동 맞춤되는 헤드밴드를 사용합니다. 이어컵은 메모리폼이라 귀 모양에 맞게 변형돼요!",
+      "userMsg2": "노이즈 캔슬링 성능이 어때요? 사무실이 좀 시끄러워서요.",
+      "botMsg2": "AI 기반 ANC가 주변 소음에 맞게 실시간 조절됩니다. 최대 40dB 차단이라 사무실 소음 걱정 없어요. 동료 목소리 들을 땐 투명 모드로 전환하시면 됩니다.",
+      "userMsg3": "안 맞으면 반품할 수 있나요?",
+      "botMsg3": "물론이죠! 30일 무조건 반품에 반품 배송비도 무료입니다. 대부분 첫 사용에서 바로 만족하시더라고요.",
+      "userMsg4": "배송은 얼마나 걸리나요?",
+      "botMsg4": "일반 배송은 2~3일이고 무료입니다. 급하시면 익스프레스 배송도 가능해요. 3,000원에 내일 도착합니다.",
+      "inputPlaceholder": "메시지를 입력하세요..."
+    }
+  },
+  "problem": {
+    "sectionLabel": "01 / 지금 일어나는 일",
+    "title": "고객은 기다리지 않습니다.",
+    "tenMinuteMyth": {
+      "humanAgent": "상담원 응답",
+      "humanTime": "10분",
+      "aiAgent": "Pavy.ai",
+      "aiTime": "3초",
+      "title": "10분이면 고객은 떠납니다",
+      "description": "고객은 즉답을 원합니다. 상담원은 10분이 걸립니다. 그 사이에 고객은 경쟁사로 갑니다. Pavy.ai는 0.2초 만에 정확한 답을 드립니다."
+    },
+    "scalingCosts": {
+      "title": "인건비의\n한계",
+      "description": "상담원을 늘리면 비용도 늘어납니다. AI는 고객이 100배 늘어도 비용은 거의 그대로입니다.",
+      "humanCost": "인건비",
+      "aiCost": "AI 비용"
+    },
+    "hallucination": {
+      "title": "엉뚱한 답변 방지",
+      "description": "보통 AI 챗봇은 모르면 지어냅니다. Pavy.ai는 우리 회사 문서에서만 답변하기 때문에 틀린 정보를 말하지 않습니다.",
+      "yourDocs": "우리 문서",
+      "verified": "검증 완료"
+    },
+    "metric": {
+      "label": "도입 성과",
+      "value": "84%",
+      "description": "도입 기업의 상담원 업무량 감소율"
+    }
+  },
+  "solution": {
+    "sectionLabel": "02 / 이렇게 다릅니다",
+    "title1": "단순 자동 응답이",
+    "title2": "아닙니다.",
+    "floatingPill": "3초 응답",
+    "steps": {
+      "step1": {
+        "title": "01. 맥락을 이해합니다",
+        "description": "단순 키워드 매칭이 아닙니다. 우리 회사만의 비즈니스 규칙, 말투, CS 정책의 뉘앙스까지 파악해서 답변합니다."
+      },
+      "step2": {
+        "title": "02. 항상 최신 상태입니다",
+        "description": "Notion, Zendesk, 사내 문서 등 어디든 연결하세요. 문서가 바뀌면 AI도 실시간으로 업데이트됩니다. 재학습 필요 없습니다."
+      },
+      "step3": {
+        "title": "03. 사람과 함께 일합니다",
+        "description": "사람을 대체하는 것이 아니라, 사람의 시간을 되찾아줍니다. 단순 반복 문의는 AI가 처리하고, 팀은 매출에 집중하세요."
+      }
+    }
+  },
+  "trustedBy": {
+    "sectionLabel": "국내외 기업이 선택한 고객지원 AI"
+  },
+  "howItWorks": {
+    "sectionLabel": "03 / 도입 방법",
+    "title1": "복잡한 설정 없이",
+    "title2": "바로 시작.",
+    "steps": {
+      "step1": {
+        "title": "연결",
+        "description": "기존 시스템을 연결하세요. Zendesk, Intercom, 또는 문서 파일만 있으면 됩니다. 즉시 내용을 분석합니다."
+      },
+      "step2": {
+        "title": "학습",
+        "description": "우리 회사의 말투, 정책, 응대 이력을 분석해서 맞춤형 AI 모델을 자동 생성합니다."
+      },
+      "step3": {
+        "title": "운영",
+        "description": "AI를 배포하면 문의의 84%가 즉시 처리됩니다. 정말 사람이 필요한 경우에만 상담원이 개입합니다."
+      }
+    }
+  },
+  "faq": {
+    "sectionLabel": "08 / 자주 묻는 질문",
+    "title": "궁금하신 점.",
+    "items": {
+      "q1": {
+        "question": "개발자가 없어도 도입할 수 있나요?",
+        "answer": "네. 코드 한 줄만 붙여넣으면 됩니다. 데이터를 연결하면 AI가 자동으로 우리 회사에 맞는 응대 방식을 만들어냅니다."
+      },
+      "q2": {
+        "question": "고객 데이터는 안전한가요?",
+        "answer": "SOC2 Type II 인증을 받았습니다. 고객 데이터는 AI 학습에 사용되지 않으며, 완전히 분리된 암호화 환경에 보관됩니다."
+      }
+    }
+  },
+  "footer": {
+    "cta": {
+      "title1": "지금 바로",
+      "title2": "시작하세요.",
+      "startBuilding": "DEMO Request",
+      "bookDemo": "기술 상담 예약"
+    },
+    "links": {
+      "platform": "서비스",
+      "infrastructure": "AI 챗봇",
+      "integrations": "어드민",
+      "company": "회사",
+      "about": "소개",
+      "changelog": "업데이트",
+      "contact": "문의",
+      "legal": "법적 고지",
+      "privacy": "개인정보 처리방침",
+      "terms": "이용약관"
+    },
+    "copyright": "Pavy.ai Intelligence. All rights reserved.",
+    "social": {
+      "twitter": "X / Twitter",
+      "github": "Github",
+      "linkedin": "LinkedIn"
+    }
+  },
+  "pages": {
+    "productChatbot": {
+      "title": "AI 챗봇 상세",
+      "description": "어떤 웹사이트에든 맞춤 설치 가능한 AI 챗봇의 모든 기능을 확인하세요.",
+      "hero": {
+        "badge": "망설임을 확신으로 바꾸는 AI",
+        "title1": "고객의 마지막 질문에",
+        "title2": "답하는 순간, 구매가 일어납니다.",
+        "description": "구매를 망설이는 고객에게 필요한 건 할인이 아닌 확신입니다. Pavy.ai는 상품의 모든 정보를 꿰뚫고, 3초 안에 정확히 답합니다."
+      },
+      "pdpAnalysis": {
+        "sectionLabel": "01 / 핵심 기술",
+        "title1": "페이지를 읽습니다.",
+        "title2": "전부.",
+        "description": "상품명, 가격, 스펙, 설명, 배송 정보, 교환/반품 정책, 고객 리뷰까지. Pavy.ai는 페이지의 모든 요소를 구조적으로 분석하고, 고객 질문에 정확히 매칭합니다.",
+        "scanLabel": "페이지 자동 분석",
+        "elements": {
+          "productName": "상품명",
+          "price": "가격",
+          "specs": "상세 스펙",
+          "description": "상품 설명",
+          "shipping": "배송 정보",
+          "returnPolicy": "교환/반품",
+          "reviews": "고객 리뷰"
+        },
+        "chat": {
+          "q1": "이 제품 방수 되나요?",
+          "a1": "네, IP68 등급 방수를 지원합니다. 수심 1.5m에서 30분까지 사용 가능해요.",
+          "s1": "출처: 상품 상세 스펙",
+          "q2": "배터리 얼마나 가나요?",
+          "a2": "72Wh 배터리로 일반 사용 시 최대 18시간, 영상 재생 시 22시간 연속 사용 가능합니다.",
+          "s2": "출처: 상품 상세 > 배터리",
+          "q3": "무게가 어떻게 되나요?",
+          "a3": "본체 무게 250g입니다. 장시간 착용해도 부담 없는 경량 설계에요.",
+          "s3": "출처: 상품 상세 > 제품 사양",
+          "q4": "반품은 어떻게 하나요?",
+          "a4": "30일 이내 무조건 반품 가능하며, 반품 배송비도 무료입니다.",
+          "s4": "출처: 교환/반품 정책",
+          "q5": "색상 옵션이 뭐가 있나요?",
+          "a5": "미드나잇 블랙, 스타라이트 실버, 오션 블루 3가지입니다. 가장 인기 있는 색상은 미드나잇 블랙이에요.",
+          "s5": "출처: 상품 옵션"
+        }
+      },
+      "hallucination": {
+        "sectionLabel": "02 / 이해력",
+        "title1": "키워드가 아닙니다.",
+        "title2": "맥락을 이해합니다.",
+        "generic": {
+          "label": "키워드 기반 챗봇",
+          "answer": "죄송합니다. '충전'에 대한 답변을 찾을 수 없습니다. 다음 키워드로 다시 질문해주세요: 배터리, AS, 반품, 배송",
+          "tag": "키워드 매칭 실패",
+          "description": "사전에 정의된 키워드와 정확히 일치해야만 답변할 수 있습니다. 고객이 조금만 다르게 물어보면 응답하지 못합니다."
+        },
+        "PavyAI": {
+          "label": "Pavy.ai",
+          "answer": "네, 72Wh 대용량 배터리로 일반 사용 시 최대 18시간 연속 사용이 가능합니다. 하루 종일 충전 없이 사용하셔도 충분합니다.",
+          "tag": "의도 파악 응답",
+          "source": "출처: 상품 상세 > 배터리 사양",
+          "description": "질문의 맥락과 의도를 파악해서 어떤 표현으로 물어봐도 정확한 정보를 찾아 답변합니다."
+        },
+        "sharedQuestion": "충전 없이 하루 종일 쓸 수 있나요?"
+      },
+      "reviewIntelligence": {
+        "sectionLabel": "03 / 리뷰 분석",
+        "title1": "리뷰도 읽습니다.",
+        "title2": "수만 개도.",
+        "description": "고객이 남긴 리뷰에는 상세 스펙에 없는 실사용 정보가 있습니다. Pavy.ai는 리뷰를 분석해서 실제 경험까지 답변에 반영합니다.",
+        "reviews": {
+          "r1": {
+            "author": "김**",
+            "text": "소음 차단이 진짜 대박이에요. 카페에서 써도 집중 잘 됩니다."
+          },
+          "r2": {
+            "author": "이**",
+            "text": "머리가 큰 편인데 착용감 좋습니다. 3시간 연속 착용해도 안 아파요."
+          },
+          "r3": {
+            "author": "박**",
+            "text": "충전 한 번에 3일은 거뜬히 씁니다. 배터리 진짜 오래 감."
+          }
+        },
+        "chat": {
+          "q1": "실제로 오래 써도 편한가요?",
+          "a1": "리뷰 분석 결과, 장시간 착용 만족도가 매우 높습니다. '3시간 연속 착용해도 편하다'는 후기가 다수입니다.",
+          "s1": "출처: 고객 리뷰 3,847건 분석",
+          "q2": "노이즈 캔슬링 실제로 잘 되나요?",
+          "a2": "리뷰의 87%가 소음 차단 성능에 만족하고 있습니다. 카페, 사무실에서 집중이 잘 된다는 평이 많아요.",
+          "s2": "출처: 리뷰 '노이즈 캔슬링' 관련 412건",
+          "q3": "비행기에서도 쓸 수 있나요?",
+          "a3": "여행 관련 리뷰에서 비행기 사용 후기가 다수 있습니다. 엔진 소음이 거의 안 들린다는 평이 많아요.",
+          "s3": "출처: 리뷰 '비행기/여행' 관련 89건",
+          "q4": "통화 품질은 괜찮나요?",
+          "a4": "대부분 통화 상대방이 잘 들린다고 평가했습니다. 바람이 부는 야외에서는 약간 아쉽다는 의견도 있어요.",
+          "s4": "출처: 리뷰 '통화/마이크' 관련 156건",
+          "q5": "다른 헤드폰이랑 비교하면 어때요?",
+          "a5": "착용감과 배터리 수명에서 높은 만족도를 보이고 있습니다. '이전 제품보다 훨씬 편하다'는 비교 리뷰가 많습니다.",
+          "s5": "출처: 리뷰 '비교' 관련 203건"
+        }
+      },
+      "frictionReduction": {
+        "sectionLabel": "04 / 고객 경험",
+        "title1": "찾지 않아도 됩니다.",
+        "title2": "물어보면 됩니다.",
+        "before": {
+          "label": "기존 고객 여정",
+          "s1": "상품 설명 스크롤",
+          "s2": "스펙 탭 확인",
+          "s3": "리뷰 탭에서 검색",
+          "s4": "Q&A 탭 확인",
+          "s5": "비교 사이트 이동",
+          "s6": "결국 이탈",
+          "time": "평균 8분",
+          "result": "이탈률 67%"
+        },
+        "after": {
+          "label": "Pavy.ai 도입 후",
+          "s1": "궁금한 점을 물어봅니다",
+          "s2": "즉시 정확한 답변",
+          "s3": "구매를 결정합니다",
+          "time": "평균 12초",
+          "result": "전환율 +34%"
+        },
+        "metric": {
+          "value": "97%",
+          "label": "탐색 시간 단축"
+        }
+      },
+      "admin": {
+        "sectionLabel": "05 / Admin",
+        "title1": "데이터로 관리합니다.",
+        "title2": "한눈에.",
+        "description": "전환 퍼널, 인게이지먼트 트렌드, 페이지별 대화량까지. 챗봇의 모든 성과를 실시간 대시보드에서 확인하고 개선하세요.",
+        "features": {
+          "funnel": "전환 퍼널 분석",
+          "funnelDesc": "노출 → 클릭 → 채팅 → 메시지까지 단계별 전환율을 추적합니다.",
+          "trends": "인게이지먼트 트렌드",
+          "trendsDesc": "일별 노출, 클릭, 채팅 추이를 한눈에 파악할 수 있습니다.",
+          "pages": "페이지별 성과",
+          "pagesDesc": "어떤 상품 페이지에서 대화가 가장 많이 일어나는지 확인하세요."
+        }
+      },
+      "productHighlight": {
+        "sectionLabel": "06 / 성능",
+        "title1": "타협 없는",
+        "title2": "정확도.",
+        "accuracy": {
+          "title": "틀리지 않습니다.",
+          "description": "자체 개발 RAG 엔진으로 AI가 우리 문서에만 기반해서 답변합니다. 추측도, 환각도 없습니다.",
+          "metricLabel": "정확도 목표",
+          "metricValue": "99.9%"
+        },
+        "globalSupport": {
+          "title": "다국어 즉시 지원",
+          "description": "100개 이상 언어를 유창하게 구사합니다. 해외 고객 응대도 별도 개발 없이 즉시 가능합니다."
+        },
+        "enterprise": {
+          "title": "단 한 줄로, Pavy.ai가 내 페이지에!",
+          "description": "복잡한 설치 과정 없이 단 한 줄의 스크립트로 내 페이지에 Pavy.ai를 추가할 수 있습니다."
+        }
+      },
+      "customPDP": {
+        "sectionLabel": "07 / 맞춤 설정",
+        "title1": "우리 브랜드에 맞게.",
+        "title2": "완벽하게 녹아듭니다.",
+        "description": "색상, 아이콘, 테마를 자유롭게 변경하세요. 쇼핑몰, SaaS 대시보드, 예약 사이트 등 어디에든 자연스럽게 어울립니다.",
+        "tabs": {
+          "ecommerce": {
+            "title": "E-Commerce",
+            "content": "Product details, reviews, and 'Add to Cart' layout."
+          },
+          "saas": {
+            "title": "SaaS Dashboard",
+            "content": "Analytics charts, user metrics, and data tables."
+          },
+          "travel": {
+            "title": "Travel Booking",
+            "content": "Flight search, hotel listings, and booking dates."
+          }
+        },
+        "chat": {
+          "aiAssistant": "Pavy.ai",
+          "replyTime": "Online",
+          "greeting": "안녕하세요! {{title}} 관련 궁금하신 점을 물어보세요.",
+          "inputPlaceholder": "메시지를 입력하세요..."
+        }
+      },
+      "cta": {
+        "title1": "상품 페이지의 잠재력을",
+        "title2": "깨워보세요.",
+        "startFree": "DEMO Request",
+        "bookDemo": "기술 상담 예약"
+      }
+    },
+    "productDashboard": {
+      "title": "Admin",
+      "description": "AI 상담원을 관리하고, 대화 기록을 확인하고, 맞춤 지식을 학습시키세요."
+    },
+    "userGuide": {
+      "title": "이용 가이드",
+      "description": "AI 챗봇을 설치하고 운영하기 위한 모든 것이 담긴 가이드입니다."
+    },
+    "demoRequest": {
+      "title": "DEMO Request",
+      "description": "AI 상담원이 고객 문의를 어떻게 자동 처리하는지 직접 확인해보세요.",
+      "fullName": "이름",
+      "workEmail": "업무용 이메일",
+      "submit": "DEMO Request"
+    }
+  }
+}

@@ -1,0 +1,226 @@
+{
+  "header": {
+    "logo": "Pavy.ai",
+    "nav": {
+      "products": "サービス",
+      "chatbot": "チャットボット",
+      "chatbotDesc": "自律型AIエージェント",
+      "admin": "管理画面",
+      "adminDesc": "分析 & マネジメント",
+      "liveDemo": "ライブデモ",
+      "liveDemoDesc": "インタラクティブダッシュボード",
+      "userGuide": "ユーザーガイド",
+      "demo": "デモ"
+    },
+    "cta": {
+      "login": "ログイン",
+      "getDemo": "デモを体験"
+    }
+  },
+  "hero": {
+    "badge": "ショッピングが変わる",
+    "headline1": "顧客は読みません。",
+    "headline2": "聞きます。",
+    "subheading": "商品ページを最後までスクロールする顧客はいません。でもAIはすべて読みます。スペック、レビュー、配送、返品ポリシーまで自動で分析し、顧客が聞いた瞬間に正確に答えます。推測なし。あなたのデータだけで。コード一行で導入完了。",
+    "emailPlaceholder": "業務用メール",
+    "startBuilding": "今すぐ始める",
+    "product": {
+      "title": "Aero Pro Wireless",
+      "description": "Experience the future of high-fidelity audio. Designed with acoustic precision, supreme comfort, and AI-optimized noise cancellation to elevate every beat.",
+      "addToCart": "Add to Cart - $299",
+      "highlights": "Highlights",
+      "battery": "40-hour Battery Life",
+      "spatialAudio": "Spatial Audio Support"
+    },
+    "chatbot": {
+      "name": "Pavy.ai",
+      "status": "ONLINE",
+      "userMsg1": "イヤーカップのサイズはどうなってますか？頭が大きめなんですが。",
+      "botMsg1": "Aero Proは52〜62cmの頭囲に自動調整するヘッドバンドを採用しています。イヤーカップはメモリーフォームで耳の形にフィット。サイズ選び不要です！",
+      "userMsg2": "ノイズキャンセリングの性能は？オフィスがうるさくて。",
+      "botMsg2": "AI搭載ANCが周囲の騒音に合わせてリアルタイム調整します。最大40dBカット。オフィスの雑音もエアコン音も遮断。同僚の声が必要な時は透過モードに切替可能です。",
+      "userMsg3": "合わなかったら返品できますか？",
+      "botMsg3": "もちろんです！30日間の無条件返品に対応、返送料も無料です。ほとんどのお客様は最初の試聴で気に入っていただけますよ。",
+      "userMsg4": "配送はどのくらいかかりますか？",
+      "botMsg4": "通常配送は3〜5営業日で全品送料無料です。お急ぎの場合は翌日届くエクスプレス配送を990円でご利用いただけます。",
+      "inputPlaceholder": "メッセージを入力..."
+    }
+  },
+  "problem": {
+    "sectionLabel": "01 / 現状の課題",
+    "title": "カスタマーサポート、根本から壊れてる。",
+    "tenMinuteMyth": {
+      "humanAgent": "人間オペレーター",
+      "humanTime": "10分",
+      "aiAgent": "Pavy.ai",
+      "aiTime": "200ms",
+      "title": "「10分で対応」という幻想",
+      "description": "ユーザーは即座の回答を求めている。人間は数分かかる。その差が、顧客離脱を生む。200msのレスポンスで、そのギャップを消し去る。"
+    },
+    "scalingCosts": {
+      "title": "スケーリング\nコスト",
+      "description": "採用は線形コスト。AIは指数的アドバンテージ。人を増やすな、知性を増やせ。",
+      "humanCost": "人件費",
+      "aiCost": "AIコスト"
+    },
+    "hallucination": {
+      "title": "ハルシネーションリスク",
+      "description": "汎用AIは推測する。俺たちは検証する。信頼できるソースからのみ回答する、コンテキスト認識型エージェント。",
+      "yourDocs": "ドキュメント",
+      "verified": "検証済み"
+    },
+    "metric": {
+      "label": "コアメトリクス",
+      "value": "84%",
+      "description": "エンタープライズアカウントにおける有人対応依存度の削減率。"
+    }
+  },
+  "solution": {
+    "sectionLabel": "02 / メソドロジー",
+    "title1": "自律時代のために",
+    "title2": "設計された。",
+    "floatingPill": "200msレスポンス",
+    "steps": {
+      "step1": {
+        "title": "01. 自律的理解",
+        "description": "キーワード検索だけじゃない。ビジネスロジック、トーン、サービスポリシーのニュアンスまで理解する。"
+      },
+      "step2": {
+        "title": "02. リアルタイムコンテキスト同期",
+        "description": "数分でエコシステム全体を同期。Notion、Zendesk、Intercom、生ドキュメント。ドキュメントが進化すれば、AIもリアルタイムで追従する。"
+      },
+      "step3": {
+        "title": "03. ヒューマン・イン・ザ・ループ",
+        "description": "人間を置き換えない。人間を強化する。AIがノイズを処理し、チームは売上を伸ばす複雑でクリエイティブな課題に集中できる。"
+      }
+    }
+  },
+  "trustedBy": {
+    "sectionLabel": "エンタープライズが信頼するインフラ"
+  },
+  "howItWorks": {
+    "sectionLabel": "03 / デプロイメント",
+    "title1": "摩擦ゼロの",
+    "title2": "オンボーディング。",
+    "steps": {
+      "step1": {
+        "title": "インテグレーション",
+        "description": "インフラを接続。Zendesk、Intercom、または生ドキュメント。リアルタイムでコンテキストを取り込む。"
+      },
+      "step2": {
+        "title": "シンセシス",
+        "description": "ニューラルエンジンがブランドボイス、ポリシー、履歴を処理し、カスタムインテリジェンスモデルを構築。"
+      },
+      "step3": {
+        "title": "自律スケール",
+        "description": "エージェントをデプロイ。84%のクエリが瞬時に処理される。人間は本当に必要な時だけ。"
+      }
+    }
+  },
+  "productHighlight": {
+    "sectionLabel": "04 / パフォーマンス",
+    "title1": "妥協を許さない",
+    "title2": "者のために。",
+    "accuracy": {
+      "title": "極限の精度。",
+      "description": "独自のRAGエンジンが、エージェントをドキュメントに完全に紐づける。推測ゼロ。ハルシネーションゼロ。",
+      "metricLabel": "ターゲットメトリクス",
+      "metricValue": "99.9%"
+    },
+    "globalSupport": {
+      "title": "グローバルサポート",
+      "description": "100以上の言語をネイティブレベルで。エンジニアリングなしで、ローカルマーケットを即座にセットアップ。"
+    },
+    "enterprise": {
+      "title": "エンタープライズ統合",
+      "description": "Zendesk、Snowflake、AWSをヘッドレスAPIインフラで5分以内に接続。"
+    }
+  },
+  "customPDP": {
+    "sectionLabel": "05 / カスタマイズ",
+    "title1": "あなたのブランド。",
+    "title2": "あなたのアイデンティティ。",
+    "description": "チャットボットをあらゆる環境にシームレスに溶け込ませる。カラー、アイコン、テーマをPDP、ダッシュボード、予約フローに合わせてカスタマイズ。",
+    "tabs": {
+      "ecommerce": {
+        "title": "E-Commerce",
+        "content": "Product details, reviews, and 'Add to Cart' layout."
+      },
+      "saas": {
+        "title": "SaaS Dashboard",
+        "content": "Analytics charts, user metrics, and data tables."
+      },
+      "travel": {
+        "title": "Travel Booking",
+        "content": "Flight search, hotel listings, and booking dates."
+      }
+    },
+    "chat": {
+      "aiAssistant": "AIアシスタント",
+      "replyTime": "通常数分以内に返信します",
+      "greeting": "こんにちは！{{title}}について何かお手伝いできますか？",
+      "inputPlaceholder": "メッセージを入力..."
+    }
+  },
+  "faq": {
+    "sectionLabel": "05 / インテリジェンス",
+    "title": "よくある質問。",
+    "items": {
+      "q1": {
+        "question": "エンジニアリングリソースは必要？",
+        "answer": "不要。Pavy.aiはヘッドレスかつコンテキスト認識型。データを接続すれば、エージェントが即座にメソドロジーを合成します。"
+      },
+      "q2": {
+        "question": "データプライバシーは保証される？",
+        "answer": "SOC2 Type II準拠。データは基盤モデルの学習には一切使用しません。サイロ化された暗号化レイヤーで保管されます。"
+      }
+    }
+  },
+  "footer": {
+    "cta": {
+      "title1": "知性で",
+      "title2": "スケールせよ。",
+      "startBuilding": "今すぐ構築開始",
+      "bookDemo": "技術デモを予約"
+    },
+    "links": {
+      "platform": "サービス",
+      "infrastructure": "AIチャットボット",
+      "integrations": "管理画面",
+      "company": "会社情報",
+      "about": "概要",
+      "changelog": "変更履歴",
+      "contact": "お問い合わせ",
+      "legal": "法的情報",
+      "privacy": "プライバシーポリシー",
+      "terms": "利用規約"
+    },
+    "copyright": "Pavy.ai Intelligence. Limited Edition.",
+    "social": {
+      "twitter": "X / Twitter",
+      "github": "Github",
+      "linkedin": "LinkedIn"
+    }
+  },
+  "pages": {
+    "productChatbot": {
+      "title": "チャットボット製品詳細",
+      "description": "高度にカスタマイズ可能なAI搭載チャットボットウィジェットのすべて。"
+    },
+    "productDashboard": {
+      "title": "管理ダッシュボードハブ",
+      "description": "AIエージェントの管理、チャット履歴のレビュー、カスタムナレッジベースのトレーニング。"
+    },
+    "userGuide": {
+      "title": "ユーザーガイド & ドキュメント",
+      "description": "AIチャットボットウィジェットの統合、カスタマイズ、デプロイのための包括的ドキュメント。"
+    },
+    "demoRequest": {
+      "title": "デモをリクエスト",
+      "description": "エンタープライズAIエージェントがサポートボリュームを40%削減する方法をご覧ください。",
+      "fullName": "氏名",
+      "workEmail": "業務用メールアドレス",
+      "submit": "リクエストを送信"
+    }
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "extends": "@page-chatbot/tsconfig/library.json",
+  "compilerOptions": {
+    "outDir": "./dist",
+    "rootDir": "./src"
+  },
+  "include": ["src"],
+  "references": [{ "path": "../types" }]
+}

@@ -1,0 +1,226 @@
+{
+  "header": {
+    "logo": "Pavy.ai",
+    "nav": {
+      "products": "Service",
+      "chatbot": "Chatbot",
+      "chatbotDesc": "Autonomous AI Agent",
+      "admin": "Admin",
+      "adminDesc": "Analytics & Management",
+      "liveDemo": "Live Demo",
+      "liveDemoDesc": "Interactive Dashboard",
+      "userGuide": "User Guide",
+      "demo": "Demo"
+    },
+    "cta": {
+      "login": "Login",
+      "getDemo": "Get Demo"
+    }
+  },
+  "hero": {
+    "badge": "Shopping, reimagined",
+    "headline1": "Customers don't read.",
+    "headline2": "They ask.",
+    "subheading": "No one scrolls to the bottom of your product page. But AI does. Pavy.ai analyzes every detail — specs, reviews, shipping, return policies — and answers the moment customers ask. No guesswork. Only your data. One line of code to start.",
+    "emailPlaceholder": "work email",
+    "startBuilding": "DEMO Request",
+    "product": {
+      "title": "Aero Pro Wireless",
+      "description": "Experience the future of high-fidelity audio. Designed with acoustic precision, supreme comfort, and AI-optimized noise cancellation to elevate every beat.",
+      "addToCart": "Add to Cart - $299",
+      "highlights": "Highlights",
+      "battery": "40-hour Battery Life",
+      "spatialAudio": "Spatial Audio Support"
+    },
+    "chatbot": {
+      "name": "Pavy.ai",
+      "status": "ONLINE",
+      "userMsg1": "What sizes do the ear cups come in? My head's pretty large.",
+      "botMsg1": "The Aero Pro has an auto-adjusting headband that fits 52–62cm. The memory foam ear cups adapt to your ear shape — no sizing needed!",
+      "userMsg2": "How's the noise cancellation? I'm in a noisy open office.",
+      "botMsg2": "Our AI-powered ANC adapts to your environment in real-time. It blocks up to 40dB — office chatter, AC hum, all gone. Toggle Transparency mode when you need to hear colleagues.",
+      "userMsg3": "Can I return them if they don't fit?",
+      "botMsg3": "Of course! 30-day no-questions-asked returns with free shipping. Most customers know they love it after the first listen though.",
+      "userMsg4": "How long does shipping take?",
+      "botMsg4": "Standard shipping is 3–5 business days, free on all orders. Need it sooner? Express next-day delivery is available for $9.99.",
+      "inputPlaceholder": "Type your message..."
+    }
+  },
+  "problem": {
+    "sectionLabel": "01 / The Status Quo",
+    "title": "Support is basically broken.",
+    "tenMinuteMyth": {
+      "humanAgent": "Human Agent",
+      "humanTime": "10 min",
+      "aiAgent": "Pavy.ai",
+      "aiTime": "200 ms",
+      "title": "The 10-Minute Myth",
+      "description": "Users expect instant answers. Humans take minutes. That gap is where your customer retention dies. We bridge it with 200ms resolution times."
+    },
+    "scalingCosts": {
+      "title": "Scaling\nCosts",
+      "description": "Hiring is a linear cost. AI is an exponential advantage. Stop scaling your workforce, scale your intelligence.",
+      "humanCost": "Human Cost",
+      "aiCost": "AI Cost"
+    },
+    "hallucination": {
+      "title": "Hallucination Risk",
+      "description": "Generic AI bots guess. Ours verifies. Context-aware agents that only speak from your source of truth.",
+      "yourDocs": "Your Docs",
+      "verified": "Verified"
+    },
+    "metric": {
+      "label": "Core Metric",
+      "value": "84%",
+      "description": "Reduction in human-agent dependency across enterprise accounts."
+    }
+  },
+  "solution": {
+    "sectionLabel": "02 / Methodology",
+    "title1": "Built for the",
+    "title2": "Autonomous Era.",
+    "floatingPill": "200ms Response",
+    "steps": {
+      "step1": {
+        "title": "01. Autonomous Understanding",
+        "description": "Our agents don't just search for keywords. They understand the nuance of your business logic, tone, and specific service policies."
+      },
+      "step2": {
+        "title": "02. Live Context Sync",
+        "description": "Sync your entire ecosystem in minutes. Notion, Zendesk, Intercom, or raw docs. The AI stays updated in real-time as your documentation evolves."
+      },
+      "step3": {
+        "title": "03. Human In The Loop",
+        "description": "We don't replace humans; we empower them. The AI handles the noise so your team can focus on the complex, creative challenges that grow revenue."
+      }
+    }
+  },
+  "trustedBy": {
+    "sectionLabel": "Trusted by Enterprise Infrastructure"
+  },
+  "howItWorks": {
+    "sectionLabel": "03 / Deployment",
+    "title1": "The zero-friction",
+    "title2": "onboarding.",
+    "steps": {
+      "step1": {
+        "title": "Integration",
+        "description": "Connect your infrastructure. Zendesk, Intercom, or raw documentation. We ingest the context in real-time."
+      },
+      "step2": {
+        "title": "Synthesis",
+        "description": "Our neural engines process your brand voice, policies, and history to create a custom intelligence model."
+      },
+      "step3": {
+        "title": "Autonomous Scale",
+        "description": "Deploy the agent. 84% of queries are handled instantly. Humans only step in when it truly matters."
+      }
+    }
+  },
+  "productHighlight": {
+    "sectionLabel": "04 / Performance",
+    "title1": "Built for the",
+    "title2": "Uncompromising.",
+    "accuracy": {
+      "title": "Extreme Accuracy.",
+      "description": "Our proprietary RAG engine ensures that your agent remains tethered to your documentation. Zero guesswork. Zero hallucinations.",
+      "metricLabel": "Target Metric",
+      "metricValue": "99.9%"
+    },
+    "globalSupport": {
+      "title": "Global Support",
+      "description": "Speak 100+ languages fluently. Instant setup for local markets without engineering overhead."
+    },
+    "enterprise": {
+      "title": "Enterprise Integration",
+      "description": "Connect to Zendesk, Snowflake, and AWS in under five minutes with our headless API infrastructure."
+    }
+  },
+  "customPDP": {
+    "sectionLabel": "05 / Customization",
+    "title1": "Your Brand.",
+    "title2": "Your Identity.",
+    "description": "Perfectly blend the chatbot into any environment. Customize colors, icons, and themes to match your Product Detail Pages (PDP), dashboards, and booking flows.",
+    "tabs": {
+      "ecommerce": {
+        "title": "E-Commerce",
+        "content": "Product details, reviews, and 'Add to Cart' layout."
+      },
+      "saas": {
+        "title": "SaaS Dashboard",
+        "content": "Analytics charts, user metrics, and data tables."
+      },
+      "travel": {
+        "title": "Travel Booking",
+        "content": "Flight search, hotel listings, and booking dates."
+      }
+    },
+    "chat": {
+      "aiAssistant": "AI Assistant",
+      "replyTime": "We typically reply in minutes",
+      "greeting": "Hi! How can I help you with our {{title}} today?",
+      "inputPlaceholder": "Type a message..."
+    }
+  },
+  "faq": {
+    "sectionLabel": "05 / Intelligence",
+    "title": "Questions.",
+    "items": {
+      "q1": {
+        "question": "Do I need engineering resources?",
+        "answer": "No. Pavy.ai is headless and context-aware. Connect your data, and the agent synthesizes your methodology instantly."
+      },
+      "q2": {
+        "question": "Is data privacy guaranteed?",
+        "answer": "We are SOC2 Type II compliant. Your data is never used for foundation model training. It resides in a siloed encryption layer."
+      }
+    }
+  },
+  "footer": {
+    "cta": {
+      "title1": "Scale with",
+      "title2": "Intelligence.",
+      "startBuilding": "DEMO Request",
+      "bookDemo": "DEMO Request"
+    },
+    "links": {
+      "platform": "Service",
+      "infrastructure": "AI Chatbot",
+      "integrations": "Admin",
+      "company": "Company",
+      "about": "About",
+      "changelog": "Changelog",
+      "contact": "Contact",
+      "legal": "Legal",
+      "privacy": "Privacy",
+      "terms": "Terms"
+    },
+    "copyright": "Pavy.ai Intelligence. All rights reserved.",
+    "social": {
+      "twitter": "X / Twitter",
+      "github": "Github",
+      "linkedin": "LinkedIn"
+    }
+  },
+  "pages": {
+    "productChatbot": {
+      "title": "Chatbot Product Details",
+      "description": "Learn all about our highly customizable, AI-driven chatbot widget for your website."
+    },
+    "productDashboard": {
+      "title": "Admin Dashboard Hub",
+      "description": "Manage your AI agents, review chat histories, and train on custom knowledge bases."
+    },
+    "userGuide": {
+      "title": "User Guide & Documentation",
+      "description": "Comprehensive documentation to integrate, customize, and deploy our AI chatbot widget."
+    },
+    "demoRequest": {
+      "title": "Request a Demo",
+      "description": "See how our enterprise AI agent can reduce support volume by 40%.",
+      "fullName": "Full Name",
+      "workEmail": "Work Email",
+      "submit": "Submit Request"
+    }
+  }
+}

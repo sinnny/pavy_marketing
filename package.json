@@ -1,0 +1,16 @@
+{
+  "name": "@pavy/site-repo",
+  "private": true,
+  "packageManager": "pnpm@10.6.1",
+  "scripts": {
+    "dev": "turbo dev --filter @page-chatbot/site",
+    "build": "turbo build --filter @page-chatbot/site",
+    "lint": "turbo lint --filter @page-chatbot/site",
+    "typecheck": "turbo typecheck --filter @page-chatbot/site",
+    "format": "prettier --write \"**/*.{ts,tsx,js,jsx,json,md}\""
+  },
+  "devDependencies": {
+    "prettier": "^3.4.2",
+    "turbo": "^2.4.4"
+  }
+}
