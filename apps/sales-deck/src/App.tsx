@@ -18,11 +18,11 @@ const slides = [
                     <span>망설임을 구매로 바꾸는 AI</span>
                 </div>
                 <h1 className="text-6xl md:text-8xl font-black text-white tracking-tight leading-tight mb-8">
-                    고객의 마지막 질문,<br />
-                    <span className="text-indigo-400">바로 지금 답해야 합니다.</span>
+                    고객이 묻는 순간이<br />
+                    <span className="text-indigo-400">곧 결제의 순간입니다.</span>
                 </h1>
                 <p className="text-2xl text-slate-300 max-w-3xl font-light">
-                    우리 쇼핑몰의 모든 상품 정보를 완벽히 숙지한<br />24시간 무인 세일즈 파트너, Pavy.ai를 소개합니다.
+                    상세페이지를 읽고, 리뷰를 분석하고, 고객에게 바로 답하는 Pavy.ai
                 </p>
             </div>
         )
@@ -31,7 +31,7 @@ const slides = [
         id: 2,
         theme: 'light',
         content: (
-            <div className="flex flex-col lg:flex-row items-center h-full max-w-6xl mx-auto px-6 gap-8 lg:gap-16">
+            <div className="flex flex-col lg:flex-row items-center justify-center h-full max-w-7xl mx-auto px-6 gap-8 lg:gap-24">
                 <div className="flex-1 w-full relative z-10 flex flex-col justify-center">
                     <span className="text-xs sm:text-sm uppercase tracking-[0.3em] font-bold text-indigo-500 mb-3 sm:mb-6 block whitespace-nowrap">01 / Introduction</span>
                     <h2 className="text-2xl sm:text-4xl md:text-5xl lg:text-6xl font-black text-slate-900 leading-tight mb-4 sm:mb-8 break-keep">
@@ -39,9 +39,9 @@ const slides = [
                         <span className="text-indigo-600 whitespace-nowrap">Pavy.ai란 무엇인가요?</span>
                     </h2>
                     <ul className="space-y-3 sm:space-y-6 text-sm sm:text-lg md:text-xl text-slate-600 break-keep">
-                        <li className="flex gap-2 sm:gap-4 items-start"><CheckCircle2 className="text-indigo-500 shrink-0 mt-0.5 w-5 h-5 sm:w-6 sm:h-6" /> <div className="leading-snug"><b>스스로 상품 공부 완료:</b> 스크립트 한 줄이면 쇼핑몰의 상세페이지(PDP)를 AI가 스스로 읽고 100% 이해합니다.</div></li>
-                        <li className="flex gap-2 sm:gap-4 items-start"><CheckCircle2 className="text-indigo-500 shrink-0 mt-0.5 w-5 h-5 sm:w-6 sm:h-6" /> <div className="leading-snug"><b>24시간 친절한 점원:</b> 고객이 묻는 사이즈, 색상, 배송 정보를 잠도 안 자고 가장 정확하게 안내합니다.</div></li>
-                        <li className="flex gap-2 sm:gap-4 items-start"><CheckCircle2 className="text-indigo-500 shrink-0 mt-0.5 w-5 h-5 sm:w-6 sm:h-6" /> <div className="leading-snug"><b>매출 수직 상승:</b> 결제를 망설이는 순간, 즉각적인 답변으로 이탈을 막고 지갑을 열게 만듭니다.</div></li>
+                        <li className="flex gap-2 sm:gap-4 items-start"><CheckCircle2 className="text-indigo-500 shrink-0 mt-0.5 w-5 h-5 sm:w-6 sm:h-6" /> <div className="leading-snug"><b className="text-indigo-600">스스로 상품 공부 완료:</b> 스크립트 한 줄이면 쇼핑몰의 상세페이지(PDP)를 AI가 스스로 읽고 100% 이해합니다.</div></li>
+                        <li className="flex gap-2 sm:gap-4 items-start"><CheckCircle2 className="text-indigo-500 shrink-0 mt-0.5 w-5 h-5 sm:w-6 sm:h-6" /> <div className="leading-snug"><b className="text-indigo-600">24시간 친절한 점원:</b> 고객이 묻는 사이즈, 색상, 배송 정보를 잠도 안 자고 가장 정확하게 안내합니다.</div></li>
+                        <li className="flex gap-2 sm:gap-4 items-start"><CheckCircle2 className="text-indigo-500 shrink-0 mt-0.5 w-5 h-5 sm:w-6 sm:h-6" /> <div className="leading-snug"><b className="text-indigo-600">매출 수직 상승:</b> 결제를 망설이는 순간, 즉각적인 답변으로 이탈을 막고 지갑을 열게 만듭니다.</div></li>
                     </ul>
                 </div>
                 <div className="flex-1 w-full mt-4 lg:mt-0 max-w-sm lg:max-w-md bg-white border border-slate-200 rounded-[24px] shadow-2xl relative z-10 overflow-hidden hidden sm:flex flex-col">
@@ -64,17 +64,17 @@ const slides = [
         id: 3,
         theme: 'light',
         content: (
-            <div className="flex flex-col lg:flex-row items-center h-full max-w-6xl mx-auto px-6 gap-8 lg:gap-16">
+            <div className="flex flex-col lg:flex-row items-center h-full max-w-7xl mx-auto px-6 gap-8 lg:gap-24">
                 <div className="flex-1 w-full relative z-10">
                     <span className="text-xs sm:text-sm uppercase tracking-[0.3em] font-bold text-indigo-500 mb-2 sm:mb-6 block whitespace-nowrap">02 / The Problem</span>
-                    <h2 className="text-2xl sm:text-4xl md:text-5xl lg:text-6xl font-black text-slate-900 leading-tight mb-4 sm:mb-8 break-keep">
-                        고객은 기다리지 않습니다.<br />
-                        질문을 남기고 <span className="text-red-500">떠납니다.</span>
+                    <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-black text-slate-900 leading-tight mb-4 sm:mb-8 break-keep">
+                        <span className="whitespace-nowrap">고객은 기다리지 않습니다.</span><br />
+                        <span className="whitespace-nowrap">질문을 남기고 <span className="text-red-500">떠납니다.</span></span>
                     </h2>
                     <ul className="space-y-3 sm:space-y-6 text-sm sm:text-lg md:text-xl text-slate-600 break-keep">
-                        <li className="flex gap-2 sm:gap-4 items-start"><AlertIcon /> <div className="leading-snug">질문이 생긴 고객은 지갑을 열 준비가 <b>가장 잘 된 고객</b>입니다.</div></li>
+                        <li className="flex gap-2 sm:gap-4 items-start"><AlertIcon /> <div className="leading-snug">질문이 있는 고객은 <b>지갑을 열 준비가 된 고객</b>입니다.</div></li>
                         <li className="flex gap-2 sm:gap-4 items-start"><AlertIcon /> <div className="leading-snug">하지만 기존 게시판이나 톡 상담은 답변을 받기까지 평균 <b>10분 이상</b> 걸립니다.</div></li>
-                        <li className="flex gap-2 sm:gap-4 items-start"><AlertIcon /> <div className="leading-snug">기다리는 사이 고객은 다른 곳으로 갑니다. 그렇다고 CS 직원을 계속 늘릴 수는 없습니다.</div></li>
+                        <li className="flex gap-2 sm:gap-4 items-start"><AlertIcon /> <div className="leading-snug">기다리는 사이 고객은 다른 곳으로 갑니다. CS 직원을 계속해서 늘리는 것도 한계가 있죠.</div></li>
                     </ul>
                 </div>
                 <div className="flex-1 bg-white p-6 lg:p-10 rounded-[20px] lg:rounded-[32px] shadow-2xl shadow-slate-200 border border-slate-100 flex flex-col items-center gap-6 lg:gap-8 w-full max-w-md mx-auto relative z-10 mt-6 lg:mt-0">
@@ -128,13 +128,13 @@ const slides = [
                 <div className="flex-1 w-full relative z-10">
                     <span className="text-xs sm:text-sm uppercase tracking-[0.3em] font-bold text-indigo-400 mb-2 sm:mb-6 block whitespace-nowrap">04 / Trust & Safety</span>
                     <h2 className="text-2xl sm:text-4xl md:text-5xl lg:text-6xl font-black text-white leading-tight mb-4 sm:mb-8 break-keep">
-                        AI가 <span className="text-emerald-400">거짓말</span>을<br />할까 봐 걱정이신가요?
+                        AI가 <span className="text-emerald-400">거짓말</span>을 할까 봐<br /> 걱정이신가요?
                     </h2>
                     <p className="text-sm sm:text-lg md:text-xl text-slate-300 mb-6 sm:mb-8 leading-relaxed break-keep">
-                        Pavy.ai는 우리 쇼핑몰에 <b>있는 상품 내용으로만</b> 대답하도록 단단히 고정되어 있습니다. 스펙에 없는 말이나 모르는 내용은 절대로 지어내지 않습니다.
+                        Pavy.ai는 우리 쇼핑몰에 <b>있는 상품 내용으로만</b> 대답하도록 학습되어 있습니다. 학습되지 않은 내용은 절대 지어내지 않습니다.
                     </p>
                     <div className="inline-flex items-center gap-2 sm:gap-3 px-4 sm:px-6 py-2 sm:py-3 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 font-bold text-[11px] sm:text-sm md:text-base whitespace-nowrap w-fit">
-                        <ShieldCheck className="w-4 h-4 sm:w-5 sm:h-5 shrink-0" /> 사실 기반 응대 (엉뚱한 답변 제로)
+                        <ShieldCheck className="w-4 h-4 sm:w-5 sm:h-5 shrink-0" /> 사실 기반 답변
                     </div>
                 </div>
                 <div className="flex-1 w-full bg-slate-800 p-5 sm:p-8 rounded-[20px] sm:rounded-[32px] border border-slate-700 shadow-2xl relative z-10 mt-6 lg:mt-0 max-w-md mx-auto">
@@ -165,7 +165,8 @@ const slides = [
                 </h2>
                 <p className="text-sm sm:text-lg md:text-2xl text-slate-600 mb-8 sm:mb-16 max-w-3xl break-keep">
                     "정사이즈인가요? 발 안 아픈가요?"<br />
-                    사장님도 잘 모르는 실제 착용감! AI가 수많은 <b>찐 텍스트 후기들을 모아 분석한 뒤</b> 기존 고객 경험에 기반한 착한 답변을 제공합니다.
+                    사장님도 잘 모르는 실제 착용감! AI가 수많은 <b>리뷰들을 모아 분석한 뒤</b><br />
+                    기존 고객 경험에 기반한 착한 답변을 제공합니다.
                 </p>
                 <div className="flex flex-col sm:flex-row flex-wrap justify-center gap-2 sm:gap-4 w-full">
                     <ReviewBadge text="3시간 걸어도 편하다는 후기가 412건이나 있어요" />
@@ -192,8 +193,8 @@ const slides = [
                         <span className="text-indigo-600 whitespace-nowrap">데이터로 속 시원히.</span>
                     </h2>
                     <ul className="space-y-3 sm:space-y-6 text-sm sm:text-lg md:text-xl text-slate-600 break-keep">
-                        <li className="flex gap-2 sm:gap-4 items-start"><CheckCircle2 className="text-indigo-500 shrink-0 mt-0.5 w-5 h-5 sm:w-6 sm:h-6" /> <div className="leading-snug"><b>진짜 관심사 파악:</b> 쇼핑몰 고객들이 어떤 상품에서 무엇을 망설이는지 এক눈에 봅니다.</div></li>
-                        <li className="flex gap-2 sm:gap-4 items-start"><CheckCircle2 className="text-indigo-500 shrink-0 mt-0.5 w-5 h-5 sm:w-6 sm:h-6" /> <div className="leading-snug"><b>즉각적인 피드백 적용:</b> 자주 묻는 질문을 바로 상세페이지 썸네일에 추가해 구매율을 올립니다.</div></li>
+                        <li className="flex gap-2 sm:gap-4 items-start"><CheckCircle2 className="text-indigo-500 shrink-0 mt-0.5 w-5 h-5 sm:w-6 sm:h-6" /> <div className="leading-snug"><b className="text-indigo-600">진짜 관심사 파악:</b> 쇼핑몰 고객들이 어떤 상품에서 무엇을 망설이는지 한눈에 봅니다.</div></li>
+                        <li className="flex gap-2 sm:gap-4 items-start"><CheckCircle2 className="text-indigo-500 shrink-0 mt-0.5 w-5 h-5 sm:w-6 sm:h-6" /> <div className="leading-snug"><b className="text-indigo-600">즉각적인 피드백 적용:</b> 자주 묻는 질문을 바로 상세페이지 썸네일에 추가해 구매율을 올립니다.</div></li>
                     </ul>
                 </div>
             </div>
@@ -211,13 +212,13 @@ const slides = [
                         <span className="text-indigo-600 whitespace-nowrap">마음대로 디자인하세요.</span>
                     </h2>
                     <ul className="space-y-4 sm:space-y-6 text-sm sm:text-lg md:text-xl text-slate-600 break-keep">
-                        <li className="flex gap-2 sm:gap-4 items-start"><CheckCircle2 className="text-indigo-500 shrink-0 mt-0.5 w-5 h-5 sm:w-6 sm:h-6" /> <div className="leading-snug"><b>브랜드 컬러 매칭:</b> 베이지, 스카이 블루 등 쇼핑몰 분위기에 딱 맞는 테마 색상을 직접 고릅니다.</div></li>
-                        <li className="flex gap-2 sm:gap-4 items-start"><CheckCircle2 className="text-indigo-500 shrink-0 mt-0.5 w-5 h-5 sm:w-6 sm:h-6" /> <div className="leading-snug"><b>맞춤형 호칭 & 어투:</b> "고객님" 대신 "언니!", 딱딱한 존댓말 대신 친절한 말투 등 우리 몰 구조에 딱 맞춥니다.</div></li>
+                        <li className="flex gap-2 sm:gap-4 items-start"><CheckCircle2 className="text-indigo-500 shrink-0 mt-0.5 w-5 h-5 sm:w-6 sm:h-6" /> <div className="leading-snug"><b className="text-indigo-600">브랜드 컬러 매칭:</b> 베이지, 스카이 블루 등 쇼핑몰 분위기에 딱 맞는 테마 색상을 직접 고릅니다.</div></li>
+                        <li className="flex gap-2 sm:gap-4 items-start"><CheckCircle2 className="text-indigo-500 shrink-0 mt-0.5 w-5 h-5 sm:w-6 sm:h-6" /> <div className="leading-snug"><b className="text-indigo-600">맞춤형 호칭 & 어투:</b> "고객님" 대신 "언니!", 딱딱한 존댓말 대신 친절한 말투 등 우리 몰 구조에 딱 맞춥니다.</div></li>
                     </ul>
                 </div>
                 <div className="flex-1 w-full flex flex-col items-center gap-4 lg:gap-6 mt-8 lg:mt-0 relative z-10">
                     <div className="w-full max-w-sm bg-white rounded-2xl shadow-lg border border-slate-100 p-4 lg:p-6 flex items-center gap-4 lg:gap-6 transform hover:-translate-y-1 transition-transform">
-                        <div className="w-12 h-12 lg:w-16 lg:h-16 rounded-full bg-rose-500 flex items-center justify-center shrink-0 shadow-lg shadow-rose-500/30">
+                        <div className="w-12 h-12 lg:w-16 lg:h-16 rounded-full bg-rose-100 flex items-center justify-center shrink-0 shadow-lg shadow-rose-500/30">
                             <AIIcon alias="coral-rose" glass={false} className="scale-75 text-white" />
                         </div>
                         <div>
@@ -272,10 +273,13 @@ const slides = [
                     CS 스트레스는 덜고,<br />매출은 끌어올립니다.
                 </h2>
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-8">
-                    <StatCard value="↓ 84%" label="단순 문의 감소" desc="재고 언제 들어오냐는 매번 똑같은 질문, AI가 대신 척척 막아줍니다." />
-                    <StatCard value="↑ 34%" label="결제 전환율 상승" desc="고객이 이거 살까 말까 고민하는 찰나에 답해줘서 구매로 이끕니다." />
+                    <StatCard value="↓ 70%" label="단순 문의 감소" desc="사이즈·배송·재입고 같은 반복 질문, AI가 즉시 해결해 CS 부담을 확 줄여줍니다." />
+                    <StatCard value="↑ 23%" label="결제 전환율 상승" desc="구매를 망설이는 그 순간, 즉각 답변으로 이탈을 막고 결제까지 이끕니다." />
                     <StatCard value="24/7" label="무인 영업 사원" desc="밤늦게나 주말에 몰리는 예비 고객들을 절대로 놓치지 않고 응대합니다." />
                 </div>
+                <p className="text-[10px] sm:text-xs text-slate-400 text-center mt-6 sm:mt-10">
+                    * AI 챗봇 도입 이커머스 업계 평균 수치 (Glassix 2024, Forrester Research)
+                </p>
             </div>
         )
     },
@@ -284,23 +288,15 @@ const slides = [
         theme: 'dark',
         content: (
             <div className="flex flex-col h-full max-w-5xl mx-auto px-6 justify-center items-center text-center">
-                <div className="w-12 h-12 sm:w-20 sm:h-20 bg-indigo-600 rounded-2xl sm:rounded-3xl flex items-center justify-center mb-6 sm:mb-10 shadow-lg shadow-indigo-500/30 transition-transform hover:scale-110 z-10">
-                    <AIIcon family="wave" className="w-6 h-6 sm:w-10 sm:h-10 text-white" glass={false} />
+                <div className="mb-6 sm:mb-10 z-10">
+                    <AIIcon family="wave" className="w-12 h-12 sm:w-20 sm:h-20 text-white" glass />
                 </div>
                 <h2 className="text-3xl sm:text-6xl md:text-7xl font-black text-white tracking-tight leading-tight mb-6 break-keep z-10">
-                    가장 똑똑한 점원을<br />지금 매장에 고용하세요.
+                    가장 똑똑한 점원을<br />지금 바로 고용하세요.
                 </h2>
                 <p className="text-sm sm:text-xl lg:text-2xl text-slate-300 mb-8 sm:mb-16 font-light max-w-2xl break-keep z-10 w-full px-4">
-                    어려운 설정 전~혀 없이 클릭 몇 번으로 바로 적용!<br />정말 될까 싶으시죠? 직접 질문을 던져보세요.
+                    어려운 설정 없이 클릭 몇 번으로 바로 적용.<br />지금 시작하세요!
                 </p>
-                <div className="flex flex-col sm:flex-row gap-3 sm:gap-6 w-full sm:w-auto px-4 sm:px-0 z-10">
-                    <button className="bg-white text-indigo-900 px-5 sm:px-10 py-4 sm:py-5 rounded-full font-bold text-sm sm:text-lg hover:bg-slate-100 transition-all flex items-center justify-center gap-2 sm:gap-3 w-full sm:w-auto break-keep whitespace-nowrap">
-                        라이브 데모 체험하기 <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5 shrink-0" />
-                    </button>
-                    <button className="bg-slate-800 text-white border border-slate-700 px-5 sm:px-10 py-4 sm:py-5 rounded-full font-bold text-sm sm:text-lg hover:bg-slate-700 transition-all flex items-center justify-center w-full sm:w-auto whitespace-nowrap">
-                        채널톡 도입 상담
-                    </button>
-                </div>
             </div>
         )
     }
@@ -384,7 +380,7 @@ export default function App() {
                         animate={{ opacity: 1, scale: 1, y: 0 }}
                         exit={{ opacity: 0, scale: 1.05, y: -20 }}
                         transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
-                        className="w-full h-full"
+                        className="w-full h-full pb-20"
                     >
                         {slide.content}
                     </motion.div>

@@ -4,23 +4,36 @@
 
 @layer base {
   html, body {
-    @apply m-0 p-0 text-white bg-[#0A0A10] font-sans antialiased overflow-x-hidden;
-    /* Basic dark background to fit the blue-purple theme */
+    @apply m-0 p-0 bg-slate-50 text-slate-900 font-sans antialiased overflow-x-hidden;
+    color-scheme: light;
   }
-  
-  /* Scrollbar styling for a premium feel */
+
   ::-webkit-scrollbar {
     width: 8px;
   }
+
   ::-webkit-scrollbar-track {
-    background: #0A0A10;
+    background: transparent;
   }
+
   ::-webkit-scrollbar-thumb {
-    background: #2D2D44;
-    border-radius: 4px;
+    background: rgba(99, 102, 241, 0.3);
+    border-radius: 9999px;
+    border: 2px solid transparent;
+    background-clip: padding-box;
   }
+
   ::-webkit-scrollbar-thumb:hover {
-    background: #0066CC; /* brand-primary */
+    background: rgba(99, 102, 241, 0.55);
+  }
+
+  ::-webkit-scrollbar-thumb:active {
+    background: rgba(99, 102, 241, 0.75);
+  }
+
+  * {
+    scrollbar-color: rgba(99, 102, 241, 0.55) transparent;
+    scrollbar-width: thin;
   }
 }
 
@@ -28,7 +41,7 @@
   .text-glow {
     text-shadow: 0 0 20px rgba(129, 140, 248, 0.4);
   }
-  
+
   .glass-panel {
     @apply bg-white/5 border border-white/10 backdrop-blur-xl shadow-glass;
   }

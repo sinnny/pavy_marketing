@@ -1,0 +1,431 @@
+{
+  "version": "2.8",
+  "children": [
+    {
+      "type": "frame",
+      "id": "mbNuU",
+      "x": 0,
+      "y": 0,
+      "name": "Pavy.ai Logo Concepts",
+      "fill": "#F2F2F7",
+      "gap": 60,
+      "padding": 80,
+      "alignItems": "center",
+      "children": [
+        {
+          "type": "frame",
+          "id": "mBSqu",
+          "name": "Light Theme",
+          "width": 400,
+          "height": 500,
+          "fill": "#FFFFFF",
+          "cornerRadius": 40,
+          "effect": {
+            "type": "shadow",
+            "shadowType": "outer",
+            "color": "#00000015",
+            "offset": {
+              "x": 0,
+              "y": 20
+            },
+            "blur": 40
+          },
+          "layout": "vertical",
+          "gap": 40,
+          "padding": 80,
+          "justifyContent": "center",
+          "alignItems": "center",
+          "children": [
+            {
+              "type": "group",
+              "id": "fx33S",
+              "name": "lightMark",
+              "children": [
+                {
+                  "type": "ellipse",
+                  "id": "iVf5a",
+                  "x": 10,
+                  "y": 20,
+                  "name": "lightLoop",
+                  "width": 70,
+                  "height": 70,
+                  "stroke": {
+                    "align": "inside",
+                    "thickness": 22,
+                    "fill": "#1D1D1F"
+                  }
+                },
+                {
+                  "type": "rectangle",
+                  "cornerRadius": 11,
+                  "id": "o2zKT",
+                  "x": 10,
+                  "y": 20,
+                  "name": "lightStem",
+                  "fill": "#1D1D1F",
+                  "width": 22,
+                  "height": 100
+                },
+                {
+                  "type": "ellipse",
+                  "id": "J1i53",
+                  "x": 75,
+                  "y": 5,
+                  "name": "lightSparkle",
+                  "fill": {
+                    "type": "gradient",
+                    "gradientType": "linear",
+                    "enabled": true,
+                    "rotation": 45,
+                    "size": {
+                      "height": 1
+                    },
+                    "colors": [
+                      {
+                        "color": "#32C5FF",
+                        "position": 0
+                      },
+                      {
+                        "color": "#0066CC",
+                        "position": 1
+                      }
+                    ]
+                  },
+                  "width": 24,
+                  "height": 24
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "n8cOM",
+              "name": "lightTextFrame",
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "text",
+                  "id": "8T9LJ",
+                  "name": "lightText",
+                  "fill": "#1D1D1F",
+                  "content": "Pavy",
+                  "fontFamily": "Inter",
+                  "fontSize": 40,
+                  "fontWeight": "700",
+                  "letterSpacing": -1.5
+                },
+                {
+                  "type": "text",
+                  "id": "pVhlm",
+                  "name": "lightDot",
+                  "fill": "#0066CC",
+                  "content": ".ai",
+                  "fontFamily": "Inter",
+                  "fontSize": 40,
+                  "fontWeight": "700",
+                  "letterSpacing": -1.5
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "UR4Wo",
+          "name": "Dark Theme",
+          "width": 400,
+          "height": 500,
+          "fill": "#000000",
+          "cornerRadius": 40,
+          "effect": {
+            "type": "shadow",
+            "shadowType": "outer",
+            "color": "#00000030",
+            "offset": {
+              "x": 0,
+              "y": 20
+            },
+            "blur": 40
+          },
+          "layout": "vertical",
+          "gap": 40,
+          "padding": 80,
+          "justifyContent": "center",
+          "alignItems": "center",
+          "children": [
+            {
+              "type": "group",
+              "id": "T2Z3N",
+              "name": "darkMark",
+              "children": [
+                {
+                  "type": "ellipse",
+                  "id": "UkoWH",
+                  "x": 10,
+                  "y": 20,
+                  "name": "darkLoop",
+                  "width": 70,
+                  "height": 70,
+                  "stroke": {
+                    "align": "inside",
+                    "thickness": 22,
+                    "fill": "#F5F5F7"
+                  }
+                },
+                {
+                  "type": "rectangle",
+                  "cornerRadius": 11,
+                  "id": "eIaRS",
+                  "x": 10,
+                  "y": 20,
+                  "name": "darkStem",
+                  "fill": "#F5F5F7",
+                  "width": 22,
+                  "height": 100
+                },
+                {
+                  "type": "ellipse",
+                  "id": "h79uJ",
+                  "x": 75,
+                  "y": 5,
+                  "name": "darkSparkle",
+                  "fill": {
+                    "type": "gradient",
+                    "gradientType": "linear",
+                    "enabled": true,
+                    "rotation": 45,
+                    "size": {
+                      "height": 1
+                    },
+                    "colors": [
+                      {
+                        "color": "#32C5FF",
+                        "position": 0
+                      },
+                      {
+                        "color": "#0066CC",
+                        "position": 1
+                      }
+                    ]
+                  },
+                  "width": 24,
+                  "height": 24
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "giOR6",
+              "name": "darkTextFrame",
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "text",
+                  "id": "1OVVW",
+                  "name": "darkText",
+                  "fill": "#F5F5F7",
+                  "content": "Pavy",
+                  "fontFamily": "Inter",
+                  "fontSize": 40,
+                  "fontWeight": "700",
+                  "letterSpacing": -1.5
+                },
+                {
+                  "type": "text",
+                  "id": "Qg36x",
+                  "name": "darkDot",
+                  "fill": "#32C5FF",
+                  "content": ".ai",
+                  "fontFamily": "Inter",
+                  "fontSize": 40,
+                  "fontWeight": "700",
+                  "letterSpacing": -1.5
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "TUQKn",
+          "name": "Apple Intelligence Style",
+          "width": 400,
+          "height": 500,
+          "fill": "#000000",
+          "cornerRadius": 40,
+          "layout": "vertical",
+          "gap": 40,
+          "padding": 80,
+          "justifyContent": "center",
+          "alignItems": "center",
+          "children": [
+            {
+              "type": "group",
+              "id": "M4ahQ",
+              "name": "glowMark",
+              "children": [
+                {
+                  "type": "ellipse",
+                  "id": "kL8gU",
+                  "x": 10,
+                  "y": 20,
+                  "name": "glowLoop",
+                  "width": 70,
+                  "height": 70,
+                  "stroke": {
+                    "align": "inside",
+                    "thickness": 22,
+                    "fill": {
+                      "type": "mesh_gradient",
+                      "enabled": true,
+                      "columns": 2,
+                      "rows": 2,
+                      "colors": [
+                        "#FF2A54",
+                        "#FF9500",
+                        "#FFCC00",
+                        "#00C7BE"
+                      ],
+                      "points": [
+                        [
+                          0,
+                          0
+                        ],
+                        [
+                          1,
+                          0
+                        ],
+                        [
+                          0,
+                          1
+                        ],
+                        [
+                          1,
+                          1
+                        ]
+                      ]
+                    }
+                  }
+                },
+                {
+                  "type": "rectangle",
+                  "cornerRadius": 11,
+                  "id": "707pv",
+                  "x": 10,
+                  "y": 20,
+                  "name": "glowStem",
+                  "fill": {
+                    "type": "mesh_gradient",
+                    "enabled": true,
+                    "columns": 2,
+                    "rows": 2,
+                    "colors": [
+                      "#FF2A54",
+                      "#FF9500",
+                      "#FFCC00",
+                      "#00C7BE"
+                    ],
+                    "points": [
+                      [
+                        0,
+                        0
+                      ],
+                      [
+                        1,
+                        0
+                      ],
+                      [
+                        0,
+                        1
+                      ],
+                      [
+                        1,
+                        1
+                      ]
+                    ]
+                  },
+                  "width": 22,
+                  "height": 100
+                },
+                {
+                  "type": "ellipse",
+                  "id": "l5LFg",
+                  "x": 75,
+                  "y": 5,
+                  "name": "glowSparkle",
+                  "fill": "#FFFFFF",
+                  "width": 24,
+                  "height": 24,
+                  "effect": {
+                    "type": "shadow",
+                    "shadowType": "outer",
+                    "color": "#FFFFFF80",
+                    "blur": 10
+                  }
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "Vt0uJ",
+              "name": "glowTextFrame",
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "text",
+                  "id": "9w9CL",
+                  "name": "glowText",
+                  "fill": "#FFFFFF",
+                  "content": "Pavy",
+                  "fontFamily": "Inter",
+                  "fontSize": 40,
+                  "fontWeight": "700",
+                  "letterSpacing": -1.5
+                },
+                {
+                  "type": "text",
+                  "id": "hFr5m",
+                  "name": "glowDot",
+                  "fill": {
+                    "type": "mesh_gradient",
+                    "enabled": true,
+                    "columns": 2,
+                    "rows": 2,
+                    "colors": [
+                      "#FF2A54",
+                      "#FF9500",
+                      "#FFCC00",
+                      "#00C7BE"
+                    ],
+                    "points": [
+                      [
+                        0,
+                        0
+                      ],
+                      [
+                        1,
+                        0
+                      ],
+                      [
+                        0,
+                        1
+                      ],
+                      [
+                        1,
+                        1
+                      ]
+                    ]
+                  },
+                  "content": ".ai",
+                  "fontFamily": "Inter",
+                  "fontSize": 40,
+                  "fontWeight": "700",
+                  "letterSpacing": -1.5
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

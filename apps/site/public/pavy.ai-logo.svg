@@ -3,9 +3,9 @@
   <circle cx="45" cy="55" r="24" stroke="#1D1D1F" stroke-width="22"/>
   <defs>
     <linearGradient id="g" x1="75" y1="5" x2="99" y2="29" gradientUnits="userSpaceOnUse">
-      <stop stop-color="#32C5FF"/><stop offset="1" stop-color="#0066CC"/>
+      <stop stop-color="#A5B4FC"/><stop offset="1" stop-color="#6366f1"/>
     </linearGradient>
   </defs>
   <circle cx="87" cy="17" r="12" fill="url(#g)"/>
-  <text x="120" y="90" fill="#1D1D1F" font-family="'Inter', sans-serif" font-weight="700" font-size="60" letter-spacing="-0.04em">Pavy<tspan fill="#0066CC">.ai</tspan></text>
+  <text x="120" y="90" fill="#1D1D1F" font-family="'Inter', sans-serif" font-weight="700" font-size="60" letter-spacing="-0.04em">Pavy<tspan fill="#6366f1">.ai</tspan></text>
 </svg>
