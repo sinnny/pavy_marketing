@@ -1,12 +1,14 @@
 {
-  "name": "@pavy/site-repo",
+  "name": "@pavy/marketing-repo",
   "private": true,
   "packageManager": "pnpm@10.6.1",
   "scripts": {
-    "dev": "turbo dev --filter @page-chatbot/site",
-    "build": "turbo build --filter @page-chatbot/site",
-    "lint": "turbo lint --filter @page-chatbot/site",
-    "typecheck": "turbo typecheck --filter @page-chatbot/site",
+    "dev:site": "turbo dev --filter @page-chatbot/site",
+    "dev:deck": "turbo dev --filter @page-chatbot/sales-deck",
+    "dev:all": "turbo dev",
+    "build": "turbo build",
+    "lint": "turbo lint",
+    "typecheck": "turbo typecheck",
     "format": "prettier --write \"**/*.{ts,tsx,js,jsx,json,md}\""
   },
   "devDependencies": {
