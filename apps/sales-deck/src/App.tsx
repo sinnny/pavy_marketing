@@ -5,7 +5,7 @@ import {
     ShieldCheck, Code, CheckCircle2
 } from 'lucide-react';
 import adminScreenshot from './assets/admin-screenshot.png';
-import { AIIcon } from '@page-chatbot/ui';
+import { AIIcon } from '@pavy/ui';
 
 const slideViewportClass = 'min-h-[100svh] md:h-full py-16 sm:py-20 md:py-0';
 

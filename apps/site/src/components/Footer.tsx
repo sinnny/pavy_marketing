@@ -1,7 +1,7 @@
 
 import { Link } from 'react-router-dom';
-import { useTranslation } from '@page-chatbot/i18n';
-import { PavyLogo } from '@page-chatbot/ui';
+import { useTranslation } from '@pavy/i18n';
+import { PavyLogo } from '@pavy/ui';
 import { useLocale } from '../hooks/useLocale';
 
 export default function Footer() {

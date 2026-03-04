@@ -1,5 +1,5 @@
 {
-  "extends": "@page-chatbot/tsconfig/react",
+  "extends": "@pavy/tsconfig/react",
   "compilerOptions": {
     "outDir": "./dist",
     "rootDir": "./src",

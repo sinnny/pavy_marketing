@@ -1,8 +1,8 @@
 import { motion } from 'framer-motion';
 import { Send } from 'lucide-react';
-import { AIIcon } from '@page-chatbot/ui';
-import { useTranslation } from '@page-chatbot/i18n';
-import type { IconThemeAlias } from '@page-chatbot/types';
+import { AIIcon } from '@pavy/ui';
+import { useTranslation } from '@pavy/i18n';
+import type { IconThemeAlias } from '@pavy/types';
 
 interface MockPDP {
     readonly titleKey: string;

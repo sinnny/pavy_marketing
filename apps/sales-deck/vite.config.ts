@@ -8,11 +8,14 @@ export default defineConfig({
   resolve: {
     alias: {
       '@': resolve(__dirname, './src'),
-      '@page-chatbot/i18n': resolve(__dirname, '../../packages/i18n/src/index.ts'),
+      '@pavy/i18n': resolve(__dirname, '../../packages/i18n/src/index.ts'),
+      '@pavy/ui': resolve(__dirname, '../../packages/ui/src/index.ts'),
     },
   },
   server: {
     host: true,
+    port: 4274,
+    strictPort: true,
     fs: {
       // 프로젝트 루트 바깥의 packages 폴더 접근 허용
       allow: ['..', '../../packages'],
@@ -24,6 +27,6 @@ export default defineConfig({
     },
   },
   optimizeDeps: {
-    exclude: ['@page-chatbot/i18n'],
+    exclude: ['@pavy/i18n', '@pavy/ui'],
   },
 });

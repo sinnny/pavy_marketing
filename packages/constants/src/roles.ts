@@ -1,4 +1,4 @@
-import type { Permission, Role, RoleId } from '@page-chatbot/types';
+import type { Permission, Role, RoleId } from '@pavy/types';
 
 const ALL_PERMISSIONS: readonly Permission[] = [
   'chatbot:create',

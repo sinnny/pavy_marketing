@@ -1,5 +1,5 @@
 import type { Config } from 'tailwindcss';
-import sharedPreset from '@page-chatbot/tailwind-config';
+import sharedPreset from '@pavy/tailwind-config';
 
 export default {
     darkMode: ['class', '[data-theme="dark"]'],

@@ -19,8 +19,8 @@ import {
     Zap,
     ShoppingCart,
 } from 'lucide-react';
-import { AIIcon } from '@page-chatbot/ui';
-import { i18next, useTranslation } from '@page-chatbot/i18n';
+import { AIIcon } from '@pavy/ui';
+import { i18next, useTranslation } from '@pavy/i18n';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 import ProductHighlightSection from '../components/ProductHighlightSection';

@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion';
 import { User, Zap, Database, BrainCircuit, CheckCircle2 } from 'lucide-react';
-import { AIIcon } from '@page-chatbot/ui';
-import { useTranslation } from '@page-chatbot/i18n';
+import { AIIcon } from '@pavy/ui';
+import { useTranslation } from '@pavy/i18n';
 
 export default function ProblemSection() {
     const { t } = useTranslation('site');

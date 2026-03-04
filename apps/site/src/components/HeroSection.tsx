@@ -1,8 +1,8 @@
 import { useRef, useEffect, useCallback } from 'react';
 import { motion, MotionValue, useTransform } from 'framer-motion';
 import { ArrowRight } from 'lucide-react';
-import { AIIcon } from '@page-chatbot/ui';
-import { useTranslation } from '@page-chatbot/i18n';
+import { AIIcon } from '@pavy/ui';
+import { useTranslation } from '@pavy/i18n';
 import { getSiteHeroCopy } from '../lib/siteHero';
 
 export default function HeroSection({ scrollYProgress }: { scrollYProgress: MotionValue<number> }) {

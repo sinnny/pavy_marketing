@@ -1,6 +1,6 @@
 import { useCallback } from 'react';
 import { useParams, useNavigate, useLocation } from 'react-router-dom';
-import { i18next } from '@page-chatbot/i18n';
+import { i18next } from '@pavy/i18n';
 
 const SUPPORTED_LANGUAGES = ['en', 'ko', 'ja'] as const;
 export type SupportedLanguage = (typeof SUPPORTED_LANGUAGES)[number];
