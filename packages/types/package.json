@@ -12,6 +12,7 @@
     }
   },
   "scripts": {
+    "dev": "tsc --project tsconfig.json --watch --preserveWatchOutput",
     "build": "tsc --project tsconfig.json",
     "typecheck": "tsc --noEmit",
     "clean": "rm -rf dist *.tsbuildinfo"

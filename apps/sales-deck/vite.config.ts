@@ -13,6 +13,8 @@ export default defineConfig({
   },
   server: {
     host: true,
+    port: 4274,
+    strictPort: true,
     fs: {
       // 프로젝트 루트 바깥의 packages 폴더 접근 허용
       allow: ['..', '../../packages'],
