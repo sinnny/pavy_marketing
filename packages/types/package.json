@@ -1,5 +1,5 @@
 {
-  "name": "@page-chatbot/types",
+  "name": "@pavy/types",
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -18,7 +18,7 @@
     "clean": "rm -rf dist *.tsbuildinfo"
   },
   "devDependencies": {
-    "@page-chatbot/tsconfig": "workspace:*",
+    "@pavy/tsconfig": "workspace:*",
     "typescript": "^5.7.3"
   }
 }

@@ -5,7 +5,7 @@ import type {
   IconThemeAlias,
   IconThemeColors,
   IconThemeVariant,
-} from '@page-chatbot/types';
+} from '@pavy/types';
 import { ICON_THEMES, resolveIconThemeSelection } from '../lib/icon-themes.js';
 
 export interface AIIconProps extends React.HTMLAttributes<HTMLDivElement> {

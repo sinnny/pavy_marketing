@@ -3,8 +3,8 @@
   "private": true,
   "packageManager": "pnpm@10.6.1",
   "scripts": {
-    "dev:site": "turbo dev --filter @page-chatbot/site",
-    "dev:deck": "turbo dev --filter @page-chatbot/sales-deck",
+    "dev:site": "turbo dev --filter @pavy/site",
+    "dev:deck": "turbo dev --filter @pavy/sales-deck",
     "dev:all": "turbo dev",
     "build": "turbo build",
     "lint": "turbo lint",

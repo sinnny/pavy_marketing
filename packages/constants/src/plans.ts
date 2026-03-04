@@ -1,4 +1,4 @@
-import type { PlanDetails, TenantPlan } from '@page-chatbot/types';
+import type { PlanDetails, TenantPlan } from '@pavy/types';
 
 export const PLANS: Record<TenantPlan, PlanDetails> = {
   free: {

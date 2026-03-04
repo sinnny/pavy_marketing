@@ -1,5 +1,5 @@
 {
-  "name": "@page-chatbot/site",
+  "name": "@pavy/site",
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -10,10 +10,10 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "@page-chatbot/i18n": "workspace:*",
-    "@page-chatbot/types": "workspace:*",
-    "@page-chatbot/ui": "workspace:*",
-    "@page-chatbot/utils": "workspace:*",
+    "@pavy/i18n": "workspace:*",
+    "@pavy/types": "workspace:*",
+    "@pavy/ui": "workspace:*",
+    "@pavy/utils": "workspace:*",
     "clsx": "^2.1.0",
     "framer-motion": "^12.0.0",
     "lucide-react": "^0.474.0",
@@ -24,8 +24,8 @@
   },
   "devDependencies": {
     "@eslint/js": "^9.39.1",
-    "@page-chatbot/tailwind-config": "workspace:*",
-    "@page-chatbot/tsconfig": "workspace:*",
+    "@pavy/tailwind-config": "workspace:*",
+    "@pavy/tsconfig": "workspace:*",
     "@types/node": "^24.10.1",
     "@types/react": "^19.2.7",
     "@types/react-dom": "^19.2.3",

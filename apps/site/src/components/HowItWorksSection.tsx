@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { useTranslation } from '@page-chatbot/i18n';
+import { useTranslation } from '@pavy/i18n';
 
 const STEP_KEYS = ['step1', 'step2', 'step3'] as const;
 

@@ -1,6 +1,6 @@
 import Header from '../components/Header';
 import Footer from '../components/Footer';
-import { useTranslation } from '@page-chatbot/i18n';
+import { useTranslation } from '@pavy/i18n';
 
 export default function ProductDashboard() {
     const { t } = useTranslation('site');

@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { useTranslation } from '@page-chatbot/i18n';
+import { useTranslation } from '@pavy/i18n';
 import widgetScreenshot from '../assets/widget-screenshot.png';
 
 export default function SolutionSection() {

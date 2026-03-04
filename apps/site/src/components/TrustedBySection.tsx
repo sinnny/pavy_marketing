@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { useTranslation } from '@page-chatbot/i18n';
+import { useTranslation } from '@pavy/i18n';
 
 const MOCK_LOGOS = [
     "AURA", "NEXUS", "QUANTUM", "HYPERION", "STARK", "WAYNE", "MONO", "ORBIT", "FLUX"

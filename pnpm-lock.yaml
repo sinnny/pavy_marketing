@@ -17,16 +17,16 @@ importers:
 
   apps/sales-deck:
     dependencies:
-      '@page-chatbot/i18n':
+      '@pavy/i18n':
         specifier: workspace:*
         version: link:../../packages/i18n
-      '@page-chatbot/types':
+      '@pavy/types':
         specifier: workspace:*
         version: link:../../packages/types
-      '@page-chatbot/ui':
+      '@pavy/ui':
         specifier: workspace:*
         version: link:../../packages/ui
-      '@page-chatbot/utils':
+      '@pavy/utils':
         specifier: workspace:*
         version: link:../../packages/utils
       clsx:
@@ -54,10 +54,10 @@ importers:
       '@eslint/js':
         specifier: ^9.39.1
         version: 9.39.3
-      '@page-chatbot/tailwind-config':
+      '@pavy/tailwind-config':
         specifier: workspace:*
         version: link:../../configs/tailwind
-      '@page-chatbot/tsconfig':
+      '@pavy/tsconfig':
         specifier: workspace:*
         version: link:../../configs/tsconfig
       '@types/node':
@@ -105,16 +105,16 @@ importers:
 
   apps/site:
     dependencies:
-      '@page-chatbot/i18n':
+      '@pavy/i18n':
         specifier: workspace:*
         version: link:../../packages/i18n
-      '@page-chatbot/types':
+      '@pavy/types':
         specifier: workspace:*
         version: link:../../packages/types
-      '@page-chatbot/ui':
+      '@pavy/ui':
         specifier: workspace:*
         version: link:../../packages/ui
-      '@page-chatbot/utils':
+      '@pavy/utils':
         specifier: workspace:*
         version: link:../../packages/utils
       clsx:
@@ -142,10 +142,10 @@ importers:
       '@eslint/js':
         specifier: ^9.39.1
         version: 9.39.3
-      '@page-chatbot/tailwind-config':
+      '@pavy/tailwind-config':
         specifier: workspace:*
         version: link:../../configs/tailwind
-      '@page-chatbot/tsconfig':
+      '@pavy/tsconfig':
         specifier: workspace:*
         version: link:../../configs/tsconfig
       '@types/node':
@@ -209,11 +209,11 @@ importers:
 
   packages/constants:
     dependencies:
-      '@page-chatbot/types':
+      '@pavy/types':
         specifier: workspace:*
         version: link:../types
     devDependencies:
-      '@page-chatbot/tsconfig':
+      '@pavy/tsconfig':
         specifier: workspace:*
         version: link:../../configs/tsconfig
       typescript:
@@ -229,7 +229,7 @@ importers:
         specifier: ^15.4.1
         version: 15.7.4(i18next@24.2.3(typescript@5.9.3))(react@19.2.4)(typescript@5.9.3)
     devDependencies:
-      '@page-chatbot/tsconfig':
+      '@pavy/tsconfig':
         specifier: workspace:*
         version: link:../../configs/tsconfig
       '@types/react':
@@ -244,7 +244,7 @@ importers:
 
   packages/types:
     devDependencies:
-      '@page-chatbot/tsconfig':
+      '@pavy/tsconfig':
         specifier: workspace:*
         version: link:../../configs/tsconfig
       typescript:
@@ -253,10 +253,10 @@ importers:
 
   packages/ui:
     dependencies:
-      '@page-chatbot/tailwind-config':
+      '@pavy/tailwind-config':
         specifier: workspace:*
         version: link:../../configs/tailwind
-      '@page-chatbot/types':
+      '@pavy/types':
         specifier: workspace:*
         version: link:../types
       class-variance-authority:
@@ -272,7 +272,7 @@ importers:
         specifier: ^3.4.0 || ^4.0.0
         version: 3.4.19
     devDependencies:
-      '@page-chatbot/tsconfig':
+      '@pavy/tsconfig':
         specifier: workspace:*
         version: link:../../configs/tsconfig
       '@types/react':
@@ -287,7 +287,7 @@ importers:
 
   packages/utils:
     devDependencies:
-      '@page-chatbot/tsconfig':
+      '@pavy/tsconfig':
         specifier: workspace:*
         version: link:../../configs/tsconfig
       typescript:

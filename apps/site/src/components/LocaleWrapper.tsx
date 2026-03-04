@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 import { Outlet, useParams, useNavigate, useLocation } from 'react-router-dom';
-import { i18next } from '@page-chatbot/i18n';
+import { i18next } from '@pavy/i18n';
 import { isSupportedLanguage, detectLanguage } from '../hooks/useLocale';
 
 export default function LocaleWrapper() {

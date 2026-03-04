@@ -2,8 +2,8 @@ import { motion, useScroll } from 'framer-motion';
 import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { ChevronDown } from 'lucide-react';
-import { useTranslation } from '@page-chatbot/i18n';
-import { PavyLogo } from '@page-chatbot/ui';
+import { useTranslation } from '@pavy/i18n';
+import { PavyLogo } from '@pavy/ui';
 import { useLocale } from '../hooks/useLocale';
 import LanguageSwitcher from './LanguageSwitcher';
 

@@ -4,7 +4,7 @@ import type {
   IconThemeAlias,
   IconThemeGroup,
   IconThemeVariant,
-} from '@page-chatbot/types';
+} from '@pavy/types';
 
 export const STAR_THEMES: IconThemeGroup = {
   standard: {

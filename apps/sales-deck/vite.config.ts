@@ -8,7 +8,8 @@ export default defineConfig({
   resolve: {
     alias: {
       '@': resolve(__dirname, './src'),
-      '@page-chatbot/i18n': resolve(__dirname, '../../packages/i18n/src/index.ts'),
+      '@pavy/i18n': resolve(__dirname, '../../packages/i18n/src/index.ts'),
+      '@pavy/ui': resolve(__dirname, '../../packages/ui/src/index.ts'),
     },
   },
   server: {
@@ -26,6 +27,6 @@ export default defineConfig({
     },
   },
   optimizeDeps: {
-    exclude: ['@page-chatbot/i18n'],
+    exclude: ['@pavy/i18n', '@pavy/ui'],
   },
 });

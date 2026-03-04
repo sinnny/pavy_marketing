@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { useTranslation } from '@page-chatbot/i18n';
+import { useTranslation } from '@pavy/i18n';
 
 export default function ProductHighlightSection() {
     const { t } = useTranslation('site');
@@ -67,4 +67,3 @@ export default function ProductHighlightSection() {
         </section>
     );
 }
-
