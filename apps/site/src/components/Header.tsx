@@ -1,6 +1,6 @@
 import { motion, useScroll } from 'framer-motion';
 import { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import { ChevronDown } from 'lucide-react';
 import { useTranslation } from '@pavy/i18n';
 import { PavyLogo } from '@pavy/ui';
@@ -12,12 +12,16 @@ export default function Header() {
     const [isScrolled, setIsScrolled] = useState(false);
     const { t } = useTranslation('site');
     const { localePath } = useLocale();
+    const location = useLocation();
 
     useEffect(() => {
         return scrollY.on('change', (latest) => {
             setIsScrolled(latest > 50);
         });
     }, [scrollY]);
+
+    const isPricingActive = location.pathname.includes('/pricing');
+    const isGuideActive = location.pathname.includes('/guide');
 
     return (
         <motion.header
@@ -54,7 +58,8 @@ export default function Header() {
                             </div>
                         </div>
                     </div>
-                    <Link to={localePath('/guide')} className="hover:text-brand-primary transition-colors duration-300 py-4 whitespace-nowrap">{t('header.nav.userGuide')}</Link>
+                    <Link to={localePath('/pricing')} className={`transition-colors duration-300 py-4 whitespace-nowrap ${isPricingActive ? 'text-brand-primary' : 'hover:text-brand-primary'}`}>{t('header.nav.pricing')}</Link>
+                    <Link to={localePath('/guide')} className={`transition-colors duration-300 py-4 whitespace-nowrap ${isGuideActive ? 'text-brand-primary' : 'hover:text-brand-primary'}`}>{t('header.nav.userGuide')}</Link>
                 </nav>
 
                 {/* CTA area */}

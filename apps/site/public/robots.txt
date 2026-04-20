@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+Disallow: /sales-deck
+Sitemap: https://pavy.ai/sitemap.xml

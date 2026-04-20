@@ -1,5 +1,6 @@
 import Header from '../components/Header';
 import Footer from '../components/Footer';
+import { SEOHead } from '../components/SEOHead';
 import { useTranslation } from '@pavy/i18n';
 
 export default function DemoRequest() {
@@ -7,6 +8,11 @@ export default function DemoRequest() {
 
     return (
         <div className="relative w-full bg-slate-50 min-h-screen font-sans flex flex-col">
+            <SEOHead
+                title={t('seo.demo.title')}
+                description={t('seo.demo.description')}
+                path="/demo"
+            />
             <Header />
             <main className="flex-1 pt-40 pb-32 max-w-[600px] w-full mx-auto px-6 text-center">
                 <h1 className="text-5xl font-heading font-black text-slate-900 mb-6">{t('pages.demoRequest.title')}</h1>
