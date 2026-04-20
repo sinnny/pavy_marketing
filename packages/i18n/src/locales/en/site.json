@@ -10,7 +10,8 @@
       "liveDemo": "Live Demo",
       "liveDemoDesc": "Interactive Dashboard",
       "userGuide": "User Guide",
-      "demo": "Demo"
+      "demo": "Demo",
+      "pricing": "Pricing"
     },
     "cta": {
       "login": "Login",
@@ -221,6 +222,141 @@
       "fullName": "Full Name",
       "workEmail": "Work Email",
       "submit": "Submit Request"
+    },
+    "pricing": {
+      "hero": {
+        "title": "Simple, transparent pricing",
+        "subtitle": "Choose the perfect plan for your business."
+      },
+      "toggle": {
+        "monthly": "Monthly",
+        "annual": "Annual",
+        "save": "Save 20%"
+      },
+      "comparison": {
+        "title": "Compare plans",
+        "categories": {
+          "chatbot": {
+            "name": "AI Chatbot",
+            "features": {
+              "product_recommendation": "Product Recommendation",
+              "message_limit": "Message Limit",
+              "custom_styling": "Custom Styling",
+              "multi_language": "Multi-language Support"
+            }
+          },
+          "dashboard": {
+            "name": "Admin Dashboard",
+            "features": {
+              "analytics": "Analytics",
+              "chat_history": "Chat History",
+              "knowledge_base": "Knowledge Base"
+            }
+          },
+          "support": {
+            "name": "Support & SLA",
+            "features": {
+              "email_support": "Email Support",
+              "priority_support": "Priority Support",
+              "dedicated_manager": "Dedicated Account Manager",
+              "sla": "SLA Guarantee"
+            }
+          },
+          "integrations": {
+            "name": "Integrations",
+            "features": {
+              "shopify": "Shopify Integration",
+              "api_access": "API Access",
+              "webhooks": "Webhooks"
+            }
+          },
+          "security": {
+            "name": "Security & Compliance",
+            "features": {
+              "encryption": "Data Encryption",
+              "sso": "Single Sign-On (SSO)",
+              "custom_data_retention": "Custom Data Retention"
+            }
+          }
+        },
+        "values": {
+          "1k_msgs": "1,000 / mo",
+          "10k_msgs": "10,000 / mo",
+          "unlimited": "Unlimited",
+          "basic": "Basic",
+          "advanced": "Advanced",
+          "custom": "Custom",
+          "7_days": "7 Days",
+          "1_year": "1 Year",
+          "10_pages": "10 Pages",
+          "1000_pages": "1,000 Pages",
+          "99_9": "99.9% Uptime"
+        }
+      },
+      "plans": {
+        "free": {
+          "name": "Free",
+          "cta": "Get Started",
+          "features": {
+            "f1": "1,000 AI responses/mo",
+            "f2": "Basic analytics",
+            "f3": "Standard support"
+          }
+        },
+        "pro": {
+          "name": "Pro",
+          "badge": "Most Popular",
+          "cta": "Start Free Trial",
+          "features": {
+            "f1": "10,000 AI responses/mo",
+            "f2": "Advanced analytics",
+            "f3": "Priority support",
+            "f4": "Custom branding"
+          }
+        },
+        "enterprise": {
+          "name": "Enterprise",
+          "price_label": "Contact Sales",
+          "cta": "Contact Sales",
+          "features": {
+            "f1": "Unlimited AI responses",
+            "f2": "Custom integrations",
+            "f3": "24/7 dedicated support",
+            "f4": "SLA guarantee"
+          }
+        }
+      },
+      "bottom_cta": {
+        "title": "Still have questions?",
+        "subtitle": "Our team is here to help you find the right solution.",
+        "button": "Talk to Sales"
+      }
+    }
+  },
+  "seo": {
+    "home": {
+      "title": "Pavy.ai — AI-Powered Product Recommendation Chatbot for E-Commerce",
+      "description": "No one scrolls to the bottom of your product page. But AI does. Pavy.ai analyzes every detail and answers the moment customers ask."
+    },
+    "pricing": {
+      "title": "Pricing — Simple Plans for Every Business | Pavy.ai",
+      "description": "Choose the perfect plan for your business. Simple, transparent pricing."
+    },
+    "dashboard": {
+      "title": "Admin Dashboard — Manage Your AI Chatbot | Pavy.ai",
+      "description": "Manage your AI agents, review chat histories, and train on custom knowledge bases."
+    },
+    "chatbot": {
+      "title": "Product Chatbot — Autonomous AI Agent | Pavy.ai",
+      "description": "Learn all about our highly customizable, AI-driven chatbot widget for your website."
+    },
+    "demo": {
+      "title": "Request a Demo | Pavy.ai",
+      "description": "See how our enterprise AI agent can reduce support volume by 40%."
+    },
+    "guide": {
+      "title": "User Guide — Setup & Integration | Pavy.ai",
+      "description": "Comprehensive documentation to integrate, customize, and deploy our AI chatbot widget."
     }
   }
 }

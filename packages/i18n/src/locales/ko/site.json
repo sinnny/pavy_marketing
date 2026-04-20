@@ -10,7 +10,8 @@
       "liveDemo": "라이브 데모",
       "liveDemoDesc": "실시간 체험하기",
       "userGuide": "이용 가이드",
-      "demo": "데모"
+      "demo": "데모",
+      "pricing": "요금제"
     },
     "cta": {
       "login": "로그인",
@@ -364,6 +365,141 @@
       "fullName": "이름",
       "workEmail": "업무용 이메일",
       "submit": "DEMO Request"
+    },
+    "pricing": {
+      "hero": {
+        "title": "투명하고 합리적인 요금제",
+        "subtitle": "비즈니스에 가장 적합한 플랜을 선택하세요."
+      },
+      "toggle": {
+        "monthly": "월간",
+        "annual": "연간",
+        "save": "20% 절약"
+      },
+      "comparison": {
+        "title": "플랜 비교하기",
+        "categories": {
+          "chatbot": {
+            "name": "AI 챗봇",
+            "features": {
+              "product_recommendation": "상품 추천",
+              "message_limit": "메시지 한도",
+              "custom_styling": "맞춤형 스타일링",
+              "multi_language": "다국어 지원"
+            }
+          },
+          "dashboard": {
+            "name": "어드민 대시보드",
+            "features": {
+              "analytics": "분석",
+              "chat_history": "대화 기록",
+              "knowledge_base": "지식 베이스"
+            }
+          },
+          "support": {
+            "name": "지원 및 SLA",
+            "features": {
+              "email_support": "이메일 지원",
+              "priority_support": "우선 지원",
+              "dedicated_manager": "전담 매니저",
+              "sla": "SLA 보장"
+            }
+          },
+          "integrations": {
+            "name": "연동",
+            "features": {
+              "shopify": "Shopify 연동",
+              "api_access": "API 접근",
+              "webhooks": "웹훅"
+            }
+          },
+          "security": {
+            "name": "보안 및 컴플라이언스",
+            "features": {
+              "encryption": "데이터 암호화",
+              "sso": "SSO (Single Sign-On)",
+              "custom_data_retention": "맞춤형 데이터 보존"
+            }
+          }
+        },
+        "values": {
+          "1k_msgs": "월 1,000건",
+          "10k_msgs": "월 10,000건",
+          "unlimited": "무제한",
+          "basic": "기본",
+          "advanced": "고급",
+          "custom": "맞춤형",
+          "7_days": "7일",
+          "1_year": "1년",
+          "10_pages": "10페이지",
+          "1000_pages": "1,000페이지",
+          "99_9": "99.9% 가동률"
+        }
+      },
+      "plans": {
+        "free": {
+          "name": "무료",
+          "cta": "시작하기",
+          "features": {
+            "f1": "월 1,000회 AI 응답",
+            "f2": "기본 분석",
+            "f3": "일반 지원"
+          }
+        },
+        "pro": {
+          "name": "프로",
+          "badge": "인기 플랜",
+          "cta": "무료 체험 시작",
+          "features": {
+            "f1": "월 10,000회 AI 응답",
+            "f2": "고급 분석",
+            "f3": "우선 지원",
+            "f4": "맞춤형 브랜딩"
+          }
+        },
+        "enterprise": {
+          "name": "엔터프라이즈",
+          "price_label": "영업팀 문의",
+          "cta": "영업팀 문의",
+          "features": {
+            "f1": "무제한 AI 응답",
+            "f2": "맞춤형 연동",
+            "f3": "24/7 전담 지원",
+            "f4": "SLA 보장"
+          }
+        }
+      },
+      "bottom_cta": {
+        "title": "아직 궁금한 점이 있으신가요?",
+        "subtitle": "전문 팀이 비즈니스에 맞는 최적의 솔루션을 찾아드립니다.",
+        "button": "영업팀 문의"
+      }
+    }
+  },
+  "seo": {
+    "home": {
+      "title": "Pavy.ai — AI-Powered Product Recommendation Chatbot for E-Commerce",
+      "description": "No one scrolls to the bottom of your product page. But AI does. Pavy.ai analyzes every detail and answers the moment customers ask."
+    },
+    "pricing": {
+      "title": "Pricing — Simple Plans for Every Business | Pavy.ai",
+      "description": "Choose the perfect plan for your business. Simple, transparent pricing."
+    },
+    "dashboard": {
+      "title": "Admin Dashboard — Manage Your AI Chatbot | Pavy.ai",
+      "description": "Manage your AI agents, review chat histories, and train on custom knowledge bases."
+    },
+    "chatbot": {
+      "title": "Product Chatbot — Autonomous AI Agent | Pavy.ai",
+      "description": "Learn all about our highly customizable, AI-driven chatbot widget for your website."
+    },
+    "demo": {
+      "title": "Request a Demo | Pavy.ai",
+      "description": "See how our enterprise AI agent can reduce support volume by 40%."
+    },
+    "guide": {
+      "title": "User Guide — Setup & Integration | Pavy.ai",
+      "description": "Comprehensive documentation to integrate, customize, and deploy our AI chatbot widget."
     }
   }
 }

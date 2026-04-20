@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  <url>
+    <loc>https://pavy.ai/en/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://pavy.ai/en/" />
+    <xhtml:link rel="alternate" hreflang="ko" href="https://pavy.ai/ko/" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://pavy.ai/ja/" />
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://pavy.ai/ko/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://pavy.ai/en/" />
+    <xhtml:link rel="alternate" hreflang="ko" href="https://pavy.ai/ko/" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://pavy.ai/ja/" />
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://pavy.ai/ja/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://pavy.ai/en/" />
+    <xhtml:link rel="alternate" hreflang="ko" href="https://pavy.ai/ko/" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://pavy.ai/ja/" />
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://pavy.ai/en/product/chatbot</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://pavy.ai/en/product/chatbot" />
+    <xhtml:link rel="alternate" hreflang="ko" href="https://pavy.ai/ko/product/chatbot" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://pavy.ai/ja/product/chatbot" />
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://pavy.ai/ko/product/chatbot</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://pavy.ai/en/product/chatbot" />
+    <xhtml:link rel="alternate" hreflang="ko" href="https://pavy.ai/ko/product/chatbot" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://pavy.ai/ja/product/chatbot" />
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://pavy.ai/ja/product/chatbot</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://pavy.ai/en/product/chatbot" />
+    <xhtml:link rel="alternate" hreflang="ko" href="https://pavy.ai/ko/product/chatbot" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://pavy.ai/ja/product/chatbot" />
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://pavy.ai/en/product/dashboard</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://pavy.ai/en/product/dashboard" />
+    <xhtml:link rel="alternate" hreflang="ko" href="https://pavy.ai/ko/product/dashboard" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://pavy.ai/ja/product/dashboard" />
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://pavy.ai/ko/product/dashboard</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://pavy.ai/en/product/dashboard" />
+    <xhtml:link rel="alternate" hreflang="ko" href="https://pavy.ai/ko/product/dashboard" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://pavy.ai/ja/product/dashboard" />
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://pavy.ai/ja/product/dashboard</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://pavy.ai/en/product/dashboard" />
+    <xhtml:link rel="alternate" hreflang="ko" href="https://pavy.ai/ko/product/dashboard" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://pavy.ai/ja/product/dashboard" />
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://pavy.ai/en/pricing</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://pavy.ai/en/pricing" />
+    <xhtml:link rel="alternate" hreflang="ko" href="https://pavy.ai/ko/pricing" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://pavy.ai/ja/pricing" />
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://pavy.ai/ko/pricing</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://pavy.ai/en/pricing" />
+    <xhtml:link rel="alternate" hreflang="ko" href="https://pavy.ai/ko/pricing" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://pavy.ai/ja/pricing" />
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://pavy.ai/ja/pricing</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://pavy.ai/en/pricing" />
+    <xhtml:link rel="alternate" hreflang="ko" href="https://pavy.ai/ko/pricing" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://pavy.ai/ja/pricing" />
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://pavy.ai/en/demo</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://pavy.ai/en/demo" />
+    <xhtml:link rel="alternate" hreflang="ko" href="https://pavy.ai/ko/demo" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://pavy.ai/ja/demo" />
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://pavy.ai/ko/demo</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://pavy.ai/en/demo" />
+    <xhtml:link rel="alternate" hreflang="ko" href="https://pavy.ai/ko/demo" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://pavy.ai/ja/demo" />
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://pavy.ai/ja/demo</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://pavy.ai/en/demo" />
+    <xhtml:link rel="alternate" hreflang="ko" href="https://pavy.ai/ko/demo" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://pavy.ai/ja/demo" />
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://pavy.ai/en/guide</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://pavy.ai/en/guide" />
+    <xhtml:link rel="alternate" hreflang="ko" href="https://pavy.ai/ko/guide" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://pavy.ai/ja/guide" />
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://pavy.ai/ko/guide</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://pavy.ai/en/guide" />
+    <xhtml:link rel="alternate" hreflang="ko" href="https://pavy.ai/ko/guide" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://pavy.ai/ja/guide" />
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://pavy.ai/ja/guide</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://pavy.ai/en/guide" />
+    <xhtml:link rel="alternate" hreflang="ko" href="https://pavy.ai/ko/guide" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://pavy.ai/ja/guide" />
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+</urlset>
