@@ -9,6 +9,7 @@ import DemoRequest from "./pages/DemoRequest";
 import { detectLanguage } from "./hooks/useLocale";
 
 const SalesDeck = lazy(() => import("./pages/SalesDeck"));
+const Pricing = lazy(() => import("./pages/Pricing"));
 
 function RootRedirect() {
   const lang = detectLanguage();
@@ -34,6 +35,11 @@ function App() {
         <Route path="product/dashboard" element={<ProductDashboard />} />
         <Route path="guide" element={<UserGuide />} />
         <Route path="demo" element={<DemoRequest />} />
+        <Route path="pricing" element={
+          <Suspense fallback={<div className="min-h-screen bg-slate-50" />}>
+            <Pricing />
+          </Suspense>
+        } />
       </Route>
     </Routes>
   );

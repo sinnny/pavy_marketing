@@ -21,6 +21,7 @@ import {
 } from 'lucide-react';
 import { AIIcon } from '@pavy/ui';
 import { i18next, useTranslation } from '@pavy/i18n';
+import { SEOHead } from '../components/SEOHead';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 import ProductHighlightSection from '../components/ProductHighlightSection';
@@ -49,6 +50,12 @@ export default function ProductChatbot() {
             ref={containerRef}
             className="relative w-full bg-slate-50 min-h-screen font-sans selection:bg-indigo-500/20 text-slate-900 flex flex-col items-center"
         >
+            <SEOHead
+                title={t('seo.chatbot.title')}
+                description={t('seo.chatbot.description')}
+                path="/product/chatbot"
+                ogImage="/og/og-chatbot.png"
+            />
             {/* Background */}
             <div className="fixed inset-0 z-0 pointer-events-none overflow-hidden bg-white">
                 <div className="absolute top-[-20%] left-[-10%] w-[80%] h-[80%] bg-indigo-50/50 blur-[120px] rounded-full" />
