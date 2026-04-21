@@ -383,6 +383,18 @@
     "guide": {
       "title": "User Guide — Setup & Integration | Pavy.ai",
       "description": "Comprehensive documentation to integrate, customize, and deploy our AI chatbot widget."
+    },
+    "blog": {
+      "title": "Blog | Pavy.ai",
+      "description": "Insights and updates on AI chatbots, e-commerce, and the future of customer experience."
+    },
+    "privacy": {
+      "title": "Privacy Policy | Pavy.ai",
+      "description": "Learn how Pavy.ai collects, uses, and protects your personal information."
+    },
+    "terms": {
+      "title": "Terms of Service | Pavy.ai",
+      "description": "Read the terms and conditions for using the Pavy.ai platform."
     }
   }
 }
