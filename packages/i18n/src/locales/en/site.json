@@ -11,7 +11,8 @@
       "liveDemoDesc": "Interactive Dashboard",
       "userGuide": "User Guide",
       "demo": "Demo",
-      "pricing": "Pricing"
+      "pricing": "Pricing",
+      "blog": "Blog"
     },
     "cta": {
       "login": "Login",
@@ -231,7 +232,8 @@
       "toggle": {
         "monthly": "Monthly",
         "annual": "Annual",
-        "save": "Save 20%"
+        "save": "Save 20%",
+        "aria_label": "Billing interval"
       },
       "comparison": {
         "title": "Compare plans",
@@ -294,6 +296,8 @@
         }
       },
       "plans": {
+        "per_month": "/ mo",
+        "billed_annually": "Billed annually",
         "free": {
           "name": "Free",
           "cta": "Get Started",
@@ -330,6 +334,28 @@
         "title": "Still have questions?",
         "subtitle": "Our team is here to help you find the right solution.",
         "button": "Talk to Sales"
+      },
+      "faq": {
+        "section_label": "PRICING FAQ",
+        "title": "Frequently asked questions",
+        "items": {
+          "q1": {
+            "question": "Can I change plans later?",
+            "answer": "Yes. You can upgrade, downgrade, or cancel at any time from your dashboard. Prorated billing is applied automatically."
+          },
+          "q2": {
+            "question": "Is there a free trial for the Pro plan?",
+            "answer": "Yes. Pro comes with a 14-day free trial — no credit card required. You can continue on Free after the trial ends."
+          },
+          "q3": {
+            "question": "What payment methods do you accept?",
+            "answer": "All major credit cards (Visa, Mastercard, AMEX) and bank transfers for annual Enterprise contracts."
+          },
+          "q4": {
+            "question": "Do you offer discounts for annual billing?",
+            "answer": "Yes — annual billing saves you 20% compared to paying monthly. Enterprise customers can also negotiate multi-year discounts."
+          }
+        }
       }
     }
   },
