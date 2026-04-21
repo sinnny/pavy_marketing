@@ -1,26 +1,32 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://pavy.ai/en/</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://pavy.ai/en/" />
-    <xhtml:link rel="alternate" hreflang="ko" href="https://pavy.ai/ko/" />
-    <xhtml:link rel="alternate" hreflang="ja" href="https://pavy.ai/ja/" />
+    <loc>https://pavy.ai/en</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://pavy.ai/en" />
+    <xhtml:link rel="alternate" hreflang="ko" href="https://pavy.ai/ko" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://pavy.ai/ja" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://pavy.ai/en" />
+    <lastmod>2026-04-21</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://pavy.ai/ko/</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://pavy.ai/en/" />
-    <xhtml:link rel="alternate" hreflang="ko" href="https://pavy.ai/ko/" />
-    <xhtml:link rel="alternate" hreflang="ja" href="https://pavy.ai/ja/" />
+    <loc>https://pavy.ai/ko</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://pavy.ai/en" />
+    <xhtml:link rel="alternate" hreflang="ko" href="https://pavy.ai/ko" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://pavy.ai/ja" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://pavy.ai/en" />
+    <lastmod>2026-04-21</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://pavy.ai/ja/</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://pavy.ai/en/" />
-    <xhtml:link rel="alternate" hreflang="ko" href="https://pavy.ai/ko/" />
-    <xhtml:link rel="alternate" hreflang="ja" href="https://pavy.ai/ja/" />
+    <loc>https://pavy.ai/ja</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://pavy.ai/en" />
+    <xhtml:link rel="alternate" hreflang="ko" href="https://pavy.ai/ko" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://pavy.ai/ja" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://pavy.ai/en" />
+    <lastmod>2026-04-21</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
@@ -29,6 +35,8 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://pavy.ai/en/product/chatbot" />
     <xhtml:link rel="alternate" hreflang="ko" href="https://pavy.ai/ko/product/chatbot" />
     <xhtml:link rel="alternate" hreflang="ja" href="https://pavy.ai/ja/product/chatbot" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://pavy.ai/en/product/chatbot" />
+    <lastmod>2026-04-21</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -37,6 +45,8 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://pavy.ai/en/product/chatbot" />
     <xhtml:link rel="alternate" hreflang="ko" href="https://pavy.ai/ko/product/chatbot" />
     <xhtml:link rel="alternate" hreflang="ja" href="https://pavy.ai/ja/product/chatbot" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://pavy.ai/en/product/chatbot" />
+    <lastmod>2026-04-21</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -45,6 +55,8 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://pavy.ai/en/product/chatbot" />
     <xhtml:link rel="alternate" hreflang="ko" href="https://pavy.ai/ko/product/chatbot" />
     <xhtml:link rel="alternate" hreflang="ja" href="https://pavy.ai/ja/product/chatbot" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://pavy.ai/en/product/chatbot" />
+    <lastmod>2026-04-21</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -53,6 +65,8 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://pavy.ai/en/product/dashboard" />
     <xhtml:link rel="alternate" hreflang="ko" href="https://pavy.ai/ko/product/dashboard" />
     <xhtml:link rel="alternate" hreflang="ja" href="https://pavy.ai/ja/product/dashboard" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://pavy.ai/en/product/dashboard" />
+    <lastmod>2026-04-21</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -61,6 +75,8 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://pavy.ai/en/product/dashboard" />
     <xhtml:link rel="alternate" hreflang="ko" href="https://pavy.ai/ko/product/dashboard" />
     <xhtml:link rel="alternate" hreflang="ja" href="https://pavy.ai/ja/product/dashboard" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://pavy.ai/en/product/dashboard" />
+    <lastmod>2026-04-21</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -69,6 +85,8 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://pavy.ai/en/product/dashboard" />
     <xhtml:link rel="alternate" hreflang="ko" href="https://pavy.ai/ko/product/dashboard" />
     <xhtml:link rel="alternate" hreflang="ja" href="https://pavy.ai/ja/product/dashboard" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://pavy.ai/en/product/dashboard" />
+    <lastmod>2026-04-21</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -77,6 +95,8 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://pavy.ai/en/pricing" />
     <xhtml:link rel="alternate" hreflang="ko" href="https://pavy.ai/ko/pricing" />
     <xhtml:link rel="alternate" hreflang="ja" href="https://pavy.ai/ja/pricing" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://pavy.ai/en/pricing" />
+    <lastmod>2026-04-21</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -85,6 +105,8 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://pavy.ai/en/pricing" />
     <xhtml:link rel="alternate" hreflang="ko" href="https://pavy.ai/ko/pricing" />
     <xhtml:link rel="alternate" hreflang="ja" href="https://pavy.ai/ja/pricing" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://pavy.ai/en/pricing" />
+    <lastmod>2026-04-21</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -93,6 +115,8 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://pavy.ai/en/pricing" />
     <xhtml:link rel="alternate" hreflang="ko" href="https://pavy.ai/ko/pricing" />
     <xhtml:link rel="alternate" hreflang="ja" href="https://pavy.ai/ja/pricing" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://pavy.ai/en/pricing" />
+    <lastmod>2026-04-21</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -101,6 +125,8 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://pavy.ai/en/demo" />
     <xhtml:link rel="alternate" hreflang="ko" href="https://pavy.ai/ko/demo" />
     <xhtml:link rel="alternate" hreflang="ja" href="https://pavy.ai/ja/demo" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://pavy.ai/en/demo" />
+    <lastmod>2026-04-21</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -109,6 +135,8 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://pavy.ai/en/demo" />
     <xhtml:link rel="alternate" hreflang="ko" href="https://pavy.ai/ko/demo" />
     <xhtml:link rel="alternate" hreflang="ja" href="https://pavy.ai/ja/demo" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://pavy.ai/en/demo" />
+    <lastmod>2026-04-21</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -117,6 +145,8 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://pavy.ai/en/demo" />
     <xhtml:link rel="alternate" hreflang="ko" href="https://pavy.ai/ko/demo" />
     <xhtml:link rel="alternate" hreflang="ja" href="https://pavy.ai/ja/demo" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://pavy.ai/en/demo" />
+    <lastmod>2026-04-21</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -125,6 +155,8 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://pavy.ai/en/guide" />
     <xhtml:link rel="alternate" hreflang="ko" href="https://pavy.ai/ko/guide" />
     <xhtml:link rel="alternate" hreflang="ja" href="https://pavy.ai/ja/guide" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://pavy.ai/en/guide" />
+    <lastmod>2026-04-21</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -133,6 +165,8 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://pavy.ai/en/guide" />
     <xhtml:link rel="alternate" hreflang="ko" href="https://pavy.ai/ko/guide" />
     <xhtml:link rel="alternate" hreflang="ja" href="https://pavy.ai/ja/guide" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://pavy.ai/en/guide" />
+    <lastmod>2026-04-21</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -141,6 +175,8 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://pavy.ai/en/guide" />
     <xhtml:link rel="alternate" hreflang="ko" href="https://pavy.ai/ko/guide" />
     <xhtml:link rel="alternate" hreflang="ja" href="https://pavy.ai/ja/guide" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://pavy.ai/en/guide" />
+    <lastmod>2026-04-21</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>

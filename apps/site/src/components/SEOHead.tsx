@@ -38,6 +38,13 @@ export function SEOHead({
     schemas.push(structuredData as Record<string, unknown>);
   }
 
+  // Serialize JSON-LD safely for embedding inside <script> — escape sequences
+  // that could close the tag or be misinterpreted by HTML parsers.
+  const jsonLd = JSON.stringify(schemas.length === 1 ? schemas[0] : schemas)
+    .replace(/</g, '\\u003c')
+    .replace(/>/g, '\\u003e')
+    .replace(/&/g, '\\u0026');
+
   return (
     <Helmet>
       <html lang={currentLanguage} />
@@ -69,6 +76,9 @@ export function SEOHead({
       <meta property="og:description" content={description} />
       <meta property="og:image" content={ogImage.startsWith('http') ? ogImage : `${BASE_URL}${ogImage.startsWith('/') ? '' : '/'}${ogImage}`} />
 
+      {/* RSS Feed */}
+      <link rel="alternate" type="application/rss+xml" href="/rss.xml" title="Pavy.ai Blog RSS Feed" />
+
       {/* Twitter */}
       <meta name="twitter:card" content="summary_large_image" />
       <meta name="twitter:title" content={title} />
@@ -83,7 +93,7 @@ export function SEOHead({
       )}
 
       {/* Structured Data */}
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schemas.length === 1 ? schemas[0] : schemas) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: jsonLd }} />
     </Helmet>
   );
 }

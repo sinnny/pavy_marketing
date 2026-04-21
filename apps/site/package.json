@@ -5,22 +5,32 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "tsc -b && vite build",
+    "build": "tsc -b && vite build && npm run generate-sitemap",
+    "postbuild": "node --experimental-strip-types scripts/generate-rss.ts",
+    "generate-sitemap": "node --experimental-strip-types scripts/generate-sitemap.ts",
     "lint": "eslint .",
     "preview": "vite preview"
   },
   "dependencies": {
+    "@mdx-js/react": "^3.1.1",
+    "@mdx-js/rollup": "^3.1.1",
     "@pavy/i18n": "workspace:*",
     "@pavy/types": "workspace:*",
     "@pavy/ui": "workspace:*",
     "@pavy/utils": "workspace:*",
+    "@tailwindcss/typography": "^0.5.19",
     "clsx": "^2.1.0",
     "framer-motion": "^12.0.0",
+    "highlight.js": "^11.11.1",
     "lucide-react": "^0.474.0",
     "react": "^19.2.0",
     "react-dom": "^19.2.0",
     "react-helmet-async": "^3.0.0",
     "react-router-dom": "^7.1.5",
+    "rehype-highlight": "^7.0.2",
+    "remark-frontmatter": "^5.0.0",
+    "remark-gfm": "^4.0.1",
+    "remark-mdx-frontmatter": "^5.2.0",
     "tailwind-merge": "^2.2.0"
   },
   "devDependencies": {
