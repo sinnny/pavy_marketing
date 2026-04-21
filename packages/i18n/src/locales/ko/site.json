@@ -504,28 +504,40 @@
   },
   "seo": {
     "home": {
-      "title": "Pavy.ai — AI-Powered Product Recommendation Chatbot for E-Commerce",
-      "description": "No one scrolls to the bottom of your product page. But AI does. Pavy.ai analyzes every detail and answers the moment customers ask."
+      "title": "Pavy.ai — 이커머스를 위한 AI 상품 추천 챗봇",
+      "description": "상품 상세 페이지를 끝까지 읽는 고객은 없지만, AI는 다릅니다. Pavy.ai가 모든 정보를 분석해 고객이 묻는 순간 바로 답해 드립니다."
     },
     "pricing": {
-      "title": "Pricing — Simple Plans for Every Business | Pavy.ai",
-      "description": "Choose the perfect plan for your business. Simple, transparent pricing."
+      "title": "요금제 — 모든 비즈니스에 맞는 간편한 플랜 | Pavy.ai",
+      "description": "우리 비즈니스에 꼭 맞는 요금제를 선택하세요. 간결하고 투명한 가격 정책을 제공합니다."
     },
     "dashboard": {
-      "title": "Admin Dashboard — Manage Your AI Chatbot | Pavy.ai",
-      "description": "Manage your AI agents, review chat histories, and train on custom knowledge bases."
+      "title": "관리자 대시보드 — AI 챗봇을 직접 관리하세요 | Pavy.ai",
+      "description": "AI 에이전트를 운영하고, 상담 내역을 검토하며, 자체 지식베이스로 학습시켜 보세요."
     },
     "chatbot": {
-      "title": "Product Chatbot — Autonomous AI Agent | Pavy.ai",
-      "description": "Learn all about our highly customizable, AI-driven chatbot widget for your website."
+      "title": "프로덕트 챗봇 — 자율형 AI 에이전트 | Pavy.ai",
+      "description": "웹사이트에 바로 적용할 수 있는, 자유롭게 커스터마이즈 가능한 AI 챗봇 위젯을 소개합니다."
     },
     "demo": {
-      "title": "Request a Demo | Pavy.ai",
-      "description": "See how our enterprise AI agent can reduce support volume by 40%."
+      "title": "데모 요청하기 | Pavy.ai",
+      "description": "엔터프라이즈 AI 에이전트로 상담 문의량을 최대 40% 줄이는 방법을 직접 확인해 보세요."
     },
     "guide": {
-      "title": "User Guide — Setup & Integration | Pavy.ai",
-      "description": "Comprehensive documentation to integrate, customize, and deploy our AI chatbot widget."
+      "title": "사용자 가이드 — 설치 및 연동 방법 | Pavy.ai",
+      "description": "AI 챗봇 위젯의 연동, 커스터마이징, 배포까지 한 번에 끝낼 수 있는 종합 가이드입니다."
+    },
+    "blog": {
+      "title": "블로그 | Pavy.ai",
+      "description": "AI 챗봇, 이커머스, 고객 경험의 미래에 대한 인사이트와 업데이트를 전해 드립니다."
+    },
+    "privacy": {
+      "title": "개인정보 처리방침 | Pavy.ai",
+      "description": "Pavy.ai가 고객의 개인정보를 어떻게 수집하고, 이용하며, 안전하게 보호하는지 안내합니다."
+    },
+    "terms": {
+      "title": "이용약관 | Pavy.ai",
+      "description": "Pavy.ai 플랫폼 이용에 관한 약관과 조건을 확인하세요."
     }
   }
 }

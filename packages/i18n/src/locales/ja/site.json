@@ -360,28 +360,40 @@
   },
   "seo": {
     "home": {
-      "title": "Pavy.ai — AI-Powered Product Recommendation Chatbot for E-Commerce",
-      "description": "No one scrolls to the bottom of your product page. But AI does. Pavy.ai analyzes every detail and answers the moment customers ask."
+      "title": "Pavy.ai — EC向けAI商品レコメンドチャットボット",
+      "description": "商品ページを最後まで読むお客様はいません。でもAIは違います。Pavy.aiがすべての情報を分析し、お客様が聞いた瞬間に答えます。"
     },
     "pricing": {
-      "title": "Pricing — Simple Plans for Every Business | Pavy.ai",
-      "description": "Choose the perfect plan for your business. Simple, transparent pricing."
+      "title": "料金プラン — あらゆるビジネスに合うシンプルなプラン | Pavy.ai",
+      "description": "あなたのビジネスに最適なプランを。シンプルで透明性のある料金体系です。"
     },
     "dashboard": {
-      "title": "Admin Dashboard — Manage Your AI Chatbot | Pavy.ai",
-      "description": "Manage your AI agents, review chat histories, and train on custom knowledge bases."
+      "title": "管理ダッシュボード — AIチャットボットを自在に運用 | Pavy.ai",
+      "description": "AIエージェントの管理、チャット履歴の確認、ナレッジベースの学習をひとつの画面で行えます。"
     },
     "chatbot": {
-      "title": "Product Chatbot — Autonomous AI Agent | Pavy.ai",
-      "description": "Learn all about our highly customizable, AI-driven chatbot widget for your website."
+      "title": "プロダクトチャットボット — 自律型AIエージェント | Pavy.ai",
+      "description": "ウェブサイトに組み込める、高度にカスタマイズ可能なAIチャットボットウィジェットをご紹介します。"
     },
     "demo": {
-      "title": "Request a Demo | Pavy.ai",
-      "description": "See how our enterprise AI agent can reduce support volume by 40%."
+      "title": "デモをリクエスト | Pavy.ai",
+      "description": "エンタープライズ向けAIエージェントで、お問い合わせ対応を最大40%削減する方法をご覧ください。"
     },
     "guide": {
-      "title": "User Guide — Setup & Integration | Pavy.ai",
-      "description": "Comprehensive documentation to integrate, customize, and deploy our AI chatbot widget."
+      "title": "ユーザーガイド — セットアップと連携方法 | Pavy.ai",
+      "description": "AIチャットボットウィジェットの導入、カスタマイズ、デプロイまで網羅したドキュメントです。"
+    },
+    "blog": {
+      "title": "ブログ | Pavy.ai",
+      "description": "AIチャットボット、EC、カスタマーエクスペリエンスの未来についてのインサイトと最新情報をお届けします。"
+    },
+    "privacy": {
+      "title": "プライバシーポリシー | Pavy.ai",
+      "description": "Pavy.aiがお客様の個人情報をどのように収集し、利用し、保護しているかをご案内します。"
+    },
+    "terms": {
+      "title": "利用規約 | Pavy.ai",
+      "description": "Pavy.aiプラットフォームのご利用に関する規約と条件をご確認ください。"
     }
   }
 }
