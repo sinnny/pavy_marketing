@@ -2,7 +2,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { Check } from 'lucide-react';
 import { useTranslation } from '@pavy/i18n';
 import { Link } from 'react-router-dom';
-import { PlanTier } from '../../lib/pricing-data';
+import type { PlanTier } from '../../lib/pricing-data';
 import { useLocale } from '../../hooks/useLocale';
 
 interface PlanCardProps {
@@ -16,12 +16,14 @@ export default function PlanCard({ plan, interval }: PlanCardProps) {
 
   const price = interval === 'monthly' ? plan.monthlyPrice : plan.annualPrice;
   const isEnterprise = plan.monthlyPrice === null;
+  const isFree = !isEnterprise && plan.monthlyPrice === 0;
+  const showAnnualNote = !isEnterprise && !isFree && interval === 'annual';
 
   return (
-    <motion.div 
+    <motion.div
       className={`relative flex flex-col p-8 rounded-3xl border bg-white ${
-        plan.highlighted 
-          ? 'border-brand-primary shadow-xl shadow-brand-primary/10 scale-105 z-10' 
+        plan.highlighted
+          ? 'border-brand-primary shadow-xl shadow-brand-primary/10 md:scale-105 md:z-10'
           : 'border-slate-200 shadow-lg'
       }`}
       variants={{
@@ -56,10 +58,15 @@ export default function PlanCard({ plan, interval }: PlanCardProps) {
                   {price}
                 </motion.span>
               </AnimatePresence>
-              <span className="text-slate-500 font-medium ml-1">/ mo</span>
+              <span className="text-slate-500 font-medium ml-1">
+                {t('pages.pricing.plans.per_month')}
+              </span>
             </>
           )}
         </div>
+        <p className="text-xs text-slate-500 mt-1 min-h-[1rem]">
+          {showAnnualNote ? t('pages.pricing.plans.billed_annually') : ''}
+        </p>
       </div>
 
       <div className="flex-1">

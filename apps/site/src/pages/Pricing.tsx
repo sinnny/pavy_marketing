@@ -11,11 +11,23 @@ import { useLocale } from '../hooks/useLocale';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 import { SEOHead } from '../components/SEOHead';
+import { getFAQPageSchema } from '../lib/structured-data';
+
+type Interval = 'monthly' | 'annual';
+
+const PRICING_FAQ_KEYS = ['q1', 'q2', 'q3', 'q4'] as const;
 
 export default function Pricing() {
   const { t } = useTranslation('site');
   const { localePath } = useLocale();
-  const [interval, setInterval] = useState<'monthly' | 'annual'>('annual');
+  const [billingInterval, setBillingInterval] = useState<Interval>('annual');
+
+  const faqSchema = getFAQPageSchema(
+    PRICING_FAQ_KEYS.map((key) => ({
+      question: t(`pages.pricing.faq.items.${key}.question`),
+      answer: t(`pages.pricing.faq.items.${key}.answer`),
+    }))
+  );
 
   return (
     <div className="relative w-full bg-slate-50 min-h-screen font-sans selection:bg-indigo-500/20 text-slate-900 flex flex-col items-center">
@@ -24,6 +36,7 @@ export default function Pricing() {
         description={t('seo.pricing.description')}
         path="/pricing"
         ogImage="/og/og-pricing.png"
+        structuredData={faqSchema}
       />
       <Header />
       <main className="relative z-10 w-full flex flex-col items-center pt-32 pb-24">
@@ -39,12 +52,12 @@ export default function Pricing() {
 
         {/* Billing Toggle */}
         <div className="w-full">
-          <BillingToggle interval={interval} onChange={setInterval} />
+          <BillingToggle interval={billingInterval} onChange={setBillingInterval} />
         </div>
 
         {/* Plan Cards Grid */}
         <section className="px-6 md:px-10 max-w-6xl w-full mx-auto mb-20">
-          <motion.div 
+          <motion.div
             className="grid md:grid-cols-3 gap-8 items-center"
             initial="hidden"
             animate="visible"
@@ -58,7 +71,7 @@ export default function Pricing() {
             }}
           >
             {plans.map((plan) => (
-              <PlanCard key={plan.id} plan={plan} interval={interval} />
+              <PlanCard key={plan.id} plan={plan} interval={billingInterval} />
             ))}
           </motion.div>
         </section>
@@ -77,7 +90,12 @@ export default function Pricing() {
 
         {/* FAQ Section */}
         <div className="w-full max-w-4xl mx-auto px-6 md:px-10 mb-32 flex flex-col items-center justify-center">
-          <FAQSection />
+          <FAQSection
+            sectionLabelKey="pages.pricing.faq.section_label"
+            titleKey="pages.pricing.faq.title"
+            itemKeys={PRICING_FAQ_KEYS}
+            itemKeyPrefix="pages.pricing.faq.items"
+          />
         </div>
 
         {/* Bottom CTA Section */}
