@@ -120,7 +120,12 @@
         "metricLabel": "Conversion Increase",
         "challenge": "Luxe Fashion struggled with high cart abandonment and customers unable to find specific styles.",
         "solution": "Implemented Pavy AI Chatbot with visual product recommendation and style matching.",
-        "results": "32% increase in sales conversion, 45% reduction in support tickets, and improved customer satisfaction scores."
+        "results": "32% increase in sales conversion, 45% reduction in support tickets, and improved customer satisfaction scores.",
+        "resultBullets": {
+          "1": "32% increase in sales conversion rate",
+          "2": "45% reduction in support ticket volume",
+          "3": "Higher CSAT across all style categories"
+        }
       },
       "2": {
         "industry": "Electronics",
@@ -128,7 +133,12 @@
         "metricLabel": "Faster Response",
         "challenge": "TechGear's support team was overwhelmed with technical questions and product availability inquiries.",
         "solution": "Pavy AI was trained on their technical documentation and real-time inventory data.",
-        "results": "Response time dropped from 4 hours to instant, while maintaining 92% accuracy in technical answers."
+        "results": "Response time dropped from 4 hours to instant, while maintaining 92% accuracy in technical answers.",
+        "resultBullets": {
+          "1": "Response time reduced from 4 hours to instant",
+          "2": "92% accuracy on technical product queries",
+          "3": "Support workload reduced by over 60%"
+        }
       },
       "3": {
         "industry": "Home & Living",
@@ -136,8 +146,25 @@
         "metricLabel": "Revenue Growth",
         "challenge": "HomeBloom wanted to personalize the shopping experience for interior design enthusiasts.",
         "solution": "Deployed a custom-themed Pavy AI widget that acts as a virtual interior designer.",
-        "results": "Average order value increased by 20% and revenue from chat-assisted sales grew by 45%."
+        "results": "Average order value increased by 20% and revenue from chat-assisted sales grew by 45%.",
+        "resultBullets": {
+          "1": "45% uplift in revenue from chat-assisted sales",
+          "2": "20% higher average order value",
+          "3": "Personalized design recommendations at scale"
+        }
       }
+    },
+    "sectionHeading": {
+      "title": "Loved by customers everywhere",
+      "subtitle": "Join hundreds of businesses that have transformed their customer experience with Pavy AI."
+    },
+    "customersPage": {
+      "title": "Customer Stories",
+      "subtitle": "See how businesses grow and scale their customer experience with Pavy AI."
+    },
+    "caseStudyDetail": {
+      "bottomCtaTitle": "Get similar results for your business",
+      "bottomCtaButton": "Request a Custom Demo"
     },
     "labels": {
       "readMore": "Read story",
@@ -147,7 +174,8 @@
       "seeAll": "See all customer stories",
       "ctaTitle": "Ready to transform your business?",
       "ctaSubtitle": "Join hundreds of brands scaling with Pavy AI.",
-      "getStarted": "Get Started Today"
+      "getStarted": "Get Started Today",
+      "customerLogosAria": "Trusted by leading brands"
     }
   },
   "howItWorks": {
@@ -611,7 +639,22 @@
       "readingTime_one": "{{count}} min read",
       "readingTime_other": "{{count}} min read"
     },
-    "legal": {
+    "docs": {
+      "nav": {
+        "getting_started": "Getting Started",
+        "quick_start": "Quick Start",
+        "api_key": "API Key",
+        "integrations": "Integrations",
+        "html": "HTML / Vanilla JS",
+        "shopify": "Shopify",
+        "woocommerce": "WooCommerce",
+        "react": "React",
+        "nextjs": "Next.js",
+        "configuration": "Configuration",
+        "theming": "Theming",
+        "events": "Events"
+      }
+    },    "legal": {
       "common": {
         "home": "Home",
         "legal": "Legal",

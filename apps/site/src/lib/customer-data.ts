@@ -20,6 +20,7 @@ export interface CaseStudy {
   challengeKey: string;
   solutionKey: string;
   resultsKey: string;
+  resultBulletKeys: string[];
   fullContent?: string;
 }
 
@@ -78,6 +79,11 @@ export const CASE_STUDIES: CaseStudy[] = [
     challengeKey: 'socialProof.caseStudies.1.challenge',
     solutionKey: 'socialProof.caseStudies.1.solution',
     resultsKey: 'socialProof.caseStudies.1.results',
+    resultBulletKeys: [
+      'socialProof.caseStudies.1.resultBullets.1',
+      'socialProof.caseStudies.1.resultBullets.2',
+      'socialProof.caseStudies.1.resultBullets.3',
+    ],
   },
   {
     id: 'cs-2',
@@ -91,6 +97,11 @@ export const CASE_STUDIES: CaseStudy[] = [
     challengeKey: 'socialProof.caseStudies.2.challenge',
     solutionKey: 'socialProof.caseStudies.2.solution',
     resultsKey: 'socialProof.caseStudies.2.results',
+    resultBulletKeys: [
+      'socialProof.caseStudies.2.resultBullets.1',
+      'socialProof.caseStudies.2.resultBullets.2',
+      'socialProof.caseStudies.2.resultBullets.3',
+    ],
   },
   {
     id: 'cs-3',
@@ -104,5 +115,10 @@ export const CASE_STUDIES: CaseStudy[] = [
     challengeKey: 'socialProof.caseStudies.3.challenge',
     solutionKey: 'socialProof.caseStudies.3.solution',
     resultsKey: 'socialProof.caseStudies.3.results',
+    resultBulletKeys: [
+      'socialProof.caseStudies.3.resultBullets.1',
+      'socialProof.caseStudies.3.resultBullets.2',
+      'socialProof.caseStudies.3.resultBullets.3',
+    ],
   },
 ];

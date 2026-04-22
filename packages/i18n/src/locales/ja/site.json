@@ -120,7 +120,12 @@
         "metricLabel": "コンバージョン向上",
         "challenge": "Luxe Fashionは、高いカゴ落ち率と、お客様が特定のスタイルを見つけられないという課題を抱えていました。",
         "solution": "視覚的な製品推薦とスタイルマッチング機能を備えたPavy AIチャットボットを導入しました。",
-        "results": "販売コンバージョンが32%増加し、サポートチケットが45%減少、顧客満足度スコアも改善しました。"
+        "results": "販売コンバージョンが32%増加し、サポートチケットが45%減少、顧客満足度スコアも改善しました。",
+        "resultBullets": {
+          "1": "販売コンバージョン率が32%向上",
+          "2": "サポートチケット数が45%減少",
+          "3": "全スタイルカテゴリでCSATが上昇"
+        }
       },
       "2": {
         "industry": "電化製品",
@@ -128,7 +133,12 @@
         "metricLabel": "対応スピード向上",
         "challenge": "TechGearのサポートチームは、技術的な質問や製品の在庫確認の問い合わせに追われていました。",
         "solution": "技術文書とリアルタイムの在庫データに基づいてPavy AIを学習させました。",
-        "results": "対応時間が4時間から即時に短縮され、技術的な回答の正確性を92%に維持しました。"
+        "results": "対応時間が4時間から即時に短縮され、技術的な回答の正確性を92%に維持しました。",
+        "resultBullets": {
+          "1": "対応時間を4時間から即時へ短縮",
+          "2": "技術的な製品問い合わせの精度92%を維持",
+          "3": "サポート業務量が60%以上削減"
+        }
       },
       "3": {
         "industry": "ホーム＆リビング",
@@ -136,8 +146,25 @@
         "metricLabel": "売上成長",
         "challenge": "HomeBloomは、インテリアデザイン愛好家に対してパーソナライズされたショッピング体験を提供したいと考えていました。",
         "solution": "バーチャルインテリアデザイナーとして機能する、カスタムテーマのPavy AIウィジェットを導入しました。",
-        "results": "平均注文額が20%増加し、チャット経由の売上が45%成長しました。"
+        "results": "平均注文額が20%増加し、チャット経由の売上が45%成長しました。",
+        "resultBullets": {
+          "1": "チャット経由の売上が45%上昇",
+          "2": "平均注文額が20%増加",
+          "3": "大規模なパーソナライズドデザイン推薦を実現"
+        }
       }
+    },
+    "sectionHeading": {
+      "title": "世界中のお客様に愛されています",
+      "subtitle": "数百の企業がPavy AIでカスタマー体験を変革しています。"
+    },
+    "customersPage": {
+      "title": "導入事例",
+      "subtitle": "ビジネスがPavy AIでカスタマー体験をどのように拡張しているかをご覧ください。"
+    },
+    "caseStudyDetail": {
+      "bottomCtaTitle": "あなたのビジネスでも同様の成果を",
+      "bottomCtaButton": "カスタムデモを依頼する"
     },
     "labels": {
       "readMore": "詳細を見る",
@@ -147,7 +174,8 @@
       "seeAll": "すべての導入事例を見る",
       "ctaTitle": "ビジネスを変革する準備はできましたか？",
       "ctaSubtitle": "Pavy AIで成長を続ける数百のブランドに加わりましょう。",
-      "getStarted": "今すぐ始める"
+      "getStarted": "今すぐ始める",
+      "customerLogosAria": "主要ブランドから信頼されています"
     }
   },
   "howItWorks": {
@@ -611,7 +639,22 @@
       "readingTime_one": "{{count}}分で読めます",
       "readingTime_other": "{{count}}分で読めます"
     },
-    "legal": {
+    "docs": {
+      "nav": {
+        "getting_started": "はじめに",
+        "quick_start": "クイックスタート",
+        "api_key": "APIキー",
+        "integrations": "連携ガイド",
+        "html": "HTML / Vanilla JS",
+        "shopify": "Shopify",
+        "woocommerce": "WooCommerce",
+        "react": "React",
+        "nextjs": "Next.js",
+        "configuration": "設定",
+        "theming": "テーマ設定",
+        "events": "イベント"
+      }
+    },    "legal": {
       "common": {
         "home": "ホーム",
         "legal": "法的情報",

@@ -6,21 +6,24 @@ import { ArrowLeft, ArrowRight, CheckCircle2 } from 'lucide-react';
 import { Link, useParams, Navigate } from 'react-router-dom';
 import { SEOHead } from '../components/SEOHead';
 import { getArticleSchema } from '../lib/structured-data';
+import { useLocale } from '../hooks/useLocale';
+import MetricCountUp from '../components/social-proof/MetricCountUp';
 
 export default function CaseStudyDetail() {
   const { t } = useTranslation('site');
-  const { lang, slug } = useParams<{ lang: string; slug: string }>();
-  
+  const { slug } = useParams<{ slug: string }>();
+  const { localePath, currentLanguage } = useLocale();
+
   const caseStudy = CASE_STUDIES.find(cs => cs.slug === slug);
 
   if (!caseStudy) {
-    return <Navigate to={`/${lang}/customers`} replace />;
+    return <Navigate to={localePath('/customers')} replace />;
   }
 
   const articleSchema = getArticleSchema({
     headline: t(caseStudy.headlineKey),
     description: t(caseStudy.challengeKey),
-    url: `/${lang}/customers/${caseStudy.slug}`,
+    url: `/${currentLanguage}/customers/${caseStudy.slug}`,
   });
 
   return (
@@ -32,12 +35,12 @@ export default function CaseStudyDetail() {
         structuredData={articleSchema}
       />
       <Header />
-      
+
       <main className="pt-32 pb-24">
         {/* Back Link */}
         <div className="max-w-4xl mx-auto px-6 mb-12">
           <Link
-            to={`/${lang}/customers`}
+            to={localePath('/customers')}
             className="inline-flex items-center gap-2 text-sm font-bold text-slate-500 hover:text-indigo-600 transition-colors"
           >
             <ArrowLeft className="w-4 h-4" />
@@ -53,12 +56,13 @@ export default function CaseStudyDetail() {
           <h1 className="text-4xl md:text-6xl font-black text-slate-900 mb-8 font-heading tracking-tight leading-tight">
             {t(caseStudy.headlineKey)}
           </h1>
-          
+
           <div className="flex items-center gap-12 p-8 bg-slate-50 rounded-[32px] border border-slate-100">
             <div>
-              <div className="text-5xl font-black text-brand-primary tracking-tighter mb-1">
-                {caseStudy.metricValue}
-              </div>
+              <MetricCountUp
+                value={caseStudy.metricValue}
+                className="block text-5xl font-black text-brand-primary tracking-tighter mb-1"
+              />
               <div className="text-xs font-bold text-slate-400 uppercase tracking-widest">
                 {t(caseStudy.metricLabelKey)}
               </div>
@@ -114,10 +118,10 @@ export default function CaseStudyDetail() {
                     {t(caseStudy.resultsKey)}
                   </p>
                   <ul className="space-y-4">
-                    {['Result 1', 'Result 2', 'Result 3'].map((r, i) => (
-                      <li key={i} className="flex items-center gap-3 text-slate-600 font-medium">
+                    {caseStudy.resultBulletKeys.map((bulletKey) => (
+                      <li key={bulletKey} className="flex items-center gap-3 text-slate-600 font-medium">
                         <CheckCircle2 className="w-5 h-5 text-emerald-500 shrink-0" />
-                        <span>Placeholder detail for {caseStudy.companyName} result #{i+1}</span>
+                        <span>{t(bulletKey)}</span>
                       </li>
                     ))}
                   </ul>
@@ -131,13 +135,13 @@ export default function CaseStudyDetail() {
         <section className="max-w-4xl mx-auto px-6 mt-32">
           <div className="bg-slate-900 rounded-[40px] p-12 text-center text-white">
             <h2 className="text-3xl font-black mb-6 font-heading">
-              Get similar results for your business
+              {t('socialProof.caseStudyDetail.bottomCtaTitle')}
             </h2>
             <Link
-              to={`/${lang}/demo`}
+              to={localePath('/demo')}
               className="inline-flex items-center gap-3 bg-brand-primary text-white px-10 py-5 rounded-full font-black text-lg hover:bg-indigo-600 transition-colors shadow-lg"
             >
-              Request a Custom Demo
+              {t('socialProof.caseStudyDetail.bottomCtaButton')}
               <ArrowRight className="w-5 h-5" />
             </Link>
           </div>

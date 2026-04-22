@@ -22,7 +22,7 @@ export default function Header() {
     }, [scrollY]);
 
     const isPricingActive = location.pathname.includes('/pricing');
-    const isGuideActive = location.pathname.includes('/guide');
+    const isDocsActive = location.pathname.includes('/docs');
 
     const handleCTAClick = (ctaText: string) => {
         trackEvent('click_header_cta', {
@@ -68,7 +68,7 @@ export default function Header() {
                     <Link to={localePath('/pricing')} className={`transition-colors duration-300 py-4 whitespace-nowrap ${isPricingActive ? 'text-brand-primary' : 'hover:text-brand-primary'}`}>{t('header.nav.pricing')}</Link>
                     <Link to={localePath('/customers')} className={`transition-colors duration-300 py-4 whitespace-nowrap ${location.pathname.includes('/customers') ? 'text-brand-primary' : 'hover:text-brand-primary'}`}>{t('header.nav.customers')}</Link>
                     <Link to={localePath('/blog')} className={`transition-colors duration-300 py-4 whitespace-nowrap ${location.pathname.includes('/blog') ? 'text-brand-primary' : 'hover:text-brand-primary'}`}>{t('header.nav.blog')}</Link>
-                    <Link to={localePath('/guide')} className={`transition-colors duration-300 py-4 whitespace-nowrap ${isGuideActive ? 'text-brand-primary' : 'hover:text-brand-primary'}`}>{t('header.nav.userGuide')}</Link>
+                    <Link to={localePath('/docs/getting-started/quick-start')} className={`transition-colors duration-300 py-4 whitespace-nowrap ${isDocsActive ? 'text-brand-primary' : 'hover:text-brand-primary'}`}>{t('header.nav.userGuide')}</Link>
                 </nav>
 
                 {/* CTA area */}

@@ -5,16 +5,17 @@ import Header from '../components/Header';
 import Footer from '../components/Footer';
 import { motion } from 'framer-motion';
 import { ArrowRight } from 'lucide-react';
-import { Link, useParams } from 'react-router-dom';
+import { Link } from 'react-router-dom';
+import { useLocale } from '../hooks/useLocale';
 
 export default function Customers() {
   const { t } = useTranslation('site');
-  const { lang } = useParams<{ lang: string }>();
+  const { localePath } = useLocale();
 
   return (
     <div className="bg-slate-50 min-h-screen">
       <Header />
-      
+
       <main className="pt-32 pb-24">
         {/* Hero */}
         <section className="max-w-7xl mx-auto px-6 mb-24 text-center">
@@ -24,10 +25,10 @@ export default function Customers() {
             transition={{ duration: 0.6 }}
           >
             <h1 className="text-4xl md:text-6xl font-black text-slate-900 mb-6 font-heading tracking-tight">
-              Customer Stories
+              {t('socialProof.customersPage.title')}
             </h1>
             <p className="text-xl text-slate-600 max-w-2xl mx-auto font-light">
-              See how businesses grow and scale their customer experience with Pavy AI.
+              {t('socialProof.customersPage.subtitle')}
             </p>
           </motion.div>
         </section>
@@ -58,7 +59,7 @@ export default function Customers() {
                 {t('socialProof.labels.ctaSubtitle')}
               </p>
               <Link
-                to={`/${lang}/demo`}
+                to={localePath('/demo')}
                 className="inline-flex items-center gap-3 bg-white text-brand-primary px-10 py-5 rounded-full font-black text-lg hover:bg-indigo-50 transition-colors shadow-lg"
               >
                 {t('socialProof.labels.getStarted')}
