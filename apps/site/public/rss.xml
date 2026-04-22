@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<rss version="2.0">
+  <channel>
+    <title>Pavy.ai Blog</title>
+    <link>https://pavy.ai/blog</link>
+    <description>Insights and updates on AI chatbots, e-commerce, and customer experience.</description>
+    <language>en</language>
+    <lastBuildDate>Wed, 22 Apr 2026 03:47:48 GMT</lastBuildDate>
+    
+    <item>
+      <title><![CDATA[Introducing Pavy.ai]]></title>
+      <link>https://pavy.ai/en/blog/hello-world</link>
+      <guid>https://pavy.ai/en/blog/hello-world</guid>
+      <description><![CDATA[Meet your AI-powered product recommendation chatbot]]></description>
+      <pubDate>Sat, 01 Mar 2025 00:00:00 GMT</pubDate>
+    </item>
+  </channel>
+</rss>

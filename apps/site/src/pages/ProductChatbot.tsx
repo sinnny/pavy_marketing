@@ -1,5 +1,7 @@
 import { useState, useRef, useEffect, useCallback } from 'react';
+import { useLocation } from 'react-router-dom';
 import { motion, useScroll, useTransform } from 'framer-motion';
+import { trackEvent } from '../lib/analytics';
 import {
     ArrowRight,
     FileText,
@@ -22,18 +24,23 @@ import {
 import { AIIcon } from '@pavy/ui';
 import { i18next, useTranslation } from '@pavy/i18n';
 import { SEOHead } from '../components/SEOHead';
+import { getSoftwareApplicationSchema } from '../lib/structured-data';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 import ProductHighlightSection from '../components/ProductHighlightSection';
 import CustomPDPSection from '../components/CustomPDPSection';
+import LogoMarquee from '../components/social-proof/LogoMarquee';
+import TestimonialSection from '../components/social-proof/TestimonialSection';
 import adminScreenshot from '../assets/admin-screenshot.png';
+import adminScreenshotWebp from '../assets/admin-screenshot.webp';
+import OptimizedImage from '../components/OptimizedImage';
 import { getSiteHeroCopy } from '../lib/siteHero';
 
 const T_PREFIX = 'pages.productChatbot';
 const CHAT_PAIR_COUNT = 5;
 const CHAT_INDICES = Array.from({ length: CHAT_PAIR_COUNT }, (_, i) => i + 1);
 
-export default function ProductChatbot() {
+export default function ProductChatbot({ isHome = false }: { isHome?: boolean } = {}) {
     const { t } = useTranslation('site');
     const containerRef = useRef<HTMLDivElement>(null);
     const demoT = useCallback(
@@ -45,16 +52,25 @@ export default function ProductChatbot() {
         offset: ['start start', 'end start'],
     });
 
+    const seoKey = isHome ? 'seo.home' : 'seo.chatbot';
+    const seoPath = isHome ? '/' : '/product/chatbot';
+    const chatbotSchema = getSoftwareApplicationSchema(
+        t(`${seoKey}.title`),
+        t(`${seoKey}.description`),
+        `https://pavy.ai/${i18next.language}${seoPath === '/' ? '' : seoPath}`,
+    );
+
     return (
         <div
             ref={containerRef}
             className="relative w-full bg-slate-50 min-h-screen font-sans selection:bg-indigo-500/20 text-slate-900 flex flex-col items-center"
         >
             <SEOHead
-                title={t('seo.chatbot.title')}
-                description={t('seo.chatbot.description')}
-                path="/product/chatbot"
+                title={t(`${seoKey}.title`)}
+                description={t(`${seoKey}.description`)}
+                path={seoPath}
                 ogImage="/og/og-chatbot.png"
+                structuredData={chatbotSchema}
             />
             {/* Background */}
             <div className="fixed inset-0 z-0 pointer-events-none overflow-hidden bg-white">
@@ -68,10 +84,12 @@ export default function ProductChatbot() {
                 <HeroSection t={t} demoT={demoT} scrollYProgress={scrollYProgress} />
 
                 <div className="w-full flex flex-col items-center space-y-40 pb-40">
+                    <LogoMarquee />
                     <PDPAnalysisSection t={t} />
                     <HallucinationSection t={t} />
                     <ReviewIntelligenceSection t={t} />
                     <FrictionReductionSection t={t} />
+                    <TestimonialSection />
                     <AdminSection t={t} />
                     <ProductHighlightSection />
                     <CustomPDPSection />
@@ -211,6 +229,14 @@ function HeroSection({
     const scale = useTransform(scrollYProgress, [0, 0.15], [1, 1.04]);
     const y = useTransform(scrollYProgress, [0, 0.2], [0, -30]);
     const heroCopy = getSiteHeroCopy(t);
+    const location = useLocation();
+
+    const handleCTAClick = () => {
+        trackEvent('click_hero_cta', {
+            cta_text: t('footer.cta.startBuilding'),
+            page: location.pathname,
+        });
+    };
 
     return (
         <section className="relative w-full py-32 min-h-screen flex flex-col items-center justify-center overflow-visible">
@@ -236,7 +262,10 @@ function HeroSection({
                     </p>
 
                     <div className="flex flex-col sm:flex-row gap-4">
-                        <button className="bg-brand-primary text-white px-10 py-5 rounded-full font-bold flex items-center justify-center gap-3 transition-all duration-500 hover:bg-indigo-700 active:scale-95 whitespace-nowrap shadow-lg shadow-indigo-500/20">
+                        <button 
+                            onClick={handleCTAClick}
+                            className="bg-brand-primary text-white px-10 py-5 rounded-full font-bold flex items-center justify-center gap-3 transition-all duration-500 hover:bg-indigo-700 active:scale-95 whitespace-nowrap shadow-lg shadow-indigo-500/20"
+                        >
                             {t('footer.cta.startBuilding')}
                             <ArrowRight className="w-5 h-5" />
                         </button>
@@ -257,10 +286,13 @@ function HeroSection({
                         <div className="relative rounded-[24px] overflow-hidden border border-slate-100 bg-white w-full h-[600px] flex flex-col lg:flex-row">
                             {/* Left Column - Product Image */}
                             <div className="w-full lg:w-1/2 bg-gray-900 relative overflow-hidden h-64 lg:h-full shrink-0">
-                                <img
+                                <OptimizedImage
                                     src="https://images.unsplash.com/photo-1546435770-a3e426bf472b?auto=format&fit=crop&q=80&w=1080"
                                     alt="Premium Wireless Headphones"
                                     className="object-cover w-full h-full opacity-80 scale-105 transition-transform hover:scale-110 duration-1000"
+                                    priority={true}
+                                    width={540}
+                                    height={600}
                                 />
                             </div>
                             {/* Right Column - Product Info */}
@@ -758,10 +790,13 @@ function AdminSection({ t }: { t: (key: string) => string }) {
                     <div className="absolute inset-0 bg-indigo-100/50 blur-[100px] rounded-full pointer-events-none group-hover:bg-indigo-200/50 transition-colors duration-1000" />
                     <div className="relative rounded-[40px] border border-slate-200 bg-white overflow-hidden shadow-2xl p-4 shadow-slate-900/10">
                         <div className="rounded-[32px] overflow-hidden border border-slate-100 bg-slate-50">
-                            <img
+                            <OptimizedImage
                                 src={adminScreenshot}
+                                webpSrc={adminScreenshotWebp}
                                 alt="Admin Dashboard"
                                 className="w-full h-auto drop-shadow-sm"
+                                width={1200}
+                                height={800}
                             />
                         </div>
                     </div>

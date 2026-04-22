@@ -1,4 +1,5 @@
 import { useState, useEffect, useLayoutEffect, useRef } from "react";
+import { Helmet } from "react-helmet-async";
 import { motion, AnimatePresence } from "framer-motion";
 import {
   ChevronLeft,
@@ -12,6 +13,8 @@ import {
   CheckCircle2,
 } from "lucide-react";
 import adminScreenshot from "../assets/admin-screenshot.png";
+import adminScreenshotWebp from "../assets/admin-screenshot.webp";
+import OptimizedImage from "../components/OptimizedImage";
 import { AIIcon } from "@pavy/ui";
 
 const slideViewportClass = "min-h-[100svh] md:h-full py-16 sm:py-20 md:py-0";
@@ -312,9 +315,12 @@ const slides = [
         <div className="flex-1 order-2 lg:order-1 relative w-full mt-4 lg:mt-0 z-10">
           <div className="absolute inset-0 bg-indigo-100/50 blur-[60px] lg:blur-[80px] rounded-full transition-all" />
           <div className="relative bg-slate-50 rounded-[20px] lg:rounded-[32px] overflow-hidden shadow-2xl border border-slate-200">
-            <img
+            <OptimizedImage
               src={adminScreenshot}
+              webpSrc={adminScreenshotWebp}
               alt="Admin Dashboard"
+              width={1200}
+              height={800}
               className="w-full h-auto object-cover"
             />
           </div>
@@ -645,6 +651,10 @@ export default function SalesDeck() {
       ref={containerRef}
       className={`fixed inset-0 overflow-x-hidden overflow-y-auto overscroll-y-contain scrollbar-hidden transition-colors duration-700 md:overflow-y-hidden ${slide.theme === "dark" ? "bg-slate-900" : "bg-slate-50"}`}
     >
+      <Helmet>
+        <title>Pavy.ai — Sales Deck</title>
+        <meta name="robots" content="noindex, nofollow" />
+      </Helmet>
       <div className="absolute inset-0 z-0 pointer-events-none overflow-hidden">
         {slide.theme === "dark" ? (
           <>

@@ -5,9 +5,11 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "tsc -b && vite build && npm run generate-sitemap",
-    "postbuild": "node --experimental-strip-types scripts/generate-rss.ts",
+    "build": "tsc -b && npm run generate-sitemap && npm run generate-rss && vite build",
+    "analyze": "ANALYZE=true npm run build",
     "generate-sitemap": "node --experimental-strip-types scripts/generate-sitemap.ts",
+    "generate-rss": "node --experimental-strip-types scripts/generate-rss.ts",
+    "generate-webp": "node --experimental-strip-types scripts/generate-webp.ts",
     "lint": "eslint .",
     "preview": "vite preview"
   },
@@ -47,9 +49,13 @@
     "eslint-plugin-react-refresh": "^0.4.24",
     "globals": "^16.5.0",
     "postcss": "^8.5.1",
+    "rollup-plugin-visualizer": "^7.0.1",
+    "sharp": "^0.34.5",
+    "svgo": "^4.0.1",
     "tailwindcss": "^3.4.17",
     "typescript": "~5.9.3",
     "typescript-eslint": "^8.48.0",
-    "vite": "^7.3.1"
+    "vite": "^7.3.1",
+    "vite-plugin-image-optimizer": "^2.0.3"
   }
 }

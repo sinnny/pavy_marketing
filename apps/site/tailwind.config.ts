@@ -1,10 +1,12 @@
 import type { Config } from 'tailwindcss';
 import sharedPreset from '@pavy/tailwind-config';
+import typography from '@tailwindcss/typography';
 
 export default {
     darkMode: ['class', '[data-theme="dark"]'],
     content: ['./index.html', './src/**/*.{ts,tsx,js,jsx}'],
     presets: [sharedPreset],
+    plugins: [typography],
     theme: {
         extend: {
             colors: {

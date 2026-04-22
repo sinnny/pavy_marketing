@@ -12,7 +12,8 @@
       "userGuide": "User Guide",
       "demo": "Demo",
       "pricing": "Pricing",
-      "blog": "Blog"
+      "blog": "Blog",
+      "customers": "Customers"
     },
     "cta": {
       "login": "Login",
@@ -98,7 +99,56 @@
     }
   },
   "trustedBy": {
-    "sectionLabel": "Trusted by Enterprise Infrastructure"
+    "sectionLabel": "Trusted by forward-thinking brands worldwide"
+  },
+  "socialProof": {
+    "testimonials": {
+      "1": {
+        "quote": "Pavy AI has transformed our customer support. We've seen a dramatic increase in conversion rates since implementation."
+      },
+      "2": {
+        "quote": "The product recommendation engine is spooky good. It understands exactly what our customers are looking for."
+      },
+      "3": {
+        "quote": "Easy to integrate and incredible support from the Pavy team. Highly recommended for any e-commerce business."
+      }
+    },
+    "caseStudies": {
+      "1": {
+        "industry": "Fashion",
+        "headline": "How Luxe Fashion increased conversions by 32% with Pavy AI",
+        "metricLabel": "Conversion Increase",
+        "challenge": "Luxe Fashion struggled with high cart abandonment and customers unable to find specific styles.",
+        "solution": "Implemented Pavy AI Chatbot with visual product recommendation and style matching.",
+        "results": "32% increase in sales conversion, 45% reduction in support tickets, and improved customer satisfaction scores."
+      },
+      "2": {
+        "industry": "Electronics",
+        "headline": "TechGear achieves 3x faster customer response time",
+        "metricLabel": "Faster Response",
+        "challenge": "TechGear's support team was overwhelmed with technical questions and product availability inquiries.",
+        "solution": "Pavy AI was trained on their technical documentation and real-time inventory data.",
+        "results": "Response time dropped from 4 hours to instant, while maintaining 92% accuracy in technical answers."
+      },
+      "3": {
+        "industry": "Home & Living",
+        "headline": "HomeBloom drives 45% more revenue from chat interactions",
+        "metricLabel": "Revenue Growth",
+        "challenge": "HomeBloom wanted to personalize the shopping experience for interior design enthusiasts.",
+        "solution": "Deployed a custom-themed Pavy AI widget that acts as a virtual interior designer.",
+        "results": "Average order value increased by 20% and revenue from chat-assisted sales grew by 45%."
+      }
+    },
+    "labels": {
+      "readMore": "Read story",
+      "challenge": "The Challenge",
+      "solution": "The Solution",
+      "results": "The Results",
+      "seeAll": "See all customer stories",
+      "ctaTitle": "Ready to transform your business?",
+      "ctaSubtitle": "Join hundreds of brands scaling with Pavy AI.",
+      "getStarted": "Get Started Today"
+    }
   },
   "howItWorks": {
     "sectionLabel": "03 / Deployment",
@@ -207,7 +257,195 @@
   "pages": {
     "productChatbot": {
       "title": "Chatbot Product Details",
-      "description": "Learn all about our highly customizable, AI-driven chatbot widget for your website."
+      "description": "Learn all about our highly customizable, AI-driven chatbot widget for your website.",
+      "hero": {
+        "badge": "AI that turns hesitation into conviction",
+        "title1": "The moment you answer",
+        "title2": "the final question, the sale happens.",
+        "description": "Hesitant shoppers don't need discounts — they need certainty. Pavy.ai understands every detail of your product and answers accurately in under 3 seconds."
+      },
+      "pdpAnalysis": {
+        "sectionLabel": "01 / Core technology",
+        "title1": "It reads the page.",
+        "title2": "All of it.",
+        "description": "Product name, price, specs, descriptions, shipping, return policy, customer reviews — Pavy.ai analyzes every element on the page and matches it precisely to each customer question.",
+        "scanLabel": "Automatic page analysis",
+        "elements": {
+          "productName": "Product name",
+          "price": "Price",
+          "specs": "Specifications",
+          "description": "Description",
+          "shipping": "Shipping",
+          "returnPolicy": "Returns",
+          "reviews": "Customer reviews"
+        },
+        "chat": {
+          "q1": "Is this product waterproof?",
+          "a1": "Yes, it's IP68 rated — usable up to 1.5m for 30 minutes.",
+          "s1": "Source: Product specs",
+          "q2": "How long does the battery last?",
+          "a2": "The 72Wh battery runs up to 18 hours in normal use and 22 hours for video playback.",
+          "s2": "Source: Product details › Battery",
+          "q3": "How much does it weigh?",
+          "a3": "The body weighs 250g — engineered to be comfortable even after long sessions.",
+          "s3": "Source: Product details › Specifications",
+          "q4": "What's the return process?",
+          "a4": "Unconditional returns within 30 days, with return shipping on us.",
+          "s4": "Source: Return policy",
+          "q5": "What color options are there?",
+          "a5": "Three: Midnight Black, Starlight Silver, and Ocean Blue. Midnight Black is the most popular.",
+          "s5": "Source: Product options"
+        }
+      },
+      "hallucination": {
+        "sectionLabel": "02 / Understanding",
+        "title1": "Not keywords.",
+        "title2": "Real context.",
+        "generic": {
+          "label": "Keyword-based chatbot",
+          "answer": "Sorry, I couldn't find an answer about \"charging.\" Try one of these keywords: battery, support, returns, shipping.",
+          "tag": "Keyword match failed",
+          "description": "Only responds when a question exactly matches a predefined keyword. If the customer phrases it any other way, it stays silent."
+        },
+        "PavyAI": {
+          "label": "Pavy.ai",
+          "answer": "Yes — the 72Wh battery runs up to 18 hours in normal use, so you can go all day without charging.",
+          "tag": "Intent-aware response",
+          "source": "Source: Product details › Battery specs",
+          "description": "Understands the intent behind the question, so it returns the right answer no matter how the customer asks."
+        },
+        "sharedQuestion": "Can it last all day without charging?"
+      },
+      "reviewIntelligence": {
+        "sectionLabel": "03 / Review analysis",
+        "title1": "It reads reviews too.",
+        "title2": "Tens of thousands.",
+        "description": "Reviews hold real-world details that product specs never mention. Pavy.ai analyzes them and surfaces lived experience inside every answer.",
+        "reviews": {
+          "r1": {
+            "author": "K.",
+            "text": "The noise cancelling is incredible. I can actually focus in cafés."
+          },
+          "r2": {
+            "author": "L.",
+            "text": "I have a large head and they still fit well — no discomfort even after 3 hours."
+          },
+          "r3": {
+            "author": "P.",
+            "text": "Lasts 3 days on a single charge. Battery life is the real deal."
+          }
+        },
+        "chat": {
+          "q1": "Are they comfortable for long sessions?",
+          "a1": "Review analysis shows very high comfort ratings over long wear — many users report 3+ hours with no discomfort.",
+          "s1": "Source: Analysis of 3,847 customer reviews",
+          "q2": "Does the noise cancelling actually work?",
+          "a2": "87% of reviewers are satisfied with noise isolation. Many report improved focus in cafés and offices.",
+          "s2": "Source: 412 reviews mentioning noise cancelling",
+          "q3": "Can I use them on a plane?",
+          "a3": "Many travel reviews report airplane use — most say engine noise becomes almost inaudible.",
+          "s3": "Source: 89 reviews mentioning flights/travel",
+          "q4": "How's the call quality?",
+          "a4": "Most reviewers say the other side hears them clearly. Outdoor use in wind is noted as slightly weaker.",
+          "s4": "Source: 156 reviews mentioning calls/mic",
+          "q5": "How do they compare to other headphones?",
+          "a5": "Strong comfort and battery satisfaction. Comparison reviews frequently say they're noticeably better than previous models.",
+          "s5": "Source: 203 comparison reviews"
+        }
+      },
+      "frictionReduction": {
+        "sectionLabel": "04 / Customer experience",
+        "title1": "No more searching.",
+        "title2": "Just ask.",
+        "before": {
+          "label": "Traditional customer journey",
+          "s1": "Scrolls the product description",
+          "s2": "Checks the specs tab",
+          "s3": "Searches the reviews tab",
+          "s4": "Opens the Q&A tab",
+          "s5": "Leaves to a comparison site",
+          "s6": "Abandons the purchase",
+          "time": "8 minutes on average",
+          "result": "67% drop-off rate"
+        },
+        "after": {
+          "label": "With Pavy.ai",
+          "s1": "Asks a question",
+          "s2": "Gets a precise answer instantly",
+          "s3": "Decides to buy",
+          "time": "12 seconds on average",
+          "result": "+34% conversion"
+        },
+        "metric": {
+          "value": "97%",
+          "label": "Less time hunting"
+        }
+      },
+      "admin": {
+        "sectionLabel": "05 / Admin",
+        "title1": "Manage with data.",
+        "title2": "At a glance.",
+        "description": "Conversion funnels, engagement trends, per-page chat volume — see every chatbot metric in a live dashboard and keep improving.",
+        "features": {
+          "funnel": "Conversion funnel",
+          "funnelDesc": "Track step-by-step conversion from impression → click → chat → message.",
+          "trends": "Engagement trends",
+          "trendsDesc": "See daily impressions, clicks, and chats at a glance.",
+          "pages": "Per-page performance",
+          "pagesDesc": "Identify which product pages drive the most conversations."
+        }
+      },
+      "productHighlight": {
+        "sectionLabel": "06 / Performance",
+        "title1": "Uncompromising",
+        "title2": "accuracy.",
+        "accuracy": {
+          "title": "It doesn't get things wrong.",
+          "description": "Our in-house RAG engine grounds every answer in your documents alone. No guessing, no hallucinations.",
+          "metricLabel": "Target accuracy",
+          "metricValue": "99.9%"
+        },
+        "globalSupport": {
+          "title": "Multilingual out of the box",
+          "description": "Fluent in 100+ languages. Serve international customers without extra development."
+        },
+        "enterprise": {
+          "title": "One line of code, Pavy.ai live on your page.",
+          "description": "No complex installation — add Pavy.ai to any page with a single script tag."
+        }
+      },
+      "customPDP": {
+        "sectionLabel": "07 / Customization",
+        "title1": "Fits your brand.",
+        "title2": "Perfectly integrated.",
+        "description": "Customize colors, icons, and themes freely. Blends naturally into e-commerce, SaaS dashboards, booking sites, and more.",
+        "tabs": {
+          "ecommerce": {
+            "title": "E-Commerce",
+            "content": "Product details, reviews, and 'Add to Cart' layout."
+          },
+          "saas": {
+            "title": "SaaS Dashboard",
+            "content": "Analytics charts, user metrics, and data tables."
+          },
+          "travel": {
+            "title": "Travel Booking",
+            "content": "Flight search, hotel listings, and booking dates."
+          }
+        },
+        "chat": {
+          "aiAssistant": "Pavy.ai",
+          "replyTime": "Online",
+          "greeting": "Hi there! Ask me anything about {{title}}.",
+          "inputPlaceholder": "Type a message..."
+        }
+      },
+      "cta": {
+        "title1": "Unlock the potential",
+        "title2": "of your product pages.",
+        "startFree": "Request a Demo",
+        "bookDemo": "Book a technical consultation"
+      }
     },
     "productDashboard": {
       "title": "Admin Dashboard Hub",
@@ -354,6 +592,166 @@
           "q4": {
             "question": "Do you offer discounts for annual billing?",
             "answer": "Yes — annual billing saves you 20% compared to paying monthly. Enterprise customers can also negotiate multi-year discounts."
+          }
+        }
+      }
+    },
+    "blog": {
+      "title": "Blog",
+      "subtitle": "Insights and updates on AI chatbots, e-commerce, and the future of customer experience.",
+      "empty": "No articles yet.",
+      "loadMore": "Load More",
+      "backToBlog": "Back to Blog",
+      "notFound": "Article not found",
+      "share": "Share",
+      "shareCopied": "Link copied",
+      "shareCopyLink": "Copy article link",
+      "shareTwitter": "Share on X",
+      "shareLinkedIn": "Share on LinkedIn",
+      "readingTime_one": "{{count}} min read",
+      "readingTime_other": "{{count}} min read"
+    },
+    "legal": {
+      "common": {
+        "home": "Home",
+        "legal": "Legal",
+        "backToHome": "Back to Home",
+        "effectiveDate": "Effective Date",
+        "lastUpdated": "Last Updated",
+        "onThisPage": "On this page"
+      },
+      "cookieBanner": {
+        "title": "We value your privacy",
+        "description": "We use cookies to enhance your browsing experience, serve personalized ads or content, and analyze our traffic. By clicking \"Accept All\", you consent to our use of cookies. Read our ",
+        "privacyPolicy": "Privacy Policy",
+        "forMoreDetails": " for more details.",
+        "acceptAll": "Accept All",
+        "rejectAll": "Reject All",
+        "manage": "Manage"
+      },
+      "cookieModal": {
+        "title": "Cookie Preferences",
+        "save": "Save Preferences",
+        "cancel": "Cancel",
+        "essential": {
+          "title": "Essential Cookies",
+          "badge": "Required",
+          "description": "These cookies are necessary for the website to function and cannot be switched off."
+        },
+        "analytics": {
+          "title": "Analytics Cookies",
+          "description": "Help us understand how visitors interact with our website by collecting and reporting information anonymously."
+        },
+        "marketing": {
+          "title": "Marketing Cookies",
+          "description": "Used to track visitors across websites. The intention is to display ads that are relevant and engaging for the individual user."
+        }
+      },
+      "privacy": {
+        "title": "Privacy Policy",
+        "effectiveDate": "April 21, 2026",
+        "intro": "At Pavy.ai, we take your privacy seriously. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you visit our website or use our AI-powered customer service platform.",
+        "sections": {
+          "collection": {
+            "title": "1. Information We Collect",
+            "content": "We collect information that you provide directly to us, such as when you create an account, subscribe to our newsletter, or communicate with us. This may include:",
+            "items": [
+              "Name and contact information",
+              "Account credentials",
+              "Payment information",
+              "Communications you send to us"
+            ]
+          },
+          "usage": {
+            "title": "2. How We Use Your Information",
+            "content": "We use the information we collect to:",
+            "items": [
+              "Provide, maintain, and improve our services",
+              "Process transactions and send related information",
+              "Send technical notices, updates, and support messages",
+              "Respond to your comments and questions",
+              "Analyze trends and usage"
+            ]
+          },
+          "sharing": {
+            "title": "3. Sharing of Information",
+            "content": "We do not share your personal information with third parties except as described in this policy. We may share information with:",
+            "items": [
+              "Service providers who perform services on our behalf",
+              "In response to a request for information if we believe disclosure is in accordance with any applicable law",
+              "In connection with any merger, sale of company assets, or acquisition"
+            ]
+          },
+          "security": {
+            "title": "4. Security",
+            "content": "We take reasonable measures to help protect information about you from loss, theft, misuse, and unauthorized access, disclosure, alteration, and destruction."
+          },
+          "gdpr": {
+            "title": "5. Your Rights (GDPR/CCPA)",
+            "content": "Depending on your location, you may have certain rights regarding your personal information, including the right to access, correct, or delete the data we hold about you."
+          },
+          "cookies": {
+            "title": "6. Cookies and Tracking",
+            "content": "We use cookies and similar tracking technologies to track activity on our service and hold certain information. You can manage your cookie preferences through our cookie consent banner."
+          },
+          "contact": {
+            "title": "7. Contact Us",
+            "content": "If you have any questions about this Privacy Policy, please contact us at:",
+            "email": "Email: privacy@pavy.ai"
+          }
+        }
+      },
+      "terms": {
+        "title": "Terms of Service",
+        "effectiveDate": "April 21, 2026",
+        "intro": "Welcome to Pavy.ai. By accessing or using our website and services, you agree to be bound by these Terms of Service. If you do not agree to these terms, please do not use our services.",
+        "sections": {
+          "description": {
+            "title": "1. Description of Service",
+            "content": "Pavy.ai provides an AI-powered customer service automation platform, including but not limited to chatbots, data analysis, and integration tools."
+          },
+          "accounts": {
+            "title": "2. User Accounts",
+            "content": "To access certain features of our service, you must register for an account. You are responsible for maintaining the confidentiality of your account credentials and for all activities that occur under your account."
+          },
+          "payment": {
+            "title": "3. Fees and Payment",
+            "content": "Certain services are provided for a fee. You agree to pay all fees associated with your use of the service. Fees are non-refundable except as required by law or explicitly stated in our refund policy."
+          },
+          "usage": {
+            "title": "4. Usage Restrictions",
+            "content": "You agree not to:",
+            "items": [
+              "Use the service for any illegal purpose",
+              "Reverse engineer or attempt to extract the source code of our platform",
+              "Interfere with or disrupt the integrity or performance of the service",
+              "Upload or transmit any viruses or malicious code"
+            ]
+          },
+          "ip": {
+            "title": "5. Intellectual Property",
+            "content": "All content, features, and functionality of the Pavy.ai platform are the exclusive property of Pavy.ai and its licensors. You are granted a limited, non-exclusive license to use the service for its intended purpose."
+          },
+          "liability": {
+            "title": "6. Limitation of Liability",
+            "content": "In no event shall Pavy.ai be liable for any indirect, incidental, special, consequential, or punitive damages, or any loss of profits or revenues."
+          },
+          "termination": {
+            "title": "7. Termination",
+            "content": "We may terminate or suspend your account and access to the service at any time, without prior notice or liability, for any reason, including if you breach the Terms."
+          },
+          "law": {
+            "title": "8. Governing Law",
+            "content": "These Terms shall be governed by and construed in accordance with the laws of the jurisdiction in which Pavy.ai is established, without regard to its conflict of law provisions."
+          },
+          "changes": {
+            "title": "9. Changes to Terms",
+            "content": "We reserve the right to modify or replace these Terms at any time. We will provide notice of any material changes."
+          },
+          "contact": {
+            "title": "10. Contact Us",
+            "content": "If you have any questions about these Terms, please contact us at:",
+            "email": "Email: legal@pavy.ai"
           }
         }
       }

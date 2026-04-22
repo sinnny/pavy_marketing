@@ -6,6 +6,7 @@ import { useTranslation } from '@pavy/i18n';
 import { PavyLogo } from '@pavy/ui';
 import { useLocale } from '../hooks/useLocale';
 import LanguageSwitcher from './LanguageSwitcher';
+import { trackEvent } from '../lib/analytics';
 
 export default function Header() {
     const { scrollY } = useScroll();
@@ -22,6 +23,12 @@ export default function Header() {
 
     const isPricingActive = location.pathname.includes('/pricing');
     const isGuideActive = location.pathname.includes('/guide');
+
+    const handleCTAClick = (ctaText: string) => {
+        trackEvent('click_header_cta', {
+            cta_text: ctaText,
+        });
+    };
 
     return (
         <motion.header
@@ -59,6 +66,7 @@ export default function Header() {
                         </div>
                     </div>
                     <Link to={localePath('/pricing')} className={`transition-colors duration-300 py-4 whitespace-nowrap ${isPricingActive ? 'text-brand-primary' : 'hover:text-brand-primary'}`}>{t('header.nav.pricing')}</Link>
+                    <Link to={localePath('/customers')} className={`transition-colors duration-300 py-4 whitespace-nowrap ${location.pathname.includes('/customers') ? 'text-brand-primary' : 'hover:text-brand-primary'}`}>{t('header.nav.customers')}</Link>
                     <Link to={localePath('/blog')} className={`transition-colors duration-300 py-4 whitespace-nowrap ${location.pathname.includes('/blog') ? 'text-brand-primary' : 'hover:text-brand-primary'}`}>{t('header.nav.blog')}</Link>
                     <Link to={localePath('/guide')} className={`transition-colors duration-300 py-4 whitespace-nowrap ${isGuideActive ? 'text-brand-primary' : 'hover:text-brand-primary'}`}>{t('header.nav.userGuide')}</Link>
                 </nav>
@@ -66,8 +74,17 @@ export default function Header() {
                 {/* CTA area */}
                 <div className="flex-1 flex items-center justify-end gap-4">
                     <LanguageSwitcher />
-                    <button className="hidden sm:block text-[13px] uppercase tracking-[0.2em] font-bold text-slate-500 hover:text-brand-primary transition-colors">{t('header.cta.login')}</button>
-                    <Link to={localePath('/demo')} className="bg-brand-primary text-white px-6 py-2.5 rounded-full text-[13px] uppercase tracking-[0.1em] font-extrabold hover:bg-indigo-700 transition-all duration-300 active:scale-95 shadow-md shadow-indigo-500/20">
+                    <button 
+                        onClick={() => handleCTAClick('Login')}
+                        className="hidden sm:block text-[13px] uppercase tracking-[0.2em] font-bold text-slate-500 hover:text-brand-primary transition-colors"
+                    >
+                        {t('header.cta.login')}
+                    </button>
+                    <Link 
+                        to={localePath('/demo')} 
+                        onClick={() => handleCTAClick('Get Demo')}
+                        className="bg-brand-primary text-white px-6 py-2.5 rounded-full text-[13px] uppercase tracking-[0.1em] font-extrabold hover:bg-indigo-700 transition-all duration-300 active:scale-95 shadow-md shadow-indigo-500/20"
+                    >
                         {t('header.cta.getDemo')}
                     </Link>
                 </div>
