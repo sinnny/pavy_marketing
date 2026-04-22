@@ -1,6 +1,8 @@
 import { motion } from 'framer-motion';
 import { useTranslation } from '@pavy/i18n';
 import widgetScreenshot from '../assets/widget-screenshot.png';
+import widgetScreenshotWebp from '../assets/widget-screenshot.webp';
+import OptimizedImage from './OptimizedImage';
 
 export default function SolutionSection() {
     const { t } = useTranslation('site');
@@ -26,7 +28,14 @@ export default function SolutionSection() {
                     <div className="absolute inset-0 bg-indigo-100/50 blur-[100px] rounded-full pointer-events-none group-hover:bg-indigo-200/50 transition-colors duration-1000"></div>
                     <div className="relative rounded-[40px] border border-slate-200 bg-white overflow-hidden shadow-2xl p-4 shadow-slate-900/10">
                         <div className="rounded-[32px] overflow-hidden border border-slate-100 bg-slate-50">
-                            <img src={widgetScreenshot} alt="Chatbot UI" className="w-full h-auto drop-shadow-sm" />
+                            <OptimizedImage
+                                src={widgetScreenshot}
+                                webpSrc={widgetScreenshotWebp}
+                                alt="Chatbot UI"
+                                width={1200}
+                                height={900}
+                                className="w-full h-auto drop-shadow-sm"
+                            />
                         </div>
                     </div>
                     {/* Floating pill */}

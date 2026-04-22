@@ -1,10 +1,17 @@
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 import { SEOHead } from '../components/SEOHead';
-import { useTranslation } from '@pavy/i18n';
+import { i18next, useTranslation } from '@pavy/i18n';
+import { getSoftwareApplicationSchema } from '../lib/structured-data';
 
 export default function ProductDashboard() {
     const { t } = useTranslation('site');
+
+    const dashboardSchema = getSoftwareApplicationSchema(
+        t('seo.dashboard.title'),
+        t('seo.dashboard.description'),
+        `https://pavy.ai/${i18next.language}/product/dashboard`,
+    );
 
     return (
         <div className="relative w-full bg-slate-50 min-h-screen font-sans">
@@ -13,6 +20,7 @@ export default function ProductDashboard() {
                 description={t('seo.dashboard.description')}
                 path="/product/dashboard"
                 ogImage="/og/og-dashboard.png"
+                structuredData={dashboardSchema}
             />
             <Header />
             <main className="pt-40 pb-32 max-w-[1200px] mx-auto px-6 text-center">

@@ -2,9 +2,19 @@ import Header from '../components/Header';
 import Footer from '../components/Footer';
 import { SEOHead } from '../components/SEOHead';
 import { useTranslation } from '@pavy/i18n';
+import { trackEvent } from '../lib/analytics';
+import { useLocation } from 'react-router-dom';
 
 export default function DemoRequest() {
     const { t } = useTranslation('site');
+    const location = useLocation();
+
+    const handleSubmit = () => {
+        trackEvent('submit_demo_request', {
+            source_page: location.pathname,
+        });
+        // Form submission logic would go here
+    };
 
     return (
         <div className="relative w-full bg-slate-50 min-h-screen font-sans flex flex-col">
@@ -20,7 +30,12 @@ export default function DemoRequest() {
                 <div className="bg-white p-8 rounded-3xl border border-slate-200 shadow-xl flex flex-col gap-4 text-left">
                     <input type="text" placeholder={t('pages.demoRequest.fullName')} className="w-full px-5 py-3 rounded-xl border border-slate-200 focus:outline-indigo-500" />
                     <input type="email" placeholder={t('pages.demoRequest.workEmail')} className="w-full px-5 py-3 rounded-xl border border-slate-200 focus:outline-indigo-500" />
-                    <button className="w-full bg-indigo-600 text-white font-bold py-4 rounded-xl mt-4 hover:bg-indigo-700 transition">{t('pages.demoRequest.submit')}</button>
+                    <button 
+                        onClick={handleSubmit}
+                        className="w-full bg-indigo-600 text-white font-bold py-4 rounded-xl mt-4 hover:bg-indigo-700 transition"
+                    >
+                        {t('pages.demoRequest.submit')}
+                    </button>
                 </div>
             </main>
             <Footer />

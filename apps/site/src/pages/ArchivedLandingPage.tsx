@@ -10,6 +10,7 @@ import ProductHighlightSection from '../components/ProductHighlightSection';
 import CustomPDPSection from '../components/CustomPDPSection';
 import FAQSection from '../components/FAQSection';
 import Footer from '../components/Footer';
+import { SEOHead } from '../components/SEOHead';
 
 export default function LandingPage() {
     const containerRef = useRef<HTMLDivElement>(null);
@@ -20,6 +21,12 @@ export default function LandingPage() {
 
     return (
         <div ref={containerRef} className="relative w-full bg-slate-50 min-h-screen font-sans selection:bg-indigo-500/20 text-slate-900 flex flex-col items-center">
+            <SEOHead
+                title="Archived Landing Page | Pavy.ai"
+                description="Archived version of an earlier Pavy.ai landing page, kept for reference."
+                path="/archive"
+                noIndex
+            />
             {/* Bright Spatial Background */}
             <div className="fixed inset-0 z-0 pointer-events-none overflow-hidden bg-white">
                 <div className="absolute top-[-20%] left-[-10%] w-[80%] h-[80%] bg-indigo-50/50 blur-[120px] rounded-full"></div>

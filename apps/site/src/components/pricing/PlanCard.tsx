@@ -4,6 +4,7 @@ import { useTranslation } from '@pavy/i18n';
 import { Link } from 'react-router-dom';
 import type { PlanTier } from '../../lib/pricing-data';
 import { useLocale } from '../../hooks/useLocale';
+import { trackEvent } from '../../lib/analytics';
 
 interface PlanCardProps {
   plan: PlanTier;
@@ -18,6 +19,13 @@ export default function PlanCard({ plan, interval }: PlanCardProps) {
   const isEnterprise = plan.monthlyPrice === null;
   const isFree = !isEnterprise && plan.monthlyPrice === 0;
   const showAnnualNote = !isEnterprise && !isFree && interval === 'annual';
+
+  const handleCTAClick = () => {
+    trackEvent('click_plan_cta', {
+      plan_name: plan.id,
+      billing_interval: interval,
+    });
+  };
 
   return (
     <motion.div
@@ -82,6 +90,7 @@ export default function PlanCard({ plan, interval }: PlanCardProps) {
 
       <Link
         to={localePath(plan.ctaHref)}
+        onClick={handleCTAClick}
         className={`block w-full py-3 px-6 text-center rounded-xl font-bold transition-all duration-300 ${
           plan.highlighted
             ? 'bg-brand-primary text-white hover:bg-indigo-700 shadow-md hover:shadow-lg'

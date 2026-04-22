@@ -4,13 +4,24 @@ import { ArrowRight } from 'lucide-react';
 import { AIIcon } from '@pavy/ui';
 import { useTranslation } from '@pavy/i18n';
 import { getSiteHeroCopy } from '../lib/siteHero';
+import OptimizedImage from './OptimizedImage';
+import { trackEvent } from '../lib/analytics';
+import { useLocation } from 'react-router-dom';
 
 export default function HeroSection({ scrollYProgress }: { scrollYProgress: MotionValue<number> }) {
     const { t } = useTranslation('site');
     const heroCopy = getSiteHeroCopy(t);
+    const location = useLocation();
     // Spatial scroll transforms
     const scale = useTransform(scrollYProgress, [0, 0.2], [1, 1.05]);
     const translateY = useTransform(scrollYProgress, [0, 0.3], [0, -40]);
+
+    const handleCTAClick = () => {
+        trackEvent('click_hero_cta', {
+            cta_text: t('hero.startBuilding'),
+            page: location.pathname,
+        });
+    };
 
     return (
         <section className="relative w-full py-32 min-h-screen flex flex-col items-center justify-center overflow-visible">
@@ -60,7 +71,10 @@ export default function HeroSection({ scrollYProgress }: { scrollYProgress: Moti
                             placeholder={t('hero.emailPlaceholder')}
                             className="flex-1 bg-white border border-slate-200 shadow-sm rounded-full px-8 py-5 text-slate-900 placeholder:text-slate-400 focus:outline-none focus:border-indigo-500 focus:ring-2 focus:ring-indigo-100 transition-all duration-300"
                         />
-                        <button className="bg-brand-primary text-white px-10 py-5 rounded-full font-bold flex items-center justify-center gap-3 transition-all duration-500 hover:bg-indigo-700 active:scale-95 whitespace-nowrap shadow-lg shadow-indigo-500/20">
+                        <button 
+                            onClick={handleCTAClick}
+                            className="bg-brand-primary text-white px-10 py-5 rounded-full font-bold flex items-center justify-center gap-3 transition-all duration-500 hover:bg-indigo-700 active:scale-95 whitespace-nowrap shadow-lg shadow-indigo-500/20"
+                        >
                             {t('hero.startBuilding')}
                             <ArrowRight className="w-5 h-5" />
                         </button>
@@ -81,10 +95,13 @@ export default function HeroSection({ scrollYProgress }: { scrollYProgress: Moti
                         <div className="relative rounded-[24px] overflow-hidden border border-slate-100 bg-white w-full h-[600px] flex flex-col lg:flex-row">
                             {/* Left Column - Image */}
                             <div className="w-full lg:w-1/2 bg-gray-900 relative overflow-hidden h-64 lg:h-full shrink-0">
-                                <img
+                                <OptimizedImage
                                     src="https://images.unsplash.com/photo-1546435770-a3e426bf472b?auto=format&fit=crop&q=80&w=1080"
                                     alt="Premium Wireless Headphones"
                                     className="object-cover w-full h-full opacity-80 scale-105 transition-transform hover:scale-110 duration-1000"
+                                    priority={true}
+                                    width={540}
+                                    height={600}
                                 />
                             </div>
                             {/* Right Column - Product Info */}

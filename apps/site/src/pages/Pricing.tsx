@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { useTranslation } from '@pavy/i18n';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
@@ -12,6 +12,7 @@ import Header from '../components/Header';
 import Footer from '../components/Footer';
 import { SEOHead } from '../components/SEOHead';
 import { getFAQPageSchema } from '../lib/structured-data';
+import { trackEvent } from '../lib/analytics';
 
 type Interval = 'monthly' | 'annual';
 
@@ -21,6 +22,10 @@ export default function Pricing() {
   const { t } = useTranslation('site');
   const { localePath } = useLocale();
   const [billingInterval, setBillingInterval] = useState<Interval>('annual');
+
+  useEffect(() => {
+    trackEvent('view_pricing');
+  }, []);
 
   const faqSchema = getFAQPageSchema(
     PRICING_FAQ_KEYS.map((key) => ({

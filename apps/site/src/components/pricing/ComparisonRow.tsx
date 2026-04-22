@@ -1,5 +1,5 @@
 import { useTranslation } from '@pavy/i18n';
-import { FeatureRow } from '../../lib/pricing-data';
+import type { FeatureRow } from '../../lib/pricing-data';
 import { Check, X } from 'lucide-react';
 
 interface ComparisonRowProps {

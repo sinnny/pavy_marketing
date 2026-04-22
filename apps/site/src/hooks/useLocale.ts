@@ -9,11 +9,32 @@ export function isSupportedLanguage(lang: string): lang is SupportedLanguage {
   return SUPPORTED_LANGUAGES.includes(lang as SupportedLanguage);
 }
 
+/**
+ * Read a supported language code from the URL path (e.g. `/en/...` → `'en'`),
+ * or `null` if the first path segment isn't a supported code. The URL is the
+ * source of truth for the current language, so this must be consulted
+ * *before* stored preferences — otherwise visiting `/en` while localStorage
+ * holds `ko` renders the first frame in Korean.
+ */
+export function languageFromPath(pathname: string): SupportedLanguage | null {
+  const first = pathname.split('/').filter(Boolean)[0];
+  return first && isSupportedLanguage(first) ? first : null;
+}
+
 export function detectLanguage(): SupportedLanguage {
-  const stored = localStorage.getItem('Pavy.ai-lang');
+  if (typeof window !== 'undefined') {
+    const fromUrl = languageFromPath(window.location.pathname);
+    if (fromUrl) return fromUrl;
+  }
+
+  const stored =
+    typeof localStorage !== 'undefined'
+      ? localStorage.getItem('Pavy.ai-lang')
+      : null;
   if (stored && isSupportedLanguage(stored)) return stored;
 
-  const browserLang = navigator.language.split('-')[0];
+  const browserLang =
+    typeof navigator !== 'undefined' ? navigator.language.split('-')[0] : undefined;
   if (browserLang && isSupportedLanguage(browserLang)) return browserLang;
 
   return 'ko';

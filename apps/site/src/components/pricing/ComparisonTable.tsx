@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { useTranslation } from '@pavy/i18n';
-import { featureMatrix, FeatureCategory } from '../../lib/pricing-data';
+import { featureMatrix } from '../../lib/pricing-data';
+import type { FeatureCategory } from '../../lib/pricing-data';
 import ComparisonRow from './ComparisonRow';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ChevronDown } from 'lucide-react';

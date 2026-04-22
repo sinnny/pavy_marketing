@@ -28,8 +28,8 @@ export default function Footer() {
                     </div>
                     <div className="flex flex-col gap-6">
                         <span className="text-[10px] uppercase tracking-[0.3em] font-bold text-indigo-500 italic">{t('footer.links.legal')}</span>
-                        <a href="#" className="text-slate-500 hover:text-brand-primary transition-colors font-medium">{t('footer.links.privacy')}</a>
-                        <a href="#" className="text-slate-500 hover:text-brand-primary transition-colors font-medium">{t('footer.links.terms')}</a>
+                        <Link to={localePath('/legal/privacy')} className="text-slate-500 hover:text-brand-primary transition-colors font-medium">{t('footer.links.privacy')}</Link>
+                        <Link to={localePath('/legal/terms')} className="text-slate-500 hover:text-brand-primary transition-colors font-medium">{t('footer.links.terms')}</Link>
                     </div>
                     <div className="flex flex-col gap-6 items-end justify-end">
                         <PavyLogo variant="vertical" size={56} />
