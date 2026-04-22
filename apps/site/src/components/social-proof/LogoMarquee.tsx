@@ -1,9 +1,23 @@
+import { useTranslation } from '@pavy/i18n';
 import { CUSTOMER_LOGOS } from '../../lib/customer-data';
 
 export default function LogoMarquee() {
+  const { t } = useTranslation('site');
+  const ariaLabel = t('socialProof.labels.customerLogosAria');
+
   return (
-    <div className="relative flex overflow-hidden w-full group py-10 bg-white/50 backdrop-blur-sm border-y border-slate-100">
-      <div className="flex w-max animate-marquee">
+    <section
+      role="region"
+      aria-label={ariaLabel}
+      className="relative flex overflow-hidden w-full group py-10 bg-white/50 backdrop-blur-sm border-y border-slate-100"
+    >
+      <ul className="sr-only">
+        {CUSTOMER_LOGOS.map((logo) => (
+          <li key={logo.name}>{logo.name}</li>
+        ))}
+      </ul>
+
+      <div aria-hidden="true" className="flex w-max animate-marquee">
         <div className="flex space-x-20 px-10 items-center whitespace-nowrap">
           {CUSTOMER_LOGOS.map((logo, idx) => (
             <div
@@ -14,7 +28,7 @@ export default function LogoMarquee() {
             </div>
           ))}
         </div>
-        <div className="flex space-x-20 px-10 items-center whitespace-nowrap" aria-hidden="true">
+        <div className="flex space-x-20 px-10 items-center whitespace-nowrap">
           {CUSTOMER_LOGOS.map((logo, idx) => (
             <div
               key={`${logo.name}-clone-${idx}`}
@@ -32,16 +46,25 @@ export default function LogoMarquee() {
           100% { transform: translateX(-50%); }
         }
         .animate-marquee {
-          animation: marquee 30s linear infinite;
+          animation: marquee 20s linear infinite;
+        }
+        @media (min-width: 768px) {
+          .animate-marquee {
+            animation-duration: 30s;
+          }
         }
         .group:hover .animate-marquee {
           animation-play-state: paused;
         }
+        @media (prefers-reduced-motion: reduce) {
+          .animate-marquee {
+            animation: none;
+          }
+        }
       `}</style>
 
-      {/* Extreme Fade Out Gradients */}
-      <div className="absolute top-0 left-0 w-32 md:w-64 h-full bg-gradient-to-r from-white to-transparent pointer-events-none z-10"></div>
-      <div className="absolute top-0 right-0 w-32 md:w-64 h-full bg-gradient-to-l from-white to-transparent pointer-events-none z-10"></div>
-    </div>
+      <div className="absolute top-0 left-0 w-32 md:w-64 h-full bg-gradient-to-r from-white to-transparent pointer-events-none z-10" />
+      <div className="absolute top-0 right-0 w-32 md:w-64 h-full bg-gradient-to-l from-white to-transparent pointer-events-none z-10" />
+    </section>
   );
 }
