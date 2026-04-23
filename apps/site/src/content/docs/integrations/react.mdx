@@ -1,0 +1,124 @@
+---
+title: React Integration
+description: Integrate Pavy.ai into your React application.
+---
+
+Integrating Pavy.ai into a React application allows you to manage the widget's lifecycle alongside your component tree.
+
+## Prerequisites
+
+Before you begin, ensure you have:
+1. A **Pavy.ai account**.
+2. A **React project** (Create React App, Vite, etc.).
+3. Your **Pavy API Key**.
+
+## Installation Steps
+
+The most robust way to integrate Pavy.ai into React is by creating a reusable component or a custom hook.
+
+### 1. Create a `PavyWidget` Component
+
+Create a new file `components/PavyWidget.tsx`:
+
+```tsx
+import { useEffect } from 'react';
+
+interface PavyWidgetProps {
+  apiKey: string;
+  config?: any;
+}
+
+export const PavyWidget = ({ apiKey, config }: PavyWidgetProps) => {
+  useEffect(() => {
+    // Set global config
+    if (config) {
+      (window as any).PavyConfig = config;
+    }
+
+    // Inject script
+    const script = document.createElement('script');
+    script.src = 'https://cdn.pavy.ai/widget/v1/pavy.js';
+    script.setAttribute('data-api-key', apiKey);
+    script.async = true;
+    
+    document.body.appendChild(script);
+    
+    return () => {
+      // Cleanup on unmount
+      document.body.removeChild(script);
+    };
+  }, [apiKey, config]);
+
+  return null;
+};
+```
+
+### 2. Use it in your App
+
+```tsx
+import { PavyWidget } from './components/PavyWidget';
+
+function App() {
+  return (
+    <div>
+      <PavyWidget 
+        apiKey="YOUR_API_KEY" 
+        config={{ theme: 'dark', primaryColor: '#6366f1' }} 
+      />
+      {/* Your app content */}
+    </div>
+  );
+}
+```
+
+## Configuration Options
+
+You can pass the configuration object directly to the `PavyWidget` component.
+
+| Prop | Type | Description |
+| :--- | :--- | :--- |
+| `apiKey` | `string` | Your Pavy API Key. |
+| `config.theme` | `'light' \| 'dark'` | Widget theme. |
+| `config.user` | `object` | User information for personalized chat. |
+| `config.position` | `'left' \| 'right'` | Bubble position. |
+
+## Verification
+
+1. Run your React app (`npm start` or `npm run dev`).
+2. Open the browser console. You should see no errors related to `pavy.js`.
+3. The chat bubble should appear once the component mounts.
+
+## Product Context Setup
+
+In a React SPA, you should update the product context when the user navigates to different product pages.
+
+```tsx
+import { useEffect } from 'react';
+
+function ProductPage({ product }) {
+  useEffect(() => {
+    if (window.Pavy) {
+      window.PavyConfig = {
+        ...window.PavyConfig,
+        product: {
+          id: product.id,
+          title: product.title,
+          price: product.price
+        }
+      };
+      // Tell Pavy that context has changed
+      window.Pavy.updateContext();
+    }
+  }, [product]);
+
+  return <div>{product.title}</div>;
+}
+```
+
+## Troubleshooting
+
+| Issue | Solution |
+| :--- | :--- |
+| **Script re-injects on re-render** | Ensure the script injection logic is inside a `useEffect` with an empty dependency array (or only `apiKey`). |
+| **TypeScript errors** | Add a declaration file (e.g., `pavy.d.ts`) to define `window.Pavy` and `window.PavyConfig`. |
+| **Widget appears multiple times** | This usually happens if `PavyWidget` is rendered multiple times. Ensure it's placed in a global layout component. |

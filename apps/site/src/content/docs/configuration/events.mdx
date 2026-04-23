@@ -1,0 +1,48 @@
+---
+title: Events & Callbacks
+description: Listen for widget events and trigger custom actions in your application.
+---
+
+Pavy.ai provides a set of events that allow you to track user interactions and integrate with your analytics tools.
+
+<h2 id="listening">Listening for Events</h2>
+
+You can listen for events by providing callbacks in the `window.PavyConfig` object.
+
+```javascript
+window.PavyConfig = {
+  onOpen: () => {
+    console.log('Chat opened');
+    // Track in Google Analytics
+    gtag('event', 'chat_opened');
+  },
+  onClose: () => {
+    console.log('Chat closed');
+  },
+  onMessageSent: (message) => {
+    console.log('User sent a message:', message);
+  },
+  onMessageReceived: (message) => {
+    console.log('AI responded:', message);
+  }
+};
+```
+
+<h2 id="available-events">Available Events</h2>
+
+| Event | Description | Data |
+|-------|-------------|------|
+| `onReady` | Triggered when the widget is fully loaded. | - |
+| `onOpen` | Triggered when the chat window is opened. | - |
+| `onClose` | Triggered when the chat window is closed. | - |
+| `onMessageSent` | Triggered when the user sends a message. | `{ text: string }` |
+| `onMessageReceived` | Triggered when the AI sends a response. | `{ text: string }` |
+| `onLeadCaptured` | Triggered when a user provides their email/info. | `{ email: string, name?: string }` |
+
+<h2 id="triggers">Programmatic Triggers</h2>
+
+You can also trigger these events manually if you are building a custom UI.
+
+```javascript
+window.Pavy.trigger('open');
+```

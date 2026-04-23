@@ -1,0 +1,95 @@
+---
+title: WooCommerce Integration
+description: Add Pavy.ai to your WordPress/WooCommerce site in minutes.
+---
+
+Integrating Pavy.ai with WooCommerce allows you to provide instant customer support and product recommendations directly on your WordPress site.
+
+## Prerequisites
+
+Before you begin, ensure you have:
+1. A **Pavy.ai account**.
+2. **Administrator access** to your WordPress dashboard.
+3. Your **Pavy API Key**.
+
+## Installation Steps
+
+### Method 1: Using functions.php (Recommended)
+
+1. Log in to your WordPress Dashboard.
+2. Go to **Appearance > Theme File Editor**.
+3. Select your active (child) theme and open the `functions.php` file.
+4. Add the following code at the end of the file:
+
+```php
+add_action('wp_footer', 'add_pavy_ai_widget');
+function add_pavy_ai_widget() {
+    ?>
+    <script 
+      src="https://cdn.pavy.ai/widget/v1/pavy.js" 
+      data-api-key="YOUR_API_KEY"
+      async
+    ></script>
+    <?php
+}
+```
+
+5. Click **Update File**.
+
+### Method 2: Using a Code Snippets Plugin
+
+If you prefer not to edit theme files, use a plugin like "WPCode":
+1. Install and activate **WPCode**.
+2. Go to **Code Snippets > Header & Footer**.
+3. Paste the Pavy.ai script tag into the **Footer** section.
+4. Click **Save Changes**.
+
+## Configuration Options
+
+You can pass WordPress user data to Pavy for a more personalized experience:
+
+| Option | PHP Code | Description |
+| :--- | :--- | :--- |
+| `user.id` | `get_current_user_id()` | ID of the logged-in user. |
+| `user.name` | `wp_get_current_user()->display_name` | Name of the logged-in user. |
+| `theme` | `'light'` or `'dark'` | Visual theme of the widget. |
+
+## Verification
+
+1. Visit your website's homepage.
+2. Look for the Pavy.ai chat bubble in the bottom corner.
+3. Try sending a message like "Hi" to confirm the connection is active.
+
+## Product Context Setup
+
+To give Pavy context about the products your customers are viewing, add this snippet to your `functions.php`:
+
+```php
+add_action('wp_head', 'pavy_product_context');
+function pavy_product_context() {
+    if ( is_product() ) {
+        global $product;
+        ?>
+        <script>
+          window.PavyConfig = {
+            product: {
+              id: '<?php echo $product->get_id(); ?>',
+              title: '<?php echo esc_js($product->get_name()); ?>',
+              price: '<?php echo $product->get_price(); ?>',
+              currency: '<?php echo get_woocommerce_currency(); ?>',
+              sku: '<?php echo $product->get_sku(); ?>'
+            }
+          };
+        </script>
+        <?php
+    }
+}
+```
+
+## Troubleshooting
+
+| Issue | Solution |
+| :--- | :--- |
+| **Widget doesn't appear** | If you use a caching plugin (like WP Rocket or W3 Total Cache), clear your site cache after adding the script. |
+| **Script not loading** | Ensure your `functions.php` doesn't have syntax errors. If the site goes blank, remove the added code via FTP/File Manager. |
+| **Inaccurate product info** | Check if your theme uses custom product templates that might bypass the `is_product()` check. |

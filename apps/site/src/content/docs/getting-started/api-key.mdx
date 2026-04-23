@@ -1,0 +1,32 @@
+---
+title: API Key Management
+description: How to find, rotate, and secure your Pavy.ai API keys.
+---
+
+Your API key is the primary way Pavy.ai authenticates your website and associates it with your knowledge base.
+
+<h2 id="finding">Finding your API Key</h2>
+
+1. Log in to the [Pavy.ai Admin Dashboard](https://admin.pavy.ai).
+2. Navigate to **Settings > Widget Config**.
+3. You will see your public API key in the "Integration" section.
+
+<h2 id="security">Security Best Practices</h2>
+
+- **Keep it public:** The API key used in the script tag is public. It is designed to be used in client-side code.
+- **Domain Whitelisting:** For added security, we recommend whitelisting your domains in the Admin Dashboard. This prevents other sites from using your API key.
+- **Rotation:** If you suspect your API key has been compromised, you can rotate it in the dashboard. Note that you will need to update the script tag on your website immediately after rotating.
+
+<h2 id="env-vars">Environment Variables</h2>
+
+If you are using a framework like React or Next.js, we recommend using environment variables to store your API key.
+
+```bash
+VITE_PAVY_API_KEY=your_api_key_here
+```
+
+Then in your code:
+
+```javascript
+const apiKey = import.meta.env.VITE_PAVY_API_KEY;
+```
