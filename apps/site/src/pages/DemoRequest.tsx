@@ -3,6 +3,7 @@ import Footer from '../components/Footer';
 import { SEOHead } from '../components/SEOHead';
 import { useTranslation } from '@pavy/i18n';
 import { trackEvent } from '../lib/analytics';
+import { getUTMParams } from '../lib/utm';
 import { useLocation } from 'react-router-dom';
 
 export default function DemoRequest() {
@@ -10,8 +11,10 @@ export default function DemoRequest() {
     const location = useLocation();
 
     const handleSubmit = () => {
+        const utmParams = getUTMParams();
         trackEvent('submit_demo_request', {
             source_page: location.pathname,
+            ...utmParams,
         });
         // Form submission logic would go here
     };
