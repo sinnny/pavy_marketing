@@ -1,0 +1,133 @@
+---
+title: Next.js Integration
+description: Optimize your Next.js application with Pavy.ai using the built-in Script component.
+---
+
+Next.js provides a specialized `Script` component that optimizes how external scripts are loaded, making it the perfect way to integrate Pavy.ai.
+
+## Prerequisites
+
+Before you begin, ensure you have:
+1. A **Pavy.ai account**.
+2. A **Next.js project** (App Router or Pages Router).
+3. Your **Pavy API Key**.
+
+## Installation Steps
+
+### 1. Add the Script to your Layout
+
+For **App Router** (`app/layout.tsx`):
+
+```tsx
+import Script from 'next/script'
+
+export default function RootLayout({ children }) {
+  return (
+    <html lang="en">
+      <body>
+        {children}
+        <Script
+          src="https://cdn.pavy.ai/widget/v1/pavy.js"
+          data-api-key={process.env.NEXT_PUBLIC_PAVY_API_KEY}
+          strategy="afterInteractive"
+        />
+      </body>
+    </html>
+  )
+}
+```
+
+For **Pages Router** (`pages/_app.tsx`):
+
+```tsx
+import Script from 'next/script'
+
+function MyApp({ Component, pageProps }) {
+  return (
+    <>
+      <Component {...pageProps} />
+      <Script
+        src="https://cdn.pavy.ai/widget/v1/pavy.js"
+        data-api-key={process.env.NEXT_PUBLIC_PAVY_API_KEY}
+        strategy="afterInteractive"
+      />
+    </>
+  )
+}
+
+export default MyApp
+```
+
+## Configuration Options
+
+Next.js allows you to manage configuration through environment variables and global objects.
+
+| Option | Env Variable | Description |
+| :--- | :--- | :--- |
+| API Key | `NEXT_PUBLIC_PAVY_API_KEY` | Must be prefixed with `NEXT_PUBLIC_` to be accessible on the client. |
+| Theme | N/A | Set via `window.PavyConfig.theme`. |
+| User Data | N/A | Set via `window.PavyConfig.user`. |
+
+Example of inline configuration:
+
+```tsx
+<Script
+  id="pavy-config"
+  strategy="beforeInteractive"
+>
+  {`
+    window.PavyConfig = {
+      theme: 'light',
+      primaryColor: '#6366f1'
+    };
+  `}
+</Script>
+```
+
+## Verification
+
+1. Start your development server (`npm run dev`).
+2. Navigate to your site.
+3. Open the "Network" tab in DevTools and filter by `pavy.js` to ensure it loads with a `200` status.
+4. The chat bubble should appear in the corner.
+
+## Product Context Setup
+
+To provide product context in Next.js, use a Client Component for your product details.
+
+```tsx
+'use client'
+
+import { useEffect } from 'react'
+
+export default function ProductDetails({ product }) {
+  useEffect(() => {
+    if (typeof window !== 'undefined' && (window as any).Pavy) {
+      (window as any).PavyConfig = {
+        ...((window as any).PavyConfig || {}),
+        product: {
+          id: product.id,
+          title: product.title,
+          price: product.price
+        }
+      };
+      (window as any).Pavy.updateContext();
+    }
+  }, [product]);
+
+  return (
+    <div>
+      <h1>{product.title}</h1>
+      {/* ... */}
+    </div>
+  )
+}
+```
+
+## Troubleshooting
+
+| Issue | Solution |
+| :--- | :--- |
+| **window is not defined** | Ensure you are checking `typeof window !== 'undefined'` before accessing `window.Pavy` or `window.PavyConfig`, or use `useEffect` which only runs on the client. |
+| **Hydration failed** | Pavy.ai widget injects itself into the DOM outside of React's root. Next.js `Script` component with `afterInteractive` handles this correctly. |
+| **Environment variable missing** | Ensure your `.env.local` file contains `NEXT_PUBLIC_PAVY_API_KEY` and that you've restarted your dev server. |

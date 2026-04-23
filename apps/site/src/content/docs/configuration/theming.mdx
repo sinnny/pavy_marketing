@@ -1,0 +1,53 @@
+---
+title: Theming
+description: Customize the look and feel of your Pavy.ai widget to match your brand.
+---
+
+Pavy.ai offers extensive theming options to ensure the chat widget feels like a native part of your website.
+
+<h2 id="colors">Color Customization</h2>
+
+You can set the primary color of the widget to match your brand's color palette.
+
+```javascript
+window.PavyConfig = {
+  primaryColor: '#6366f1', // Indigo 600
+  secondaryColor: '#4f46e5' // Indigo 700
+};
+```
+
+<h2 id="dark-mode">Dark Mode</h2>
+
+The widget supports both light and dark modes. You can force a specific mode or let it follow the system preference.
+
+```javascript
+window.PavyConfig = {
+  theme: 'dark' // 'light', 'dark', or 'system'
+};
+```
+
+<h2 id="ui-elements">UI Elements</h2>
+
+Customize icons, button shapes, and position.
+
+```javascript
+window.PavyConfig = {
+  position: 'right', // 'left' or 'right'
+  offset: {
+    x: 20,
+    y: 20
+  },
+  launcherIcon: 'https://mysite.com/chat-icon.png',
+  borderRadius: 12
+};
+```
+
+<h2 id="fonts">Custom Fonts</h2>
+
+Pavy.ai can inherit fonts from your parent website or use a specific font stack.
+
+```javascript
+window.PavyConfig = {
+  fontFamily: 'Inter, system-ui, sans-serif'
+};
+```

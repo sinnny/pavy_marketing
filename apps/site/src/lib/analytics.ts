@@ -1,6 +1,7 @@
 /**
  * Analytics utility for GA4 integration with Google Consent Mode v2 support.
  */
+import { getUTMParams } from './utm';
 
 declare global {
   interface Window {
@@ -60,9 +61,11 @@ export function grantAnalyticsConsent(): void {
  */
 export function trackPageView(path: string, title?: string): void {
   if (typeof window !== 'undefined' && typeof window.gtag === 'function') {
+    const utmParams = getUTMParams();
     window.gtag('event', 'page_view', {
       page_path: path,
       page_title: title || document.title,
+      ...utmParams,
     });
   }
 }
@@ -72,6 +75,8 @@ export function trackPageView(path: string, title?: string): void {
  */
 export function trackEvent(name: string, params?: Record<string, unknown>): void {
   if (typeof window !== 'undefined' && typeof window.gtag === 'function') {
-    window.gtag('event', name, params);
+    const utmParams = getUTMParams();
+    const eventParams = utmParams ? { ...params, ...utmParams } : params;
+    window.gtag('event', name, eventParams);
   }
 }

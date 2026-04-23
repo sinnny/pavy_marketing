@@ -1,0 +1,91 @@
+---
+title: HTML / Vanilla JS Integration
+description: Integrate Pavy.ai into any website using standard HTML and JavaScript.
+---
+
+Integrating Pavy.ai into your website is simple and platform-agnostic. By adding a single script tag, you can provide an AI-powered shopping assistant to your visitors.
+
+## Prerequisites
+
+Before you begin, ensure you have:
+1. A **Pavy.ai account**. If you don't have one, [sign up here](https://pavy.ai/signup).
+2. Your **API Key**. You can find this in your [Dashboard > Settings > API Keys](https://pavy.ai/dashboard/settings).
+
+## Installation Steps
+
+Follow these steps to add the Pavy.ai widget to your website:
+
+1. Copy the script tag below.
+2. Open your website's main HTML file (usually `index.html` or a global footer template).
+3. Paste the script tag just before the closing `</body>` tag.
+4. Replace `YOUR_API_KEY` with your actual API key.
+
+```html
+<script 
+  src="https://cdn.pavy.ai/widget/v1/pavy.js" 
+  data-api-key="YOUR_API_KEY"
+  async
+></script>
+```
+
+## Configuration Options
+
+You can customize the widget's behavior by defining a `window.PavyConfig` object *before* the script loads.
+
+| Option | Type | Description |
+| :--- | :--- | :--- |
+| `theme` | `string` | 'light' or 'dark'. Default is 'light'. |
+| `primaryColor` | `string` | HEX code for the main brand color (e.g., '#6366f1'). |
+| `position` | `string` | 'right' or 'left'. Default is 'right'. |
+| `user` | `object` | Optional object containing `id`, `name`, and `email`. |
+
+Example of advanced configuration:
+
+```html
+<script>
+  window.PavyConfig = {
+    theme: 'dark',
+    primaryColor: '#6366f1',
+    position: 'right',
+    user: {
+      id: 'user_123',
+      name: 'Jane Doe',
+      email: 'jane@example.com'
+    }
+  };
+</script>
+<script src="https://cdn.pavy.ai/widget/v1/pavy.js" data-api-key="YOUR_API_KEY" async></script>
+```
+
+## Verification
+
+Once you've added the script and saved your changes:
+1. Refresh your website in your browser.
+2. You should see the Pavy.ai chat bubble in the bottom corner (default is bottom-right).
+3. Click the bubble to ensure the chat window opens correctly.
+
+## Product Context Setup
+
+To help Pavy.ai understand which product a user is viewing, you should provide product context on your product pages.
+
+```html
+<script>
+  window.PavyConfig = {
+    product: {
+      id: 'sku_123',
+      title: 'Premium Wireless Headphones',
+      price: 199.99,
+      currency: 'USD',
+      url: window.location.href
+    }
+  };
+</script>
+```
+
+## Troubleshooting
+
+| Issue | Solution |
+| :--- | :--- |
+| **Widget doesn't appear** | Double-check that the API key is correct and the script URL is reachable. Ensure no ad-blockers are preventing the script from loading. |
+| **Chat bubble overlaps content** | Change the `position` in `PavyConfig` or use CSS to adjust the z-index of your overlapping elements. |
+| **Styling issues** | The widget uses Shadow DOM to prevent style leakage, but ensure your site's global CSS isn't targeting `iframe` or `pavy-widget` elements aggressively. |

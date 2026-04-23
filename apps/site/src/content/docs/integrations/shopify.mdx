@@ -1,0 +1,79 @@
+---
+title: Shopify Integration
+description: Boost your Shopify store conversions with Pavy.ai.
+---
+
+Integrating Pavy.ai with Shopify allows the AI to understand your product catalog, inventory levels, and shipping policies automatically.
+
+## Prerequisites
+
+Before you begin, ensure you have:
+1. A **Pavy.ai account** with your Shopify store connected.
+2. Access to your **Shopify Admin** panel.
+3. Your **Pavy API Key**.
+
+## Installation Steps
+
+1. From your Shopify admin, go to **Online Store > Themes**.
+2. Find the theme you want to edit and click **... > Edit code**.
+3. In the sidebar, open the `layout/theme.liquid` file.
+4. Scroll to the very bottom of the file.
+5. Paste the Pavy.ai script tag just before the closing `</body>` tag.
+6. Replace `YOUR_API_KEY` with your actual key.
+
+```html
+<script 
+  src="https://cdn.pavy.ai/widget/v1/pavy.js" 
+  data-api-key="YOUR_API_KEY"
+  async
+></script>
+```
+
+7. Click **Save**.
+
+## Configuration Options
+
+While the basic script works immediately, you can customize Shopify-specific behavior in `theme.liquid`:
+
+| Option | Shopify Variable | Description |
+| :--- | :--- | :--- |
+| `theme` | Custom string | Set to 'light' or 'dark' to match your theme. |
+| `primaryColor` | Custom string | Match your store's primary button color. |
+| `user.id` | `{{ customer.id }}` | Pass the logged-in customer's ID for personalized support. |
+| `user.email` | `{{ customer.email }}` | Pass the customer's email. |
+
+## Verification
+
+To verify the installation:
+1. Open your Shopify store in a new window.
+2. The Pavy.ai chat bubble should appear in the bottom right corner.
+3. If you are logged in as a customer, Pavy should be able to greet you by name (if configured).
+
+## Product Context Setup
+
+To enable Pavy to answer questions about the specific product a user is viewing, add this snippet inside the `<head>` tag of your `theme.liquid` file:
+
+```html
+{% if template contains 'product' %}
+<script>
+  window.PavyConfig = {
+    product: {
+      id: "{{ product.id }}",
+      title: "{{ product.title | escape }}",
+      handle: "{{ product.handle }}",
+      price: "{{ product.price | money_without_currency }}",
+      currency: "{{ shop.currency }}",
+      sku: "{{ product.selected_or_first_available_variant.sku }}"
+    }
+  };
+</script>
+{% endif %}
+```
+
+## Troubleshooting
+
+| Issue | Solution |
+| :--- | :--- |
+| **Widget not appearing** | Verify that you've saved the `theme.liquid` file and that you're looking at the live version of your store (not a draft theme unless you're previewing it). |
+| **Product data is missing** | Ensure the `{% if template contains 'product' %}` block is correctly placed and that Liquid variables are rendering as expected in the page source. |
+| **Conflicts with App Embeds** | If you use other chat apps, they might overlap. Use `PavyConfig.position` to move the bubble to the left. |
