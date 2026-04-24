@@ -8,27 +8,33 @@ export interface UTMParams {
 
 const STORAGE_KEY = 'pavy_utm';
 
+const UTM_KEYS: (keyof UTMParams)[] = [
+  'utm_source',
+  'utm_medium',
+  'utm_campaign',
+  'utm_term',
+  'utm_content',
+];
+
+type NavigateFn = (url: string, options: { replace?: boolean }) => void;
+
 /**
- * Captures UTM parameters from the URL and stores them in sessionStorage.
- * Also cleans the URL by removing the UTM parameters.
- * @param navigate Optional navigate function from react-router-dom to clean URL without full page reload.
+ * Captures UTM parameters from the URL and stores them in sessionStorage
+ * using first-touch attribution (existing values are never overwritten for
+ * the duration of the session). Always strips UTM params from the URL so
+ * the address bar is clean regardless of storage state.
+ *
+ * @param navigate Optional react-router navigate to clean the URL in-app;
+ *                 falls back to `history.replaceState()` when omitted.
  */
-export function captureUTMParams(navigate?: (url: string, options: { replace: true }) => void): void {
+export function captureUTMParams(navigate?: NavigateFn): void {
   if (typeof window === 'undefined') return;
 
   const urlParams = new URLSearchParams(window.location.search);
   const utm: UTMParams = {};
   let hasUTM = false;
 
-  const utmKeys: (keyof UTMParams)[] = [
-    'utm_source',
-    'utm_medium',
-    'utm_campaign',
-    'utm_term',
-    'utm_content',
-  ];
-
-  utmKeys.forEach((key) => {
+  UTM_KEYS.forEach((key) => {
     const value = urlParams.get(key);
     if (value) {
       utm[key] = value;
@@ -36,23 +42,28 @@ export function captureUTMParams(navigate?: (url: string, options: { replace: tr
     }
   });
 
-  if (hasUTM) {
-    // Store in sessionStorage for the duration of the visit
-    sessionStorage.setItem(STORAGE_KEY, JSON.stringify(utm));
+  if (!hasUTM) return;
 
-    // Clean URL
-    const newUrl = new URL(window.location.href);
-    utmKeys.forEach((key) => newUrl.searchParams.delete(key));
-    
-    // If the search string is empty after deletion, remove the '?'
-    const searchString = newUrl.searchParams.toString();
-    const cleanUrl = newUrl.pathname + (searchString ? `?${searchString}` : '') + newUrl.hash;
-    
-    if (navigate) {
-      navigate(cleanUrl, { replace: true });
-    } else {
-      window.history.replaceState({}, '', cleanUrl);
+  // First-touch attribution: only write if no UTM is already stored for this session.
+  if (!readStoredUTM()) {
+    try {
+      sessionStorage.setItem(STORAGE_KEY, JSON.stringify(utm));
+    } catch {
+      // sessionStorage may be unavailable (private mode, quota, disabled storage).
     }
+  }
+
+  // Always clean the URL so campaign params don't leak into share/back-nav state.
+  const newUrl = new URL(window.location.href);
+  UTM_KEYS.forEach((key) => newUrl.searchParams.delete(key));
+
+  const searchString = newUrl.searchParams.toString();
+  const cleanUrl = newUrl.pathname + (searchString ? `?${searchString}` : '') + newUrl.hash;
+
+  if (navigate) {
+    navigate(cleanUrl, { replace: true });
+  } else {
+    window.history.replaceState({}, '', cleanUrl);
   }
 }
 
@@ -61,11 +72,26 @@ export function captureUTMParams(navigate?: (url: string, options: { replace: tr
  */
 export function getUTMParams(): UTMParams | null {
   if (typeof window === 'undefined') return null;
-  const stored = sessionStorage.getItem(STORAGE_KEY);
+  return readStoredUTM();
+}
+
+function readStoredUTM(): UTMParams | null {
+  let stored: string | null = null;
+  try {
+    stored = sessionStorage.getItem(STORAGE_KEY);
+  } catch {
+    return null;
+  }
   if (!stored) return null;
   try {
     return JSON.parse(stored) as UTMParams;
   } catch {
+    // Clear corrupt entry so subsequent reads don't keep failing.
+    try {
+      sessionStorage.removeItem(STORAGE_KEY);
+    } catch {
+      // best-effort cleanup
+    }
     return null;
   }
 }
