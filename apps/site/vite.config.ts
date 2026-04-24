@@ -10,6 +10,55 @@ import remarkMdxFrontmatter from 'remark-mdx-frontmatter';
 import { ViteImageOptimizer } from 'vite-plugin-image-optimizer';
 import { visualizer } from 'rollup-plugin-visualizer';
 
+// Auto-generate `id` attributes on headings (h2–h4) when the MDX author
+// didn't supply one. Needed so the DocsTableOfContents and deep links can
+// anchor to sections. We intentionally avoid installing rehype-slug to keep
+// the dependency surface small — this covers the subset we need.
+type HastNode = {
+  type: string;
+  tagName?: string;
+  value?: string;
+  properties?: Record<string, unknown>;
+  children?: HastNode[];
+};
+function rehypeAutoSlug() {
+  const slugify = (text: string) =>
+    text
+      .toLowerCase()
+      .trim()
+      .replace(/[^a-z0-9\s-]/g, '')
+      .replace(/\s+/g, '-')
+      .replace(/-+/g, '-')
+      .replace(/^-|-$/g, '');
+  const toText = (node: HastNode): string => {
+    if (node.type === 'text') return node.value ?? '';
+    if (!node.children) return '';
+    return node.children.map(toText).join('');
+  };
+  return (tree: HastNode) => {
+    const used = new Set<string>();
+    const visit = (node: HastNode) => {
+      if (
+        node.type === 'element' &&
+        node.tagName &&
+        /^h[2-4]$/.test(node.tagName)
+      ) {
+        const existing = (node.properties?.id as string | undefined) ?? '';
+        let id = existing || slugify(toText(node));
+        if (id) {
+          let n = 2;
+          const base = id;
+          while (used.has(id)) id = `${base}-${n++}`;
+          used.add(id);
+          node.properties = { ...(node.properties ?? {}), id };
+        }
+      }
+      node.children?.forEach(visit);
+    };
+    visit(tree);
+  };
+}
+
 // Virtual module that maps blog slug -> reading-time minutes (~200 wpm),
 // computed by reading the raw .mdx files at server start / build time.
 // We can't read the raw text from the runtime side because the MDX rollup
@@ -74,8 +123,9 @@ export default defineConfig({
   plugins: [
     blogReadingTimesPlugin(),
     mdx({
+      providerImportSource: '@mdx-js/react',
       remarkPlugins: [remarkGfm, remarkFrontmatter, remarkMdxFrontmatter],
-      rehypePlugins: [rehypeHighlight],
+      rehypePlugins: [rehypeAutoSlug, rehypeHighlight],
     }),
     react(),
     ViteImageOptimizer({
