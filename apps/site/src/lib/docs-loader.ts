@@ -12,32 +12,45 @@ export interface DocsPage {
   component: ComponentType;
 }
 
+const FALLBACK_LANG = 'en';
+
 const docsModules = import.meta.glob<{
   frontmatter: DocsFrontmatter;
   default: ComponentType;
 }>('../content/docs/**/*.mdx', { eager: true });
 
 function pathFromModulePath(path: string): string {
-  // Convert ../content/docs/getting-started/quick-start.mdx -> getting-started/quick-start
-  return path
-    .replace('../content/docs/', '')
-    .replace(/\.mdx$/, '');
+  // '../content/docs/en/getting-started/quick-start.mdx' -> 'getting-started/quick-start'
+  const rest = path.replace('../content/docs/', '').replace(/\.mdx$/, '');
+  const slashIdx = rest.indexOf('/');
+  return slashIdx === -1 ? rest : rest.slice(slashIdx + 1);
 }
 
-export function getDocsPageByPath(path: string): DocsPage | null {
-  const modulePath = `../content/docs/${path}.mdx`;
-  const module = docsModules[modulePath];
-  
-  if (!module?.frontmatter) return null;
+export function getDocsPageByPath(path: string, lang: string = FALLBACK_LANG): DocsPage | null {
+  const candidates = [
+    `../content/docs/${lang}/${path}.mdx`,
+    `../content/docs/${FALLBACK_LANG}/${path}.mdx`,
+  ];
 
-  return {
-    slug: path.split('/').pop() || '',
-    path,
-    frontmatter: module.frontmatter,
-    component: module.default,
-  };
+  for (const modulePath of candidates) {
+    const module = docsModules[modulePath];
+    if (module?.frontmatter) {
+      return {
+        slug: path.split('/').pop() || '',
+        path,
+        frontmatter: module.frontmatter,
+        component: module.default,
+      };
+    }
+  }
+
+  return null;
 }
 
 export function getAllDocsPaths(): string[] {
-  return Object.keys(docsModules).map(pathFromModulePath);
+  const paths = new Set<string>();
+  for (const modulePath of Object.keys(docsModules)) {
+    paths.add(pathFromModulePath(modulePath));
+  }
+  return Array.from(paths);
 }
