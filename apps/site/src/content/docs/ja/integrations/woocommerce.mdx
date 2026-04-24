@@ -1,0 +1,95 @@
+---
+title: WooCommerce連携
+description: WordPress / WooCommerceサイトにPavy.aiを数分で追加できます。
+---
+
+Pavy.aiをWooCommerceに連携すると、WordPressサイト上で即時のカスタマーサポートと商品レコメンドを提供できます。
+
+## 事前準備
+
+始める前に、以下を準備してください：
+1. **Pavy.aiアカウント**。
+2. WordPressダッシュボードの **管理者権限**。
+3. **Pavy APIキー**。
+
+## インストール手順
+
+### 方法1: functions.php を使用(推奨)
+
+1. WordPressダッシュボードにログインします。
+2. **外観 > テーマファイルエディター** に移動します。
+3. 有効な(子)テーマを選択し、`functions.php` ファイルを開きます。
+4. ファイルの末尾に次のコードを追加します：
+
+```php
+add_action('wp_footer', 'add_pavy_ai_widget');
+function add_pavy_ai_widget() {
+    ?>
+    <script 
+      src="https://cdn.pavy.ai/widget/v1/pavy.js" 
+      data-api-key="YOUR_API_KEY"
+      async
+    ></script>
+    <?php
+}
+```
+
+5. **ファイルを更新** をクリックします。
+
+### 方法2: コードスニペットプラグインを使用
+
+テーマファイルを直接編集したくない場合は、「WPCode」などのプラグインを利用します：
+1. **WPCode** をインストール・有効化します。
+2. **Code Snippets > Header & Footer** に移動します。
+3. **Footer** セクションにPavy.aiのスクリプトタグを貼り付けます。
+4. **変更を保存** をクリックします。
+
+## 設定オプション
+
+WordPressのユーザーデータをPavyに渡すことで、よりパーソナライズされた体験を提供できます：
+
+| オプション | PHPコード | 説明 |
+| :--- | :--- | :--- |
+| `user.id` | `get_current_user_id()` | ログイン中ユーザーのID。 |
+| `user.name` | `wp_get_current_user()->display_name` | ログイン中ユーザーの名前。 |
+| `theme` | `'light'` または `'dark'` | ウィジェットのビジュアルテーマ。 |
+
+## 動作確認
+
+1. ウェブサイトのトップページを開きます。
+2. 画面下部にPavy.aiのチャットバブルを探してください。
+3. 「こんにちは」などのメッセージを送信し、接続が有効であることを確認します。
+
+## 商品コンテキストの設定
+
+訪問中の商品に関するコンテキストをPavyに渡すため、`functions.php` に次のスニペットを追加してください：
+
+```php
+add_action('wp_head', 'pavy_product_context');
+function pavy_product_context() {
+    if ( is_product() ) {
+        global $product;
+        ?>
+        <script>
+          window.PavyConfig = {
+            product: {
+              id: '<?php echo $product->get_id(); ?>',
+              title: '<?php echo esc_js($product->get_name()); ?>',
+              price: '<?php echo $product->get_price(); ?>',
+              currency: '<?php echo get_woocommerce_currency(); ?>',
+              sku: '<?php echo $product->get_sku(); ?>'
+            }
+          };
+        </script>
+        <?php
+    }
+}
+```
+
+## トラブルシューティング
+
+| 問題 | 解決方法 |
+| :--- | :--- |
+| **ウィジェットが表示されない** | WP RocketやW3 Total Cacheなどのキャッシュプラグインを利用している場合は、スクリプト追加後にサイトキャッシュをクリアしてください。 |
+| **スクリプトが読み込まれない** | `functions.php` に構文エラーがないか確認してください。サイトが真っ白になった場合は、FTP/ファイルマネージャーで追加したコードを削除してください。 |
+| **商品情報が不正確** | テーマが `is_product()` 判定を回避するカスタム商品テンプレートを使用していないか確認してください。 |

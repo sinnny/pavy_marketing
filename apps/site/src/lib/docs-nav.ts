@@ -6,30 +6,30 @@ export interface DocsNavItem {
 
 export const docsNavigation: DocsNavItem[] = [
   {
-    titleKey: 'docs.nav.getting_started',
+    titleKey: 'pages.docs.nav.getting_started',
     slug: 'getting-started',
     children: [
-      { titleKey: 'docs.nav.quick_start', slug: 'quick-start' },
-      { titleKey: 'docs.nav.api_key', slug: 'api-key' },
+      { titleKey: 'pages.docs.nav.quick_start', slug: 'quick-start' },
+      { titleKey: 'pages.docs.nav.api_key', slug: 'api-key' },
     ]
   },
   {
-    titleKey: 'docs.nav.integrations',
+    titleKey: 'pages.docs.nav.integrations',
     slug: 'integrations',
     children: [
-      { titleKey: 'docs.nav.html', slug: 'html' },
-      { titleKey: 'docs.nav.shopify', slug: 'shopify' },
-      { titleKey: 'docs.nav.woocommerce', slug: 'woocommerce' },
-      { titleKey: 'docs.nav.react', slug: 'react' },
-      { titleKey: 'docs.nav.nextjs', slug: 'nextjs' },
+      { titleKey: 'pages.docs.nav.html', slug: 'html' },
+      { titleKey: 'pages.docs.nav.shopify', slug: 'shopify' },
+      { titleKey: 'pages.docs.nav.woocommerce', slug: 'woocommerce' },
+      { titleKey: 'pages.docs.nav.react', slug: 'react' },
+      { titleKey: 'pages.docs.nav.nextjs', slug: 'nextjs' },
     ]
   },
   {
-    titleKey: 'docs.nav.configuration',
+    titleKey: 'pages.docs.nav.configuration',
     slug: 'configuration',
     children: [
-      { titleKey: 'docs.nav.theming', slug: 'theming' },
-      { titleKey: 'docs.nav.events', slug: 'events' },
+      { titleKey: 'pages.docs.nav.theming', slug: 'theming' },
+      { titleKey: 'pages.docs.nav.events', slug: 'events' },
     ]
   },
 ];

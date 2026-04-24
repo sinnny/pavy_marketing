@@ -1,0 +1,34 @@
+---
+title: クイックスタート
+description: 5分以内にPavy.aiをサイトに導入しましょう。
+---
+
+Pavy.aiへようこそ！このガイドでは、自律型AIエージェントをウェブサイトに連携する方法を説明します。
+
+<h2 id="api-key">1. APIキーの取得</h2>
+
+まず、[Pavy.ai管理ダッシュボード](https://admin.pavy.ai)でAPIキーを取得してください。アカウントをお持ちでない場合は[無料で登録](https://pavy.ai/demo)できます。
+
+<h2 id="script-tag">2. スクリプトタグの追加</h2>
+
+以下のスクリプトタグをコピーして、HTMLの`<head>`内、または`</body>`の閉じタグの直前に貼り付けてください。
+
+```html
+<script 
+  src="https://cdn.pavy.ai/widget/v1/pavy.js" 
+  data-api-key="YOUR_API_KEY"
+  async
+></script>
+```
+
+<h2 id="verify">3. インストールの確認</h2>
+
+スクリプトを追加したら、ウェブサイトを再読み込みしてください。右下にPavy.aiのチャットバブルが表示されます。
+
+<h2 id="next-steps">次のステップ</h2>
+
+基本的なウィジェットの導入が完了したら、次の作業に進みましょう：
+
+- [テーマ設定](/docs/configuration/theming)
+- [プラットフォーム連携](/docs/integrations/html)
+- [イベントについて](/docs/configuration/events)

@@ -25,29 +25,33 @@ import { useEffect } from 'react';
 
 interface PavyWidgetProps {
   apiKey: string;
-  config?: any;
+  config?: Record<string, unknown>;
 }
 
 export const PavyWidget = ({ apiKey, config }: PavyWidgetProps) => {
   useEffect(() => {
-    // Set global config
     if (config) {
       (window as any).PavyConfig = config;
     }
 
-    // Inject script
     const script = document.createElement('script');
     script.src = 'https://cdn.pavy.ai/widget/v1/pavy.js';
     script.setAttribute('data-api-key', apiKey);
     script.async = true;
-    
+
     document.body.appendChild(script);
-    
+
     return () => {
-      // Cleanup on unmount
-      document.body.removeChild(script);
+      // Guard against the script having been moved/removed elsewhere.
+      if (script.parentNode) {
+        script.parentNode.removeChild(script);
+      }
     };
-  }, [apiKey, config]);
+    // We intentionally exclude `config` to avoid re-injecting the widget on
+    // every re-render when a new config object literal is passed in. Update
+    // the config via `window.Pavy.updateContext()` instead (see below).
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [apiKey]);
 
   return null;
 };

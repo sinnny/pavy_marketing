@@ -2,7 +2,7 @@ import { useLocation, Link } from 'react-router-dom';
 import { useTranslation } from '@pavy/i18n';
 import { clsx } from 'clsx';
 import { useLocale } from '../../hooks/useLocale';
-import { docsNavigation, DocsNavItem } from '../../lib/docs-nav';
+import { docsNavigation, type DocsNavItem } from '../../lib/docs-nav';
 import { ChevronRight } from 'lucide-react';
 import { useState } from 'react';
 
@@ -48,15 +48,18 @@ function SidebarItem({ item, level = 0 }: SidebarItemProps) {
   return (
     <div className={clsx("space-y-1", level > 0 && "ml-4 border-l border-slate-200 dark:border-slate-800 pl-4")}>
       {href ? (
-        <Link 
+        <Link
           to={href}
+          aria-current={isActive ? 'page' : undefined}
           className={clsx(baseClasses, isActive ? activeClasses : inactiveClasses)}
         >
           {content}
         </Link>
       ) : (
         <button
+          type="button"
           onClick={() => setIsOpen(!isOpen)}
+          aria-expanded={isOpen}
           className={clsx(baseClasses, isChildActive ? "text-indigo-700 dark:text-indigo-300" : "text-slate-900 dark:text-slate-200")}
         >
           {content}

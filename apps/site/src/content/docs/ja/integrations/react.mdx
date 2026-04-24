@@ -1,0 +1,128 @@
+---
+title: React連携
+description: Pavy.aiをReactアプリケーションに連携しましょう。
+---
+
+Pavy.aiをReactアプリケーションに連携すると、ウィジェットのライフサイクルをコンポーネントツリーと一緒に管理できます。
+
+## 事前準備
+
+始める前に、以下を準備してください：
+1. **Pavy.aiアカウント**。
+2. **Reactプロジェクト** (Create React App、Viteなど)。
+3. **Pavy APIキー**。
+
+## インストール手順
+
+Pavy.aiをReactに連携する最も堅牢な方法は、再利用可能なコンポーネントまたはカスタムフックを作ることです。
+
+### 1. `PavyWidget` コンポーネントの作成
+
+`components/PavyWidget.tsx` を新規作成します：
+
+```tsx
+import { useEffect } from 'react';
+
+interface PavyWidgetProps {
+  apiKey: string;
+  config?: Record<string, unknown>;
+}
+
+export const PavyWidget = ({ apiKey, config }: PavyWidgetProps) => {
+  useEffect(() => {
+    if (config) {
+      (window as any).PavyConfig = config;
+    }
+
+    const script = document.createElement('script');
+    script.src = 'https://cdn.pavy.ai/widget/v1/pavy.js';
+    script.setAttribute('data-api-key', apiKey);
+    script.async = true;
+
+    document.body.appendChild(script);
+
+    return () => {
+      // スクリプトが別の場所に移動・削除されたケースへのガード。
+      if (script.parentNode) {
+        script.parentNode.removeChild(script);
+      }
+    };
+    // 再レンダーごとに新しいconfigオブジェクトリテラルが渡されて、
+    // ウィジェットが毎回再注入されるのを防ぐため、`config` は意図的に除外します。
+    // 設定の更新は `window.Pavy.updateContext()` を使ってください(下記参照)。
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [apiKey]);
+
+  return null;
+};
+```
+
+### 2. アプリ内で使用する
+
+```tsx
+import { PavyWidget } from './components/PavyWidget';
+
+function App() {
+  return (
+    <div>
+      <PavyWidget 
+        apiKey="YOUR_API_KEY" 
+        config={{ theme: 'dark', primaryColor: '#6366f1' }} 
+      />
+      {/* アプリのコンテンツ */}
+    </div>
+  );
+}
+```
+
+## 設定オプション
+
+設定オブジェクトを `PavyWidget` コンポーネントに直接渡せます。
+
+| Prop | 型 | 説明 |
+| :--- | :--- | :--- |
+| `apiKey` | `string` | Pavy APIキー。 |
+| `config.theme` | `'light' \| 'dark'` | ウィジェットのテーマ。 |
+| `config.user` | `object` | パーソナライズ会話用のユーザー情報。 |
+| `config.position` | `'left' \| 'right'` | バブルの位置。 |
+
+## 動作確認
+
+1. Reactアプリを起動します(`npm start` または `npm run dev`)。
+2. ブラウザのコンソールを開き、`pavy.js` 関連のエラーが出ていないことを確認します。
+3. コンポーネントがマウントされるとチャットバブルが表示されます。
+
+## 商品コンテキストの設定
+
+React SPAでは、ユーザーが異なる商品ページに遷移するたびに商品コンテキストを更新する必要があります。
+
+```tsx
+import { useEffect } from 'react';
+
+function ProductPage({ product }) {
+  useEffect(() => {
+    if (window.Pavy) {
+      window.PavyConfig = {
+        ...window.PavyConfig,
+        product: {
+          id: product.id,
+          title: product.title,
+          price: product.price
+        }
+      };
+      // コンテキストが変わったことをPavyに通知
+      window.Pavy.updateContext();
+    }
+  }, [product]);
+
+  return <div>{product.title}</div>;
+}
+```
+
+## トラブルシューティング
+
+| 問題 | 解決方法 |
+| :--- | :--- |
+| **再レンダーのたびにスクリプトが再注入される** | スクリプト注入ロジックが空の依存配列(または `apiKey` のみを含む)の `useEffect` 内にあることを確認してください。 |
+| **TypeScriptのエラー** | `window.Pavy` と `window.PavyConfig` を定義する宣言ファイル(例: `pavy.d.ts`)を追加してください。 |
+| **ウィジェットが複数表示される** | 通常は `PavyWidget` が複数箇所でレンダーされているのが原因です。グローバルなレイアウトコンポーネントにのみ配置してください。 |

@@ -1,0 +1,53 @@
+---
+title: テーマ設定
+description: Pavy.aiウィジェットの見た目をブランドに合わせてカスタマイズしましょう。
+---
+
+Pavy.aiは、チャットウィジェットがウェブサイトの一部のように自然に溶け込むよう、豊富なテーマオプションを提供します。
+
+<h2 id="colors">カラーカスタマイズ</h2>
+
+ウィジェットのメインカラーをブランドのカラーパレットに合わせて設定できます。
+
+```javascript
+window.PavyConfig = {
+  primaryColor: '#6366f1', // Indigo 600
+  secondaryColor: '#4f46e5' // Indigo 700
+};
+```
+
+<h2 id="dark-mode">ダークモード</h2>
+
+ウィジェットはライトモードとダークモードの両方をサポートしています。特定のモードを強制することも、システム設定に従わせることもできます。
+
+```javascript
+window.PavyConfig = {
+  theme: 'dark' // 'light'、'dark'、'system'
+};
+```
+
+<h2 id="ui-elements">UI要素</h2>
+
+アイコン、ボタンの形状、位置をカスタマイズできます。
+
+```javascript
+window.PavyConfig = {
+  position: 'right', // 'left' または 'right'
+  offset: {
+    x: 20,
+    y: 20
+  },
+  launcherIcon: 'https://mysite.com/chat-icon.png',
+  borderRadius: 12
+};
+```
+
+<h2 id="fonts">カスタムフォント</h2>
+
+Pavy.aiは親ウェブサイトのフォントを継承することも、指定したフォントスタックを使うこともできます。
+
+```javascript
+window.PavyConfig = {
+  fontFamily: 'Inter, system-ui, sans-serif'
+};
+```

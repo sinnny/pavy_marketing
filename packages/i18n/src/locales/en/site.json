@@ -653,8 +653,38 @@
         "configuration": "Configuration",
         "theming": "Theming",
         "events": "Events"
+      },
+      "layout": {
+        "menu": "Documentation Menu",
+        "menuLabel": "Toggle documentation navigation"
+      },
+      "breadcrumb": {
+        "ariaLabel": "Breadcrumb",
+        "home": "Home",
+        "docs": "Docs"
+      },
+      "common": {
+        "onThisPage": "On this page"
+      },
+      "pagination": {
+        "ariaLabel": "Docs navigation",
+        "previous": "Previous",
+        "next": "Next"
+      },
+      "notFound": {
+        "title": "404",
+        "description": "Page not found",
+        "backToDocs": "Back to Docs"
+      },
+      "codeBlock": {
+        "copy": "Copy",
+        "copied": "Copied"
+      },
+      "seo": {
+        "defaultDescription": "Pavy.ai integration and configuration documentation"
       }
-    },    "legal": {
+    },
+    "legal": {
       "common": {
         "home": "Home",
         "legal": "Legal",
