@@ -1,0 +1,48 @@
+---
+title: 이벤트 & 콜백
+description: 위젯 이벤트를 수신하고 애플리케이션에서 커스텀 동작을 트리거하세요.
+---
+
+Pavy.ai는 사용자 상호작용을 추적하고 분석 도구와 연동할 수 있도록 다양한 이벤트를 제공합니다.
+
+<h2 id="listening">이벤트 수신하기</h2>
+
+`window.PavyConfig` 객체에 콜백을 지정해 이벤트를 수신할 수 있습니다.
+
+```javascript
+window.PavyConfig = {
+  onOpen: () => {
+    console.log('Chat opened');
+    // Google Analytics로 추적
+    gtag('event', 'chat_opened');
+  },
+  onClose: () => {
+    console.log('Chat closed');
+  },
+  onMessageSent: (message) => {
+    console.log('User sent a message:', message);
+  },
+  onMessageReceived: (message) => {
+    console.log('AI responded:', message);
+  }
+};
+```
+
+<h2 id="available-events">사용 가능한 이벤트</h2>
+
+| 이벤트 | 설명 | 데이터 |
+|-------|-------------|------|
+| `onReady` | 위젯이 완전히 로드되었을 때 발생합니다. | - |
+| `onOpen` | 채팅 창이 열렸을 때 발생합니다. | - |
+| `onClose` | 채팅 창이 닫혔을 때 발생합니다. | - |
+| `onMessageSent` | 사용자가 메시지를 보냈을 때 발생합니다. | `{ text: string }` |
+| `onMessageReceived` | AI가 응답을 보냈을 때 발생합니다. | `{ text: string }` |
+| `onLeadCaptured` | 사용자가 이메일/정보를 제공했을 때 발생합니다. | `{ email: string, name?: string }` |
+
+<h2 id="triggers">프로그래매틱 트리거</h2>
+
+커스텀 UI를 직접 만드는 경우, 이벤트를 수동으로 트리거할 수도 있습니다.
+
+```javascript
+window.Pavy.trigger('open');
+```

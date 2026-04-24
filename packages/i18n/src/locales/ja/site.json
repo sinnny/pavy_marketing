@@ -653,8 +653,38 @@
         "configuration": "設定",
         "theming": "テーマ設定",
         "events": "イベント"
+      },
+      "layout": {
+        "menu": "ドキュメントメニュー",
+        "menuLabel": "ドキュメントナビゲーションを開閉"
+      },
+      "breadcrumb": {
+        "ariaLabel": "パンくずリスト",
+        "home": "ホーム",
+        "docs": "ドキュメント"
+      },
+      "common": {
+        "onThisPage": "このページの内容"
+      },
+      "pagination": {
+        "ariaLabel": "ドキュメントページ移動",
+        "previous": "前へ",
+        "next": "次へ"
+      },
+      "notFound": {
+        "title": "404",
+        "description": "ページが見つかりません",
+        "backToDocs": "ドキュメントに戻る"
+      },
+      "codeBlock": {
+        "copy": "コピー",
+        "copied": "コピーしました"
+      },
+      "seo": {
+        "defaultDescription": "Pavy.ai 連携と設定のドキュメント"
       }
-    },    "legal": {
+    },
+    "legal": {
       "common": {
         "home": "ホーム",
         "legal": "法的情報",

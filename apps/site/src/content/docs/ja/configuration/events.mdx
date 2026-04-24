@@ -1,0 +1,48 @@
+---
+title: イベント & コールバック
+description: ウィジェットのイベントを受け取り、アプリ側でカスタム動作をトリガーしましょう。
+---
+
+Pavy.aiは、ユーザーの操作を追跡したり、分析ツールと連携したりするためのイベントを多数提供しています。
+
+<h2 id="listening">イベントの受け取り方</h2>
+
+`window.PavyConfig` オブジェクトにコールバックを指定することでイベントを受け取れます。
+
+```javascript
+window.PavyConfig = {
+  onOpen: () => {
+    console.log('Chat opened');
+    // Google Analyticsに送信
+    gtag('event', 'chat_opened');
+  },
+  onClose: () => {
+    console.log('Chat closed');
+  },
+  onMessageSent: (message) => {
+    console.log('User sent a message:', message);
+  },
+  onMessageReceived: (message) => {
+    console.log('AI responded:', message);
+  }
+};
+```
+
+<h2 id="available-events">利用可能なイベント</h2>
+
+| イベント | 説明 | データ |
+|-------|-------------|------|
+| `onReady` | ウィジェットの読み込みが完了したときに発火。 | - |
+| `onOpen` | チャットウィンドウが開いたときに発火。 | - |
+| `onClose` | チャットウィンドウが閉じたときに発火。 | - |
+| `onMessageSent` | ユーザーがメッセージを送信したときに発火。 | `{ text: string }` |
+| `onMessageReceived` | AIが応答を返したときに発火。 | `{ text: string }` |
+| `onLeadCaptured` | ユーザーがメール/情報を提供したときに発火。 | `{ email: string, name?: string }` |
+
+<h2 id="triggers">プログラムによるトリガー</h2>
+
+カスタムUIを自作している場合は、イベントを手動でトリガーすることもできます。
+
+```javascript
+window.Pavy.trigger('open');
+```

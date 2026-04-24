@@ -1,0 +1,79 @@
+---
+title: Shopify 연동
+description: Pavy.ai로 Shopify 스토어의 전환율을 높이세요.
+---
+
+Pavy.ai를 Shopify에 연동하면 AI가 여러분의 상품 카탈로그, 재고 상태, 배송 정책을 자동으로 이해할 수 있습니다.
+
+## 사전 준비
+
+시작하기 전에 다음 사항을 준비해 주세요:
+1. Shopify 스토어가 연결된 **Pavy.ai 계정**.
+2. **Shopify Admin** 패널 접근 권한.
+3. **Pavy API 키**.
+
+## 설치 단계
+
+1. Shopify 관리자 화면에서 **온라인 스토어 > 테마** 메뉴로 이동합니다.
+2. 편집할 테마를 찾아 **... > 코드 편집**을 클릭합니다.
+3. 사이드바에서 `layout/theme.liquid` 파일을 엽니다.
+4. 파일의 가장 아래로 스크롤합니다.
+5. `</body>` 닫는 태그 바로 앞에 Pavy.ai 스크립트 태그를 붙여넣습니다.
+6. `YOUR_API_KEY`를 실제 API 키로 교체합니다.
+
+```html
+<script 
+  src="https://cdn.pavy.ai/widget/v1/pavy.js" 
+  data-api-key="YOUR_API_KEY"
+  async
+></script>
+```
+
+7. **저장**을 클릭합니다.
+
+## 설정 옵션
+
+기본 스크립트만으로도 즉시 동작하지만, `theme.liquid`에서 Shopify 전용 동작을 커스터마이즈할 수 있습니다:
+
+| 옵션 | Shopify 변수 | 설명 |
+| :--- | :--- | :--- |
+| `theme` | 사용자 정의 문자열 | 테마에 맞게 'light' 또는 'dark'로 설정합니다. |
+| `primaryColor` | 사용자 정의 문자열 | 스토어의 주요 버튼 색상과 맞춥니다. |
+| `user.id` | `{{ customer.id }}` | 개인화된 지원을 위해 로그인한 고객의 ID를 전달합니다. |
+| `user.email` | `{{ customer.email }}` | 고객의 이메일을 전달합니다. |
+
+## 설치 확인
+
+설치를 검증하려면:
+1. 새 창에서 Shopify 스토어를 엽니다.
+2. 오른쪽 하단에 Pavy.ai 채팅 버블이 보여야 합니다.
+3. 고객으로 로그인한 상태라면, Pavy가 이름을 불러 인사할 수 있어야 합니다(설정된 경우).
+
+## 상품 컨텍스트 설정
+
+사용자가 보고 있는 상품에 대해 Pavy가 답할 수 있도록, `theme.liquid` 파일의 `<head>` 태그 안에 다음 스니펫을 추가하세요:
+
+```html
+{% if template contains 'product' %}
+<script>
+  window.PavyConfig = {
+    product: {
+      id: "{{ product.id }}",
+      title: "{{ product.title | escape }}",
+      handle: "{{ product.handle }}",
+      price: "{{ product.price | money_without_currency }}",
+      currency: "{{ shop.currency }}",
+      sku: "{{ product.selected_or_first_available_variant.sku }}"
+    }
+  };
+</script>
+{% endif %}
+```
+
+## 문제 해결
+
+| 문제 | 해결 방법 |
+| :--- | :--- |
+| **위젯이 나타나지 않음** | `theme.liquid` 파일이 저장되었는지, 초안이 아닌 실제 라이브 스토어를 보고 있는지 확인하세요(초안 테마라면 미리보기 모드에서 확인). |
+| **상품 데이터가 비어 있음** | `{% if template contains 'product' %}` 블록이 올바른 위치에 있는지, 페이지 소스에서 Liquid 변수가 정상적으로 렌더되는지 확인하세요. |
+| **앱 임베드와 충돌** | 다른 채팅 앱을 함께 사용한다면 버블이 겹칠 수 있습니다. `PavyConfig.position`으로 버블을 왼쪽으로 옮기세요. |

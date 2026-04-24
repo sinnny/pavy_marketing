@@ -1,0 +1,79 @@
+---
+title: Shopify連携
+description: Pavy.aiでShopifyストアのコンバージョンを高めましょう。
+---
+
+Pavy.aiをShopifyに連携すると、AIが商品カタログ、在庫状況、配送ポリシーを自動的に把握できるようになります。
+
+## 事前準備
+
+始める前に、以下を準備してください：
+1. ShopifyストアがリンクされたPavy.aiアカウント。
+2. **Shopify Admin**パネルへのアクセス権。
+3. **Pavy APIキー**。
+
+## インストール手順
+
+1. Shopify管理画面で **オンラインストア > テーマ** に移動します。
+2. 編集したいテーマを探し、**... > コードを編集** をクリックします。
+3. サイドバーで `layout/theme.liquid` ファイルを開きます。
+4. ファイルの一番下までスクロールします。
+5. `</body>` の閉じタグの直前にPavy.aiのスクリプトタグを貼り付けます。
+6. `YOUR_API_KEY` を実際のAPIキーに置き換えます。
+
+```html
+<script 
+  src="https://cdn.pavy.ai/widget/v1/pavy.js" 
+  data-api-key="YOUR_API_KEY"
+  async
+></script>
+```
+
+7. **保存** をクリックします。
+
+## 設定オプション
+
+基本のスクリプトだけでもすぐ動作しますが、`theme.liquid` でShopify特有の挙動をカスタマイズできます：
+
+| オプション | Shopify変数 | 説明 |
+| :--- | :--- | :--- |
+| `theme` | カスタム文字列 | テーマに合わせて 'light' または 'dark' に設定します。 |
+| `primaryColor` | カスタム文字列 | ストアのメインボタンカラーに合わせます。 |
+| `user.id` | `{{ customer.id }}` | ログイン済み顧客のIDを渡して、パーソナライズ対応に活用します。 |
+| `user.email` | `{{ customer.email }}` | 顧客のメールアドレスを渡します。 |
+
+## 動作確認
+
+導入を確認するには：
+1. 新しいウィンドウでShopifyストアを開きます。
+2. 右下にPavy.aiのチャットバブルが表示されます。
+3. 顧客としてログイン中であれば、Pavyが名前で挨拶できます(設定済みの場合)。
+
+## 商品コンテキストの設定
+
+ユーザーが閲覧中の商品に関してPavyが回答できるよう、`theme.liquid` ファイルの `<head>` タグ内に次のスニペットを追加してください：
+
+```html
+{% if template contains 'product' %}
+<script>
+  window.PavyConfig = {
+    product: {
+      id: "{{ product.id }}",
+      title: "{{ product.title | escape }}",
+      handle: "{{ product.handle }}",
+      price: "{{ product.price | money_without_currency }}",
+      currency: "{{ shop.currency }}",
+      sku: "{{ product.selected_or_first_available_variant.sku }}"
+    }
+  };
+</script>
+{% endif %}
+```
+
+## トラブルシューティング
+
+| 問題 | 解決方法 |
+| :--- | :--- |
+| **ウィジェットが表示されない** | `theme.liquid` ファイルが保存されているか、ドラフトテーマではなくライブ環境を閲覧しているかを確認してください(ドラフトの場合はプレビューモードで確認)。 |
+| **商品データが空になる** | `{% if template contains 'product' %}` ブロックが正しい位置にあり、ページソース上でLiquid変数が想定どおりレンダリングされているか確認してください。 |
+| **アプリ埋め込みとの競合** | 他のチャットアプリを併用している場合はバブルが重なることがあります。`PavyConfig.position` でバブルを左に移動してください。 |

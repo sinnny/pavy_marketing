@@ -608,8 +608,38 @@
         "configuration": "설정",
         "theming": "테마 설정",
         "events": "이벤트"
+      },
+      "layout": {
+        "menu": "문서 메뉴",
+        "menuLabel": "문서 내비게이션 열기/닫기"
+      },
+      "breadcrumb": {
+        "ariaLabel": "경로 내비게이션",
+        "home": "홈",
+        "docs": "문서"
+      },
+      "common": {
+        "onThisPage": "이 페이지의 내용"
+      },
+      "pagination": {
+        "ariaLabel": "문서 페이지 이동",
+        "previous": "이전",
+        "next": "다음"
+      },
+      "notFound": {
+        "title": "404",
+        "description": "페이지를 찾을 수 없습니다",
+        "backToDocs": "문서로 돌아가기"
+      },
+      "codeBlock": {
+        "copy": "복사",
+        "copied": "복사됨"
+      },
+      "seo": {
+        "defaultDescription": "Pavy.ai 연동 및 설정 문서"
       }
-    },    "legal": {
+    },
+    "legal": {
       "common": {
         "home": "홈",
         "legal": "법적 고지",

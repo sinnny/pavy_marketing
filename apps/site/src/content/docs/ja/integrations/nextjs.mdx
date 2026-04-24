@@ -1,0 +1,133 @@
+---
+title: Next.js連携
+description: Next.jsの組み込み Script コンポーネントを活用してPavy.aiを最適な形で導入します。
+---
+
+Next.jsは外部スクリプトを最適化して読み込むための専用 `Script` コンポーネントを提供しており、Pavy.aiの導入に最適です。
+
+## 事前準備
+
+始める前に、以下を準備してください：
+1. **Pavy.aiアカウント**。
+2. **Next.jsプロジェクト** (App Router または Pages Router)。
+3. **Pavy APIキー**。
+
+## インストール手順
+
+### 1. レイアウトにスクリプトを追加する
+
+**App Router** (`app/layout.tsx`):
+
+```tsx
+import Script from 'next/script'
+
+export default function RootLayout({ children }) {
+  return (
+    <html lang="en">
+      <body>
+        {children}
+        <Script
+          src="https://cdn.pavy.ai/widget/v1/pavy.js"
+          data-api-key={process.env.NEXT_PUBLIC_PAVY_API_KEY}
+          strategy="afterInteractive"
+        />
+      </body>
+    </html>
+  )
+}
+```
+
+**Pages Router** (`pages/_app.tsx`):
+
+```tsx
+import Script from 'next/script'
+
+function MyApp({ Component, pageProps }) {
+  return (
+    <>
+      <Component {...pageProps} />
+      <Script
+        src="https://cdn.pavy.ai/widget/v1/pavy.js"
+        data-api-key={process.env.NEXT_PUBLIC_PAVY_API_KEY}
+        strategy="afterInteractive"
+      />
+    </>
+  )
+}
+
+export default MyApp
+```
+
+## 設定オプション
+
+Next.jsでは、環境変数やグローバルオブジェクトを使って設定を管理できます。
+
+| オプション | 環境変数 | 説明 |
+| :--- | :--- | :--- |
+| APIキー | `NEXT_PUBLIC_PAVY_API_KEY` | クライアント側から参照するには必ず `NEXT_PUBLIC_` プレフィックスが必要です。 |
+| テーマ | 該当なし | `window.PavyConfig.theme` で設定します。 |
+| ユーザーデータ | 該当なし | `window.PavyConfig.user` で設定します。 |
+
+インライン設定の例：
+
+```tsx
+<Script
+  id="pavy-config"
+  strategy="beforeInteractive"
+>
+  {`
+    window.PavyConfig = {
+      theme: 'light',
+      primaryColor: '#6366f1'
+    };
+  `}
+</Script>
+```
+
+## 動作確認
+
+1. 開発サーバーを起動します(`npm run dev`)。
+2. サイトにアクセスします。
+3. DevToolsの「Network」タブを開き、`pavy.js` でフィルタして `200` ステータスで読み込まれていることを確認します。
+4. 画面の隅にチャットバブルが表示されます。
+
+## 商品コンテキストの設定
+
+Next.jsで商品コンテキストを提供するには、商品詳細用にクライアントコンポーネントを使用します。
+
+```tsx
+'use client'
+
+import { useEffect } from 'react'
+
+export default function ProductDetails({ product }) {
+  useEffect(() => {
+    if (typeof window !== 'undefined' && (window as any).Pavy) {
+      (window as any).PavyConfig = {
+        ...((window as any).PavyConfig || {}),
+        product: {
+          id: product.id,
+          title: product.title,
+          price: product.price
+        }
+      };
+      (window as any).Pavy.updateContext();
+    }
+  }, [product]);
+
+  return (
+    <div>
+      <h1>{product.title}</h1>
+      {/* ... */}
+    </div>
+  )
+}
+```
+
+## トラブルシューティング
+
+| 問題 | 解決方法 |
+| :--- | :--- |
+| **window is not defined** | `window.Pavy` や `window.PavyConfig` にアクセスする前に `typeof window !== 'undefined'` を確認するか、クライアントでのみ実行される `useEffect` を使ってください。 |
+| **Hydrationに失敗する** | Pavy.aiウィジェットはReactのルートの外側のDOMに自身を注入します。`afterInteractive` 戦略のNext.js `Script` コンポーネントが適切に処理します。 |
+| **環境変数が読めない** | `.env.local` に `NEXT_PUBLIC_PAVY_API_KEY` が定義されているか、開発サーバーを再起動したかを確認してください。 |

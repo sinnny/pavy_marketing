@@ -1,0 +1,53 @@
+---
+title: 테마 설정
+description: Pavy.ai 위젯의 룩앤필을 브랜드에 맞게 커스터마이즈하세요.
+---
+
+Pavy.ai는 채팅 위젯이 웹사이트의 자연스러운 일부처럼 느껴지도록 풍부한 테마 옵션을 제공합니다.
+
+<h2 id="colors">컬러 커스터마이즈</h2>
+
+위젯의 주요 색상을 브랜드 색상 팔레트에 맞춰 설정할 수 있습니다.
+
+```javascript
+window.PavyConfig = {
+  primaryColor: '#6366f1', // Indigo 600
+  secondaryColor: '#4f46e5' // Indigo 700
+};
+```
+
+<h2 id="dark-mode">다크 모드</h2>
+
+위젯은 라이트 모드와 다크 모드를 모두 지원합니다. 특정 모드를 강제할 수도 있고, 시스템 설정을 따르도록 할 수도 있습니다.
+
+```javascript
+window.PavyConfig = {
+  theme: 'dark' // 'light', 'dark', 'system'
+};
+```
+
+<h2 id="ui-elements">UI 요소</h2>
+
+아이콘, 버튼 형태, 위치를 커스터마이즈할 수 있습니다.
+
+```javascript
+window.PavyConfig = {
+  position: 'right', // 'left' 또는 'right'
+  offset: {
+    x: 20,
+    y: 20
+  },
+  launcherIcon: 'https://mysite.com/chat-icon.png',
+  borderRadius: 12
+};
+```
+
+<h2 id="fonts">사용자 폰트</h2>
+
+Pavy.ai는 상위 웹사이트의 폰트를 상속받거나, 지정한 폰트 스택을 사용할 수 있습니다.
+
+```javascript
+window.PavyConfig = {
+  fontFamily: 'Inter, system-ui, sans-serif'
+};
+```

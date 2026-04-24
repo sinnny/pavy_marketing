@@ -1,0 +1,91 @@
+---
+title: HTML / Vanilla JS 連携
+description: 標準のHTMLとJavaScriptだけで、Pavy.aiをあらゆるウェブサイトに導入できます。
+---
+
+Pavy.aiはシンプルかつプラットフォームを問わず導入できます。1つのスクリプトタグを追加するだけで、訪問者にAI搭載のショッピングアシスタントを提供できます。
+
+## 事前準備
+
+始める前に、以下を準備してください：
+1. **Pavy.aiアカウント** — お持ちでない場合は[こちらから登録](https://pavy.ai/signup)してください。
+2. **APIキー** — [ダッシュボード > 設定 > APIキー](https://pavy.ai/dashboard/settings)で確認できます。
+
+## インストール手順
+
+以下の手順でPavy.aiウィジェットをウェブサイトに追加します：
+
+1. 下のスクリプトタグをコピーします。
+2. ウェブサイトのメインHTMLファイル(通常は`index.html`や共通フッターテンプレート)を開きます。
+3. `</body>`の閉じタグの直前にスクリプトタグを貼り付けます。
+4. `YOUR_API_KEY`を実際のAPIキーに置き換えます。
+
+```html
+<script 
+  src="https://cdn.pavy.ai/widget/v1/pavy.js" 
+  data-api-key="YOUR_API_KEY"
+  async
+></script>
+```
+
+## 設定オプション
+
+スクリプトが読み込まれる*前に* `window.PavyConfig` オブジェクトを定義することで、ウィジェットの動作をカスタマイズできます。
+
+| オプション | 型 | 説明 |
+| :--- | :--- | :--- |
+| `theme` | `string` | 'light' または 'dark'。デフォルトは 'light'。 |
+| `primaryColor` | `string` | メインブランドカラーのHEXコード(例: '#6366f1')。 |
+| `position` | `string` | 'right' または 'left'。デフォルトは 'right'。 |
+| `user` | `object` | `id`、`name`、`email`を含む任意のオブジェクト。 |
+
+高度な設定例：
+
+```html
+<script>
+  window.PavyConfig = {
+    theme: 'dark',
+    primaryColor: '#6366f1',
+    position: 'right',
+    user: {
+      id: 'user_123',
+      name: 'Jane Doe',
+      email: 'jane@example.com'
+    }
+  };
+</script>
+<script src="https://cdn.pavy.ai/widget/v1/pavy.js" data-api-key="YOUR_API_KEY" async></script>
+```
+
+## 動作確認
+
+スクリプトを追加して変更を保存したら：
+1. ブラウザでウェブサイトを再読み込みします。
+2. 画面下部(デフォルトは右下)にPavy.aiのチャットバブルが表示されます。
+3. バブルをクリックして、チャットウィンドウが正しく開くことを確認します。
+
+## 商品コンテキストの設定
+
+ユーザーが閲覧中の商品をPavy.aiに理解させるため、商品ページでは商品コンテキストを提供してください。
+
+```html
+<script>
+  window.PavyConfig = {
+    product: {
+      id: 'sku_123',
+      title: 'Premium Wireless Headphones',
+      price: 199.99,
+      currency: 'USD',
+      url: window.location.href
+    }
+  };
+</script>
+```
+
+## トラブルシューティング
+
+| 問題 | 解決方法 |
+| :--- | :--- |
+| **ウィジェットが表示されない** | APIキーが正しいか、スクリプトURLにアクセスできるかを再確認してください。広告ブロッカーがスクリプトの読み込みを妨げていないかも確認してください。 |
+| **チャットバブルがコンテンツに重なる** | `PavyConfig`の`position`を変更するか、重なっている要素のz-indexをCSSで調整してください。 |
+| **スタイルの崩れ** | ウィジェットはスタイルの漏出を防ぐためShadow DOMを使用していますが、サイトのグローバルCSSが`iframe`や`pavy-widget`要素を強く指定していないか確認してください。 |

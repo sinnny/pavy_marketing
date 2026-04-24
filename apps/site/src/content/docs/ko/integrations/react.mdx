@@ -1,0 +1,128 @@
+---
+title: React 연동
+description: Pavy.ai를 React 애플리케이션에 연동하세요.
+---
+
+Pavy.ai를 React 애플리케이션에 연동하면 위젯의 라이프사이클을 컴포넌트 트리와 함께 관리할 수 있습니다.
+
+## 사전 준비
+
+시작하기 전에 다음 사항을 준비해 주세요:
+1. **Pavy.ai 계정**.
+2. **React 프로젝트** (Create React App, Vite 등).
+3. **Pavy API 키**.
+
+## 설치 단계
+
+Pavy.ai를 React에 연동하는 가장 견고한 방법은 재사용 가능한 컴포넌트나 커스텀 훅을 만드는 것입니다.
+
+### 1. `PavyWidget` 컴포넌트 만들기
+
+`components/PavyWidget.tsx` 파일을 새로 만듭니다:
+
+```tsx
+import { useEffect } from 'react';
+
+interface PavyWidgetProps {
+  apiKey: string;
+  config?: Record<string, unknown>;
+}
+
+export const PavyWidget = ({ apiKey, config }: PavyWidgetProps) => {
+  useEffect(() => {
+    if (config) {
+      (window as any).PavyConfig = config;
+    }
+
+    const script = document.createElement('script');
+    script.src = 'https://cdn.pavy.ai/widget/v1/pavy.js';
+    script.setAttribute('data-api-key', apiKey);
+    script.async = true;
+
+    document.body.appendChild(script);
+
+    return () => {
+      // 다른 곳에서 스크립트가 이동되거나 제거되었을 경우를 방어합니다.
+      if (script.parentNode) {
+        script.parentNode.removeChild(script);
+      }
+    };
+    // 리렌더마다 새 config 객체 리터럴이 전달되어 위젯이 다시 주입되는 것을
+    // 방지하기 위해 `config`는 의도적으로 제외합니다. 설정 업데이트는
+    // `window.Pavy.updateContext()`로 수행하세요(아래 참고).
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [apiKey]);
+
+  return null;
+};
+```
+
+### 2. 앱에서 사용하기
+
+```tsx
+import { PavyWidget } from './components/PavyWidget';
+
+function App() {
+  return (
+    <div>
+      <PavyWidget 
+        apiKey="YOUR_API_KEY" 
+        config={{ theme: 'dark', primaryColor: '#6366f1' }} 
+      />
+      {/* 앱 콘텐츠 */}
+    </div>
+  );
+}
+```
+
+## 설정 옵션
+
+설정 객체를 `PavyWidget` 컴포넌트에 직접 전달할 수 있습니다.
+
+| Prop | 타입 | 설명 |
+| :--- | :--- | :--- |
+| `apiKey` | `string` | Pavy API 키. |
+| `config.theme` | `'light' \| 'dark'` | 위젯 테마. |
+| `config.user` | `object` | 개인화된 채팅을 위한 사용자 정보. |
+| `config.position` | `'left' \| 'right'` | 버블 위치. |
+
+## 설치 확인
+
+1. React 앱을 실행합니다(`npm start` 또는 `npm run dev`).
+2. 브라우저 콘솔을 열어 `pavy.js` 관련 에러가 없는지 확인합니다.
+3. 컴포넌트가 마운트되면 채팅 버블이 나타나야 합니다.
+
+## 상품 컨텍스트 설정
+
+React SPA에서는 사용자가 서로 다른 상품 페이지로 이동할 때 상품 컨텍스트를 갱신해야 합니다.
+
+```tsx
+import { useEffect } from 'react';
+
+function ProductPage({ product }) {
+  useEffect(() => {
+    if (window.Pavy) {
+      window.PavyConfig = {
+        ...window.PavyConfig,
+        product: {
+          id: product.id,
+          title: product.title,
+          price: product.price
+        }
+      };
+      // 컨텍스트가 바뀌었음을 Pavy에 알립니다
+      window.Pavy.updateContext();
+    }
+  }, [product]);
+
+  return <div>{product.title}</div>;
+}
+```
+
+## 문제 해결
+
+| 문제 | 해결 방법 |
+| :--- | :--- |
+| **리렌더마다 스크립트가 재주입됨** | 스크립트 주입 로직이 빈 의존성 배열(또는 `apiKey`만 포함)의 `useEffect` 안에 있는지 확인하세요. |
+| **TypeScript 에러** | `window.Pavy`와 `window.PavyConfig`를 정의하는 선언 파일(예: `pavy.d.ts`)을 추가하세요. |
+| **위젯이 여러 번 표시됨** | 보통 `PavyWidget`이 여러 곳에서 렌더링될 때 발생합니다. 전역 레이아웃 컴포넌트에만 배치되어 있는지 확인하세요. |
