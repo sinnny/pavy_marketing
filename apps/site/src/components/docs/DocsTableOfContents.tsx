@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import { useLocation } from 'react-router-dom';
 import { useTranslation } from '@pavy/i18n';
 import { clsx } from 'clsx';
 
@@ -10,68 +11,90 @@ interface TOCItem {
 
 export function DocsTableOfContents() {
   const { t } = useTranslation('site');
+  const location = useLocation();
   const [headings, setHeadings] = useState<TOCItem[]>([]);
   const [activeId, setActiveId] = useState<string>('');
 
   useEffect(() => {
-    // Extract headings from the prose content
-    const elements = Array.from(document.querySelectorAll('.docs-content h2, .docs-content h3'))
-      .map((elem) => ({
-        id: elem.id,
-        text: elem.textContent || '',
-        level: Number(elem.tagName.charAt(1)),
-      }))
-      .filter(item => item.id); // Only include those with IDs
+    let observer: IntersectionObserver | null = null;
 
-    setHeadings(elements);
+    // Defer one frame so the MDX content renders before we query the DOM.
+    const rafId = window.requestAnimationFrame(() => {
+      const elements = Array.from(
+        document.querySelectorAll<HTMLElement>('.docs-content h2, .docs-content h3')
+      )
+        .map((elem) => ({
+          id: elem.id,
+          text: elem.textContent || '',
+          level: Number(elem.tagName.charAt(1)),
+        }))
+        .filter((item) => item.id);
 
-    // Setup intersection observer to highlight active heading
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            setActiveId(entry.target.id);
+      setHeadings(elements);
+      setActiveId(elements[0]?.id ?? '');
+
+      // Pick the topmost intersecting heading so jumping between adjacent
+      // sections doesn't flicker the active indicator.
+      const visible = new Map<string, number>();
+      observer = new IntersectionObserver(
+        (entries) => {
+          for (const entry of entries) {
+            const id = (entry.target as HTMLElement).id;
+            if (entry.isIntersecting) {
+              visible.set(id, entry.boundingClientRect.top);
+            } else {
+              visible.delete(id);
+            }
           }
-        });
-      },
-      { rootMargin: '-100px 0% -80% 0%' }
-    );
+          if (visible.size > 0) {
+            const next = [...visible.entries()].sort((a, b) => a[1] - b[1])[0][0];
+            setActiveId(next);
+          }
+        },
+        { rootMargin: '-96px 0px -70% 0px', threshold: [0, 1] }
+      );
 
-    elements.forEach((heading) => {
-      const element = document.getElementById(heading.id);
-      if (element) observer.observe(element);
+      elements.forEach((heading) => {
+        const element = document.getElementById(heading.id);
+        if (element && observer) observer.observe(element);
+      });
     });
 
-    return () => observer.disconnect();
-  }, [headings.length]); // Re-run if content length changes
+    return () => {
+      window.cancelAnimationFrame(rafId);
+      observer?.disconnect();
+    };
+  }, [location.pathname]);
 
   if (headings.length === 0) return null;
 
   return (
-    <div className="hidden xl:block sticky top-32 w-64 pl-8">
+    <div className="hidden xl:block sticky top-32 w-64 pl-8 self-start">
       <h4 className="text-sm font-semibold text-slate-900 dark:text-white mb-4 uppercase tracking-wider">
-        {t('legal.common.onThisPage')}
+        {t('pages.docs.common.onThisPage')}
       </h4>
-      <nav aria-label="Table of contents">
+      <nav aria-label={t('pages.docs.common.onThisPage')}>
         <ul className="space-y-3">
           {headings.map((heading) => (
-            <li 
+            <li
               key={heading.id}
               style={{ paddingLeft: `${(heading.level - 2) * 1}rem` }}
             >
               <a
                 href={`#${heading.id}`}
                 className={clsx(
-                  "block text-sm transition-colors duration-200",
+                  'block text-sm transition-colors duration-200',
                   activeId === heading.id
-                    ? "text-indigo-600 dark:text-indigo-400 font-medium"
-                    : "text-slate-500 hover:text-slate-900 dark:text-slate-400 dark:hover:text-slate-200"
+                    ? 'text-indigo-600 dark:text-indigo-400 font-medium'
+                    : 'text-slate-500 hover:text-slate-900 dark:text-slate-400 dark:hover:text-slate-200'
                 )}
                 onClick={(e) => {
                   e.preventDefault();
-                  document.getElementById(heading.id)?.scrollIntoView({
-                    behavior: 'smooth'
-                  });
+                  const el = document.getElementById(heading.id);
+                  if (el) {
+                    el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    history.replaceState(null, '', `#${heading.id}`);
+                  }
                 }}
               >
                 {heading.text}
