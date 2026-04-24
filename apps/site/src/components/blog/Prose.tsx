@@ -15,7 +15,7 @@ export function Prose({ children, className }: ProseProps) {
   return (
     <div
       className={cn(
-        'prose prose-lg prose-indigo dark:prose-invert max-w-3xl mx-auto',
+        'prose prose-lg prose-indigo dark:prose-invert max-w-4xl',
         // Customizations
         'prose-headings:font-heading prose-headings:font-bold',
         'prose-a:text-brand-primary prose-a:no-underline hover:prose-a:underline',
