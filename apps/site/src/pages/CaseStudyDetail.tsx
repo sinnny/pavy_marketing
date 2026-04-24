@@ -1,4 +1,5 @@
 import { useTranslation } from '@pavy/i18n';
+import { useEffect } from 'react';
 import { CASE_STUDIES } from '../lib/customer-data';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
@@ -8,6 +9,7 @@ import { SEOHead } from '../components/SEOHead';
 import { getArticleSchema } from '../lib/structured-data';
 import { useLocale } from '../hooks/useLocale';
 import MetricCountUp from '../components/social-proof/MetricCountUp';
+import { trackEvent } from '../lib/analytics';
 
 export default function CaseStudyDetail() {
   const { t } = useTranslation('site');
@@ -15,6 +17,14 @@ export default function CaseStudyDetail() {
   const { localePath, currentLanguage } = useLocale();
 
   const caseStudy = CASE_STUDIES.find(cs => cs.slug === slug);
+
+  useEffect(() => {
+    if (caseStudy) {
+      trackEvent('view_customer_story', {
+        company_name: caseStudy.companyName,
+      });
+    }
+  }, [caseStudy]);
 
   if (!caseStudy) {
     return <Navigate to={localePath('/customers')} replace />;

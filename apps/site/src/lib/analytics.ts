@@ -3,29 +3,38 @@
  */
 import { getUTMParams } from './utm';
 
+type GtagArgs =
+  | ['js', Date]
+  | ['config', string, Record<string, unknown>?]
+  | ['event', string, Record<string, unknown>?]
+  | ['consent', 'default' | 'update', Record<string, unknown>];
+
+type Gtag = (...args: GtagArgs) => void;
+
 declare global {
   interface Window {
-    dataLayer: any[];
-    gtag: (...args: any[]) => void;
+    dataLayer: unknown[];
+    gtag: Gtag;
   }
 }
 
 /**
  * Initializes GA4 with the given measurement ID.
  * Sets default consent to 'denied' for Consent Mode v2 compliance.
+ * Safe to call multiple times — only the first call takes effect.
  */
 export function initGA4(measurementId: string): void {
   if (!measurementId || typeof window === 'undefined') return;
+  if (typeof window.gtag === 'function') return; // already initialized
 
-  // Initialize dataLayer
   window.dataLayer = window.dataLayer || [];
-  window.gtag = function gtag() {
-    // eslint-disable-next-line prefer-rest-params
-    window.dataLayer.push(arguments);
+  const gtag: Gtag = (...args) => {
+    window.dataLayer.push(args);
   };
+  window.gtag = gtag;
 
   // Set default consent mode: denied (Consent Mode v2)
-  window.gtag('consent', 'default', {
+  gtag('consent', 'default', {
     ad_storage: 'denied',
     ad_user_data: 'denied',
     ad_personalization: 'denied',
@@ -39,8 +48,8 @@ export function initGA4(measurementId: string): void {
   script.src = `https://www.googletagmanager.com/gtag/js?id=${measurementId}`;
   document.head.appendChild(script);
 
-  window.gtag('js', new Date());
-  window.gtag('config', measurementId, {
+  gtag('js', new Date());
+  gtag('config', measurementId, {
     send_page_view: false, // Handle page views manually for SPA
   });
 }
@@ -49,34 +58,32 @@ export function initGA4(measurementId: string): void {
  * Updates consent state when user accepts analytics cookies.
  */
 export function grantAnalyticsConsent(): void {
-  if (typeof window !== 'undefined' && typeof window.gtag === 'function') {
-    window.gtag('consent', 'update', {
-      analytics_storage: 'granted',
-    });
-  }
+  if (typeof window === 'undefined' || typeof window.gtag !== 'function') return;
+  window.gtag('consent', 'update', {
+    analytics_storage: 'granted',
+  });
 }
 
 /**
- * Tracks a page view event.
+ * Tracks a page view event. Safe to call regardless of consent state —
+ * Consent Mode v2 suppresses data until analytics_storage is granted.
  */
 export function trackPageView(path: string, title?: string): void {
-  if (typeof window !== 'undefined' && typeof window.gtag === 'function') {
-    const utmParams = getUTMParams();
-    window.gtag('event', 'page_view', {
-      page_path: path,
-      page_title: title || document.title,
-      ...utmParams,
-    });
-  }
+  if (typeof window === 'undefined' || typeof window.gtag !== 'function') return;
+  const utmParams = getUTMParams() ?? {};
+  window.gtag('event', 'page_view', {
+    page_path: path,
+    page_title: title ?? document.title,
+    ...utmParams,
+  });
 }
 
 /**
- * Tracks a custom event.
+ * Tracks a custom event. No-ops when gtag is not initialized
+ * (e.g., missing measurement ID).
  */
 export function trackEvent(name: string, params?: Record<string, unknown>): void {
-  if (typeof window !== 'undefined' && typeof window.gtag === 'function') {
-    const utmParams = getUTMParams();
-    const eventParams = utmParams ? { ...params, ...utmParams } : params;
-    window.gtag('event', name, eventParams);
-  }
+  if (typeof window === 'undefined' || typeof window.gtag !== 'function') return;
+  const utmParams = getUTMParams() ?? {};
+  window.gtag('event', name, { ...params, ...utmParams });
 }
