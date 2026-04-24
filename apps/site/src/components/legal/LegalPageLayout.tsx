@@ -39,8 +39,8 @@ export default function LegalPageLayout({ title, effectiveDate, children }: Lega
   }, [children]);
 
   return (
-    <div className="min-h-screen bg-white pt-24 pb-24">
-      <div className="max-w-7xl mx-auto px-6 lg:px-8">
+    <div className="min-h-screen bg-white pb-24">
+      <div className="max-w-[1400px] mx-auto px-10 pt-32 lg:pt-40">
         {/* Breadcrumbs */}
         <nav
           className="flex items-center gap-2 text-sm font-medium text-slate-500 mb-8"

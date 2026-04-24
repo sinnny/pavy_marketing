@@ -14,9 +14,11 @@ export default function UserGuide() {
                 path="/guide"
             />
             <Header />
-            <main className="pt-40 pb-32 max-w-[1200px] mx-auto px-6 text-center">
-                <h1 className="text-5xl font-heading font-black text-slate-900 mb-6">{t('pages.userGuide.title')}</h1>
-                <p className="text-xl text-slate-600 max-w-2xl mx-auto font-medium">{t('pages.userGuide.description')}</p>
+            <main className="pt-40 pb-32 max-w-[1400px] mx-auto px-10">
+                <div className="max-w-4xl">
+                    <h1 className="text-5xl font-heading font-black text-slate-900 mb-6">{t('pages.userGuide.title')}</h1>
+                    <p className="text-xl text-slate-600 font-medium">{t('pages.userGuide.description')}</p>
+                </div>
             </main>
             <Footer />
         </div>
