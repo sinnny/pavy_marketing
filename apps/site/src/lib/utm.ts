@@ -65,7 +65,7 @@ export function getUTMParams(): UTMParams | null {
   if (!stored) return null;
   try {
     return JSON.parse(stored) as UTMParams;
-  } catch (e) {
+  } catch {
     return null;
   }
 }
