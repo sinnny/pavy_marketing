@@ -1,5 +1,5 @@
 import { lazy, Suspense, useEffect } from "react";
-import { Routes, Route, Navigate, useLocation, useNavigate } from "react-router-dom";
+import { Routes, Route, Navigate, useLocation, useNavigate, useParams } from "react-router-dom";
 import LocaleWrapper from "./components/LocaleWrapper";
 import ArchivedLandingPage from "./pages/ArchivedLandingPage";
 import ProductDashboard from "./pages/ProductDashboard";
@@ -26,6 +26,25 @@ const TermsOfService = lazy(() => import("./pages/legal/TermsOfService"));
 function RootRedirect() {
   const lang = detectLanguage();
   return <Navigate to={`/${lang}`} replace />;
+}
+
+// docs.pavy.ai/troubleshoot/<slug> is the canonical fix-URL surface emitted by
+// the Widget SDK (pavy-error-messages.ts). Without this redirect, those URLs
+// fall through to RootRedirect and the customer lands on the home page.
+function TroubleshootRedirect() {
+  const { '*': splat } = useParams();
+  const lang = detectLanguage();
+  const tail = splat ? `/${splat}` : '';
+  return <Navigate to={`/${lang}/docs/troubleshoot${tail}`} replace />;
+}
+
+// /docs/<path> shared without a language prefix should still resolve, e.g. when
+// support pastes a deep link or when MDX uses a leading-slash internal path.
+function DocsRootRedirect() {
+  const { '*': splat } = useParams();
+  const lang = detectLanguage();
+  const tail = splat ? `/${splat}` : '';
+  return <Navigate to={`/${lang}/docs${tail}`} replace />;
 }
 
 const GA4_MEASUREMENT_ID = import.meta.env.VITE_GA4_MEASUREMENT_ID;
@@ -57,6 +76,8 @@ function App() {
     <>
       <Routes>
         <Route path="/" element={<RootRedirect />} />
+        <Route path="/troubleshoot/*" element={<TroubleshootRedirect />} />
+        <Route path="/docs/*" element={<DocsRootRedirect />} />
         <Route
           path="/sales-deck"
           element={
