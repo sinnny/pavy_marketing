@@ -7,7 +7,29 @@ If you've embedded the script but the widget is not visible, it's likely being b
 
 Pavy Widget outputs detailed error codes and troubleshooting links to your browser's Developer Tools (Console) when initialization fails.
 
-## How to Diagnose
+## Diagnostic decision tree
+
+Follow these steps in order. The first one that fails points to the right guide.
+
+1. **Is the script tag in your page source?** If not, re-add the embed snippet from **Admin → Install**.
+2. **Open DevTools → Console and filter by `[Pavy]`.** Do you see any messages?
+   - **No messages at all** → The script may be blocked by an ad-blocker or CSP. See [Still Stuck?](#still-stuck).
+   - **A message with an error code** → Use the table below to jump to the matching guide.
+3. **Does the message include a `Fix:` link?** Click it. Each fix URL maps 1:1 to a guide on this site.
+
+## Error code → fix guide
+
+| Error Code | Meaning | Quick Fix |
+| :--- | :--- | :--- |
+| [**INVALID_API_KEY**](./invalid-api-key) | Invalid API Key | Verify your API key in the Admin panel. |
+| [**NOT_PUBLIC_KEY**](./not-public-key) | Secret Key Used | Use the Public Key starting with `pk_` instead of `sk_`. |
+| [**ORIGIN_NOT_ALLOWED**](./origin-not-allowed) | Domain Not Whitelisted | Add your current domain to 'Allowed Domains' in the Admin panel. |
+| [**WORKSPACE_NOT_FOUND**](./workspace-not-found) | Workspace Issue | Ensure your workspace is active and not disabled. |
+| [**RATE_LIMITED**](./rate-limited) | Rate Limit Exceeded | Wait a moment. The SDK will retry automatically. |
+| [**NETWORK_ERROR**](./network-error) | Connection Failure | Check your internet or firewall settings. |
+| [**CORS_BLOCKED**](./cors-blocked) | CORS Policy Blocked | Check browser security settings or proxy configurations. |
+
+## How to open the console
 
 1. Open the webpage where the widget is installed.
 2. Open **Developer Tools** in your browser (Windows: `F12` or `Ctrl+Shift+I`, Mac: `Cmd+Option+I`).
@@ -15,19 +37,7 @@ Pavy Widget outputs detailed error codes and troubleshooting links to your brows
 4. Type `[Pavy]` in the filter box to see only Pavy-related logs.
 5. Click the troubleshooting link provided next to the error message for a detailed guide.
 
-## Troubleshooting Guides by Error Code
-
-Refer to the guides below based on the error code displayed in the console.
-
-| Error Code | Meaning | Quick Fix |
-| :--- | :--- | :--- |
-| **INVALID_API_KEY** | Invalid API Key | Verify your API key in the Admin panel. |
-| **NOT_PUBLIC_KEY** | Secret Key Used | Use the Public Key starting with `pk_` instead of `sk_`. |
-| **ORIGIN_NOT_ALLOWED** | Domain Not Whitelisted | Add your current domain to 'Allowed Domains' in the Admin panel. |
-| **WORKSPACE_NOT_FOUND** | Workspace Issue | Ensure your workspace is active and not disabled. |
-| **RATE_LIMITED** | Rate Limit Exceeded | Wait a moment. The SDK will retry automatically. |
-| **NETWORK_ERROR** | Connection Failure | Check your internet or firewall settings. |
-| **CORS_BLOCKED** | CORS Policy Blocked | Check browser security settings or proxy configurations. |
+![DevTools Console filtered by [Pavy]](/images/troubleshoot/console-filter.svg)
 
 ## Still Stuck?
 

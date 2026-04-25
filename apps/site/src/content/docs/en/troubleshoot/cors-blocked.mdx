@@ -10,8 +10,10 @@ CORS (Cross-Origin Resource Sharing) is a security policy that limits requests t
 Check the **Console** or **Network** tab in Developer Tools for error messages related to `Access-Control-Allow-Origin`.
 
 ## How to fix?
-1. **Register Domain:** In most cases, this is caused by not registering your domain in [Admin > Domain Management]. Refer to the [ORIGIN_NOT_ALLOWED Guide](/docs/troubleshoot/origin-not-allowed) to register your domain.
+1. **Register Domain:** In most cases, this is caused by not registering your domain in [Admin > Domain Management]. Refer to the [ORIGIN_NOT_ALLOWED Guide](./origin-not-allowed) to register your domain.
 2. **Check Protocol:** `http` and `https` are considered different domains. In production, ensure you are using `https` and have registered the domain with the `https://` prefix.
+
+![CORS error example in DevTools Console](/images/troubleshoot/cors-blocked-devtools.svg)
 
 ## Still stuck?
 If testing in a local development environment (`localhost`), ensure you have explicitly added `http://localhost:3000` or similar to the Admin panel.
