@@ -1,0 +1,18 @@
+---
+title: RATE_LIMITED
+description: Temporary block due to too many requests in a short period.
+---
+
+## What does this mean?
+For security and service stability, we limit the number of requests from the same IP or domain. This error can occur if there are an unusually high number of refreshes or a sudden surge in traffic.
+
+## How to verify?
+Check if the message `Retrying in X seconds...` is displayed in the browser console.
+
+## How to fix?
+1. **Please wait:** The Pavy SDK will automatically retry after a certain period. The widget will load normally after a short wait.
+2. **Check traffic:** Verify if there are any macros or unusual access attempts on your website.
+3. **Upgrade Plan:** If your traffic is legitimately high, consider upgrading to a plan that offers higher limits.
+
+## Still stuck?
+If you encounter this error repeatedly, you can contact our [Technical Support](mailto:support@pavy.ai) to request a limit adjustment.

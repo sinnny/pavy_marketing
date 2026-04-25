@@ -1,0 +1,22 @@
+---
+title: NOT_PUBLIC_KEY
+description: You must use a 'Public Key' for widget installation.
+---
+
+## What does this mean?
+Pavy uses two types of keys:
+- **Public Key (starts with `pk_`):** Used for website widget installation. It is safe to be exposed to the public.
+- **Secret Key (starts with `sk_`):** Used for server-to-server communication (backend API calls). It must NEVER be exposed in your website's source code.
+
+Your widget installation script is currently using a Secret Key starting with `sk_`, which has been blocked by our security policy.
+
+## How to verify?
+Check if the `data-api-key` value in your website's source code starts with `sk_`.
+
+## How to fix?
+1. Go to **Settings > API Keys** in the [Pavy Admin](https://admin.pavy.ai).
+2. Copy the key starting with `pk_` from the **Public Key** section.
+3. Replace the `data-api-key` value in your script tag with the copied Public Key.
+
+## Still stuck?
+If you need further assistance, please contact our [Support Team](mailto:support@pavy.ai).
