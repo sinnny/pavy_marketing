@@ -607,7 +607,16 @@
         "nextjs": "Next.js",
         "configuration": "설정",
         "theming": "테마 설정",
-        "events": "이벤트"
+        "events": "이벤트",
+        "troubleshooting": "트러블슈팅",
+        "invalid_api_key": "잘못된 API 키",
+        "not_public_key": "퍼블릭 키가 아님",
+        "origin_not_allowed": "허용되지 않은 도메인",
+        "workspace_not_found": "워크스페이스를 찾을 수 없음",
+        "rate_limited": "요청 횟수 제한",
+        "network_error": "네트워크 오류",
+        "cors_blocked": "CORS 차단",
+        "widget_not_showing_overview": "위젯이 보이지 않을 때"
       },
       "layout": {
         "menu": "문서 메뉴",

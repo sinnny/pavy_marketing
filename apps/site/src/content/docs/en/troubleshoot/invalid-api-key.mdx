@@ -1,0 +1,20 @@
+---
+title: INVALID_API_KEY
+description: The provided API key is invalid or has expired.
+---
+
+## What does this mean?
+The API key used during the Widget SDK initialization was not recognized by the Pavy system or has been deactivated. If the API key is incorrect, the widget cannot fetch its configuration from the server.
+
+## How to verify?
+1. Check the `data-api-key` value in the script tag within your website's source code.
+2. Example: `<script src="..." data-api-key="pk_live_...">`
+
+## How to fix?
+1. Log in to the [Pavy Admin](https://admin.pavy.ai).
+2. Go to **Settings > API Keys**.
+3. Verify if the key you are using is in the list and its status is 'Active'.
+4. If the keys don't match, copy the key from the Admin panel and paste it into your website's source code.
+
+## Still stuck?
+If the issue persists despite having the correct key, please contact our [Support Team](mailto:support@pavy.ai).

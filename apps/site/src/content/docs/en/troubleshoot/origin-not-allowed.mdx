@@ -1,0 +1,19 @@
+---
+title: ORIGIN_NOT_ALLOWED
+description: The current domain is not registered in the allowed domains list.
+---
+
+## What does this mean?
+For security reasons, the Pavy widget only operates on pre-registered domains (Origins). This prevents others from using your API key on unauthorized sites.
+
+## How to verify?
+Check if the `Origin: https://...` address displayed in the browser console error message matches your actual website address.
+
+## How to fix?
+1. Go to **Settings > Domain Management** in the [Pavy Admin](https://admin.pavy.ai).
+2. Add the domain of the website where you want to install the widget (e.g., `https://my-shop.com`).
+3. **Wildcard Support:** Use the format `*.my-shop.com` to allow all subdomains.
+4. After saving, wait 1-2 minutes and refresh your website to verify.
+
+## Still stuck?
+If the problem persists after registering the domain, try clearing your browser cache or re-testing in an Incognito window.
