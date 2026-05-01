@@ -10,6 +10,7 @@ import { getArticleSchema } from '../lib/structured-data';
 import { useLocale } from '../hooks/useLocale';
 import MetricCountUp from '../components/social-proof/MetricCountUp';
 import { trackEvent } from '../lib/analytics';
+import { getSignupUrl } from '../lib/signup';
 
 export default function CaseStudyDetail() {
   const { t } = useTranslation('site');
@@ -147,13 +148,13 @@ export default function CaseStudyDetail() {
             <h2 className="text-3xl font-black mb-6 font-heading">
               {t('socialProof.caseStudyDetail.bottomCtaTitle')}
             </h2>
-            <Link
-              to={localePath('/demo')}
+            <a
+              href={getSignupUrl()}
               className="inline-flex items-center gap-3 bg-brand-primary text-white px-10 py-5 rounded-full font-black text-lg hover:bg-indigo-600 transition-colors shadow-lg"
             >
               {t('socialProof.caseStudyDetail.bottomCtaButton')}
               <ArrowRight className="w-5 h-5" />
-            </Link>
+            </a>
           </div>
         </section>
       </main>

@@ -35,6 +35,7 @@ import adminScreenshot from '../assets/admin-screenshot.png';
 import adminScreenshotWebp from '../assets/admin-screenshot.webp';
 import OptimizedImage from '../components/OptimizedImage';
 import { getSiteHeroCopy } from '../lib/siteHero';
+import { getSignupUrl } from '../lib/signup';
 
 const T_PREFIX = 'pages.productChatbot';
 const CHAT_PAIR_COUNT = 5;
@@ -262,13 +263,14 @@ function HeroSection({
                     </p>
 
                     <div className="flex flex-col sm:flex-row gap-4">
-                        <button 
+                        <a
+                            href={getSignupUrl()}
                             onClick={handleCTAClick}
                             className="bg-brand-primary text-white px-10 py-5 rounded-full font-bold flex items-center justify-center gap-3 transition-all duration-500 hover:bg-indigo-700 active:scale-95 whitespace-nowrap shadow-lg shadow-indigo-500/20"
                         >
                             {t('footer.cta.startBuilding')}
                             <ArrowRight className="w-5 h-5" />
-                        </button>
+                        </a>
                     </div>
                 </motion.div>
             </div>
@@ -966,9 +968,12 @@ function CTASection({ t }: { t: (key: string) => string }) {
                 </h2>
 
                 <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
-                    <button className="bg-brand-primary text-white px-12 py-5 rounded-full font-extrabold text-lg hover:bg-indigo-700 transition-all duration-300 active:scale-95 shadow-lg shadow-indigo-500/20">
+                    <a
+                        href={getSignupUrl()}
+                        className="bg-brand-primary text-white px-12 py-5 rounded-full font-extrabold text-lg hover:bg-indigo-700 transition-all duration-300 active:scale-95 shadow-lg shadow-indigo-500/20"
+                    >
                         {t(`${T_PREFIX}.cta.startFree`)}
-                    </button>
+                    </a>
                 </div>
             </motion.div>
         </section>
