@@ -1,4 +1,4 @@
-import { useRef, useEffect, useCallback } from 'react';
+import { useRef, useEffect, useCallback, useState } from 'react';
 import { motion, MotionValue, useTransform } from 'framer-motion';
 import { ArrowRight } from 'lucide-react';
 import { AIIcon } from '@pavy/ui';
@@ -7,11 +7,13 @@ import { getSiteHeroCopy } from '../lib/siteHero';
 import OptimizedImage from './OptimizedImage';
 import { trackEvent } from '../lib/analytics';
 import { useLocation } from 'react-router-dom';
+import { getSignupUrl } from '../lib/signup';
 
 export default function HeroSection({ scrollYProgress }: { scrollYProgress: MotionValue<number> }) {
     const { t } = useTranslation('site');
     const heroCopy = getSiteHeroCopy(t);
     const location = useLocation();
+    const [email, setEmail] = useState('');
     // Spatial scroll transforms
     const scale = useTransform(scrollYProgress, [0, 0.2], [1, 1.05]);
     const translateY = useTransform(scrollYProgress, [0, 0.3], [0, -40]);
@@ -20,6 +22,7 @@ export default function HeroSection({ scrollYProgress }: { scrollYProgress: Moti
         trackEvent('click_hero_cta', {
             cta_text: t('hero.startBuilding'),
             page: location.pathname,
+            has_email: email.trim().length > 0,
         });
     };
 
@@ -68,16 +71,19 @@ export default function HeroSection({ scrollYProgress }: { scrollYProgress: Moti
                     <div className="w-full max-w-lg flex flex-col sm:flex-row gap-4">
                         <input
                             type="email"
+                            value={email}
+                            onChange={(e) => setEmail(e.target.value)}
                             placeholder={t('hero.emailPlaceholder')}
                             className="flex-1 bg-white border border-slate-200 shadow-sm rounded-full px-8 py-5 text-slate-900 placeholder:text-slate-400 focus:outline-none focus:border-indigo-500 focus:ring-2 focus:ring-indigo-100 transition-all duration-300"
                         />
-                        <button 
+                        <a
+                            href={getSignupUrl(email)}
                             onClick={handleCTAClick}
                             className="bg-brand-primary text-white px-10 py-5 rounded-full font-bold flex items-center justify-center gap-3 transition-all duration-500 hover:bg-indigo-700 active:scale-95 whitespace-nowrap shadow-lg shadow-indigo-500/20"
                         >
                             {t('hero.startBuilding')}
                             <ArrowRight className="w-5 h-5" />
-                        </button>
+                        </a>
                     </div>
                 </motion.div>
             </div>

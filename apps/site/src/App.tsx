@@ -4,7 +4,6 @@ import LocaleWrapper from "./components/LocaleWrapper";
 import ArchivedLandingPage from "./pages/ArchivedLandingPage";
 import ProductDashboard from "./pages/ProductDashboard";
 import UserGuide from "./pages/UserGuide";
-import DemoRequest from "./pages/DemoRequest";
 import { detectLanguage } from "./hooks/useLocale";
 import CookieBanner from "./components/legal/CookieBanner";
 import { initGA4, grantAnalyticsConsent } from "./lib/analytics";
@@ -100,7 +99,6 @@ function App() {
           } />
           <Route path="product/dashboard" element={<ProductDashboard />} />
           <Route path="guide" element={<UserGuide />} />
-          <Route path="demo" element={<DemoRequest />} />
           <Route path="blog" element={
             <Suspense fallback={<div className="min-h-screen bg-slate-50 pt-32 pb-24 flex justify-center"><div className="w-8 h-8 border-4 border-indigo-600 border-t-transparent rounded-full animate-spin"></div></div>}>
               <Blog />
