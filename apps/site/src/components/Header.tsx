@@ -7,6 +7,7 @@ import { PavyLogo } from '@pavy/ui';
 import { useLocale } from '../hooks/useLocale';
 import LanguageSwitcher from './LanguageSwitcher';
 import { trackEvent } from '../lib/analytics';
+import { getSignupUrl } from '../lib/signup';
 
 export default function Header() {
     const { scrollY } = useScroll();
@@ -80,13 +81,13 @@ export default function Header() {
                     >
                         {t('header.cta.login')}
                     </button>
-                    <Link 
-                        to={localePath('/demo')} 
-                        onClick={() => handleCTAClick('Get Demo')}
+                    <a
+                        href={getSignupUrl()}
+                        onClick={() => handleCTAClick('Get Started')}
                         className="bg-brand-primary text-white px-6 py-2.5 rounded-full text-[13px] uppercase tracking-[0.1em] font-extrabold hover:bg-indigo-700 transition-all duration-300 active:scale-95 shadow-md shadow-indigo-500/20"
                     >
                         {t('header.cta.getDemo')}
-                    </Link>
+                    </a>
                 </div>
             </div>
         </motion.header>
