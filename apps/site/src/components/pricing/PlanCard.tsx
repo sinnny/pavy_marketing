@@ -88,17 +88,23 @@ export default function PlanCard({ plan, interval }: PlanCardProps) {
         </ul>
       </div>
 
-      <Link
-        to={localePath(plan.ctaHref)}
-        onClick={handleCTAClick}
-        className={`block w-full py-3 px-6 text-center rounded-xl font-bold transition-all duration-300 ${
+      {(() => {
+        const isExternal = /^(mailto:|https?:\/\/)/.test(plan.ctaHref);
+        const linkClass = `block w-full py-3 px-6 text-center rounded-xl font-bold transition-all duration-300 ${
           plan.highlighted
             ? 'bg-brand-primary text-white hover:bg-indigo-700 shadow-md hover:shadow-lg'
             : 'bg-slate-50 text-slate-900 hover:bg-slate-100 border border-slate-200'
-        }`}
-      >
-        {t(plan.ctaKey)}
-      </Link>
+        }`;
+        return isExternal ? (
+          <a href={plan.ctaHref} onClick={handleCTAClick} className={linkClass}>
+            {t(plan.ctaKey)}
+          </a>
+        ) : (
+          <Link to={localePath(plan.ctaHref)} onClick={handleCTAClick} className={linkClass}>
+            {t(plan.ctaKey)}
+          </Link>
+        );
+      })()}
     </motion.div>
   );
 }

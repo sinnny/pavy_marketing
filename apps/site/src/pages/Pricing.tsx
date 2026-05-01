@@ -1,13 +1,11 @@
 import { useState, useEffect } from 'react';
 import { useTranslation } from '@pavy/i18n';
 import { motion } from 'framer-motion';
-import { Link } from 'react-router-dom';
 import { plans } from '../lib/pricing-data';
 import PlanCard from '../components/pricing/PlanCard';
 import BillingToggle from '../components/pricing/BillingToggle';
 import ComparisonTable from '../components/pricing/ComparisonTable';
 import FAQSection from '../components/FAQSection';
-import { useLocale } from '../hooks/useLocale';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 import { SEOHead } from '../components/SEOHead';
@@ -20,7 +18,6 @@ const PRICING_FAQ_KEYS = ['q1', 'q2', 'q3', 'q4'] as const;
 
 export default function Pricing() {
   const { t } = useTranslation('site');
-  const { localePath } = useLocale();
   const [billingInterval, setBillingInterval] = useState<Interval>('annual');
 
   useEffect(() => {
@@ -111,12 +108,12 @@ export default function Pricing() {
           <p className="text-slate-600 mb-8 max-w-lg mx-auto">
             {t('pages.pricing.bottom_cta.subtitle')}
           </p>
-          <Link
-            to={localePath('/demo')}
+          <a
+            href="mailto:axiomni.official@gmail.com"
             className="inline-block bg-brand-primary text-white font-bold px-8 py-3.5 rounded-full hover:bg-indigo-700 transition-colors shadow-md"
           >
             {t('pages.pricing.bottom_cta.button')}
-          </Link>
+          </a>
         </section>
       </main>
       <Footer />

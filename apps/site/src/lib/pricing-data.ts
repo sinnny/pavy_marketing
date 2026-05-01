@@ -1,3 +1,5 @@
+import { getSignupUrl } from './signup';
+
 export interface PlanTier {
   id: 'free' | 'pro' | 'enterprise';
   nameKey: string;
@@ -184,7 +186,7 @@ export const plans: PlanTier[] = [
       'pages.pricing.plans.free.features.f3',
     ],
     ctaKey: 'pages.pricing.plans.free.cta',
-    ctaHref: '/login', // Adjust if needed
+    ctaHref: getSignupUrl(),
     highlighted: false,
   },
   {
@@ -200,7 +202,7 @@ export const plans: PlanTier[] = [
       'pages.pricing.plans.pro.features.f4',
     ],
     ctaKey: 'pages.pricing.plans.pro.cta',
-    ctaHref: '/login',
+    ctaHref: getSignupUrl(),
     highlighted: true,
     badge: 'pages.pricing.plans.pro.badge',
   },
@@ -217,7 +219,7 @@ export const plans: PlanTier[] = [
       'pages.pricing.plans.enterprise.features.f4',
     ],
     ctaKey: 'pages.pricing.plans.enterprise.cta',
-    ctaHref: '/demo',
+    ctaHref: 'mailto:axiomni.official@gmail.com',
     highlighted: false,
   },
 ];
