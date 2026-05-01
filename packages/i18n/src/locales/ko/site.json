@@ -17,7 +17,7 @@
     },
     "cta": {
       "login": "로그인",
-      "getDemo": "DEMO"
+      "getDemo": "시작하기"
     }
   },
   "hero": {
@@ -26,7 +26,7 @@
     "headline2": "구매가 일어납니다.",
     "subheading": "구매를 망설이는 고객에게 필요한 건 할인이 아닌 확신입니다. Pavy.ai는 상품의 모든 정보를 이해하고, 3초 안에 답합니다.",
     "emailPlaceholder": "업무용 이메일 주소",
-    "startBuilding": "DEMO Request",
+    "startBuilding": "시작하기",
     "product": {
       "title": "Aero Pro Wireless",
       "description": "Experience the future of high-fidelity audio. Designed with acoustic precision, supreme comfort, and AI-optimized noise cancellation to elevate every beat.",
@@ -164,7 +164,7 @@
     },
     "caseStudyDetail": {
       "bottomCtaTitle": "우리 비즈니스에도 동일한 성과를 만들어 보세요",
-      "bottomCtaButton": "맞춤 데모 요청하기"
+      "bottomCtaButton": "시작하기"
     },
     "labels": {
       "readMore": "자세히 보기",
@@ -215,8 +215,8 @@
     "cta": {
       "title1": "지금 바로",
       "title2": "시작하세요.",
-      "startBuilding": "DEMO Request",
-      "bookDemo": "기술 상담 예약"
+      "startBuilding": "시작하기",
+      "bookDemo": "시작하기"
     },
     "links": {
       "platform": "서비스",
@@ -426,7 +426,7 @@
       "cta": {
         "title1": "상품 페이지의 잠재력을",
         "title2": "깨워보세요.",
-        "startFree": "DEMO Request",
+        "startFree": "시작하기",
         "bookDemo": "기술 상담 예약"
       }
     },

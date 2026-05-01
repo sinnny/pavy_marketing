@@ -17,7 +17,7 @@
     },
     "cta": {
       "login": "Login",
-      "getDemo": "Get Demo"
+      "getDemo": "Get Started"
     }
   },
   "hero": {
@@ -26,7 +26,7 @@
     "headline2": "They ask.",
     "subheading": "No one scrolls to the bottom of your product page. But AI does. Pavy.ai analyzes every detail — specs, reviews, shipping, return policies — and answers the moment customers ask. No guesswork. Only your data. One line of code to start.",
     "emailPlaceholder": "work email",
-    "startBuilding": "DEMO Request",
+    "startBuilding": "Get Started",
     "product": {
       "title": "Aero Pro Wireless",
       "description": "Experience the future of high-fidelity audio. Designed with acoustic precision, supreme comfort, and AI-optimized noise cancellation to elevate every beat.",
@@ -164,7 +164,7 @@
     },
     "caseStudyDetail": {
       "bottomCtaTitle": "Get similar results for your business",
-      "bottomCtaButton": "Request a Custom Demo"
+      "bottomCtaButton": "Get Started"
     },
     "labels": {
       "readMore": "Read story",
@@ -260,8 +260,8 @@
     "cta": {
       "title1": "Scale with",
       "title2": "Intelligence.",
-      "startBuilding": "DEMO Request",
-      "bookDemo": "DEMO Request"
+      "startBuilding": "Get Started",
+      "bookDemo": "Get Started"
     },
     "links": {
       "platform": "Service",
@@ -471,7 +471,7 @@
       "cta": {
         "title1": "Unlock the potential",
         "title2": "of your product pages.",
-        "startFree": "Request a Demo",
+        "startFree": "Get Started",
         "bookDemo": "Book a technical consultation"
       }
     },

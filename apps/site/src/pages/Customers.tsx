@@ -5,12 +5,10 @@ import Header from '../components/Header';
 import Footer from '../components/Footer';
 import { motion } from 'framer-motion';
 import { ArrowRight } from 'lucide-react';
-import { Link } from 'react-router-dom';
-import { useLocale } from '../hooks/useLocale';
+import { getSignupUrl } from '../lib/signup';
 
 export default function Customers() {
   const { t } = useTranslation('site');
-  const { localePath } = useLocale();
 
   return (
     <div className="bg-slate-50 min-h-screen">
@@ -58,13 +56,13 @@ export default function Customers() {
               <p className="text-lg md:text-xl text-indigo-100 mb-10 max-w-xl mx-auto">
                 {t('socialProof.labels.ctaSubtitle')}
               </p>
-              <Link
-                to={localePath('/demo')}
+              <a
+                href={getSignupUrl()}
                 className="inline-flex items-center gap-3 bg-white text-brand-primary px-10 py-5 rounded-full font-black text-lg hover:bg-indigo-50 transition-colors shadow-lg"
               >
                 {t('socialProof.labels.getStarted')}
                 <ArrowRight className="w-5 h-5" />
-              </Link>
+              </a>
             </div>
           </motion.div>
         </section>
