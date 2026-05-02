@@ -431,8 +431,177 @@
       }
     },
     "productDashboard": {
-      "title": "Admin",
-      "description": "AI 상담원을 관리하고, 대화 기록을 확인하고, 맞춤 지식을 학습시키세요."
+      "title": "Admin — 대화를 매출로 복리화하세요",
+      "description": "Pavy의 Admin은 챗봇 대화를 한 화면 안에서 지표·지식·의사결정으로 바꿔 복리처럼 쌓이게 합니다.",
+      "pullQuote": {
+        "text1": "모든 대화는",
+        "text2": "신호입니다.",
+        "sub": "Pavy는 각 대화를 추적할 지표, 채울 격차, 또는 만들 기능으로 바꿉니다."
+      },
+      "workflow": {
+        "title": "설치부터 인사이트까지, 4단계.",
+        "steps": {
+          "install": { "num": "01", "title": "설치", "description": "스크립트 한 줄을 <head>에 붙여넣으세요. 30초면 라이브." },
+          "crawl": { "num": "02", "title": "전처리", "description": "상품 URL을 추가하세요. Pavy가 가격·스펙·반품정책을 자동 크롤·인덱싱합니다." },
+          "watch": { "num": "03", "title": "관찰", "description": "고객이 묻습니다. Pavy가 200ms 이내에 답합니다 — 출처와 함께." },
+          "improve": { "num": "04", "title": "개선", "description": "고객 질문을 읽고, KB·FAQ·로드맵을 업데이트하세요." }
+        }
+      },
+      "hero": {
+        "eyebrow": "ADMIN",
+        "title": "대화는 시작일 뿐입니다. 개선이 곧 제품입니다.",
+        "tagline": "모든 챗봇 지표, 지식 격차, 전환 기회를 한 화면에."
+      },
+      "cards": {
+        "hero": {
+          "caption": "정말 중요한 모든 지표를, 한 화면에서.",
+          "imageAlt": "KPI 카드, 전환 퍼널, 인게이지먼트 트렌드를 보여주는 Pavy Admin 대시보드"
+        },
+        "statBig": {
+          "value": "+13.3%",
+          "label": "노출 증가",
+          "sub": "지난주 대비"
+        },
+        "statTrio": {
+          "ctr": { "value": "11.8%", "label": "위젯 CTR" },
+          "activation": { "value": "75%", "label": "채팅 활성화율" },
+          "dismissal": { "value": "9.3%", "label": "이탈률" }
+        },
+        "kb": {
+          "title": "AI를 정확하게.",
+          "description": "URL을 추가하기만 하면 됩니다. Pavy가 크롤링·인덱싱하고, 콘텐츠가 오래되면 알려드립니다.",
+          "imageAlt": "상품 URL별 상태 뱃지가 표시된 지식 베이스 관리 화면"
+        },
+        "widgetConfig": {
+          "title": "라이브로 즉시 조정.",
+          "description": "컬러, 카피, 동작, 트리거 규칙 — 모든 수정이 라이브 프리뷰에 즉시 반영됩니다.",
+          "imageAlt": "설정 패널 옆에 라이브 프리뷰가 함께 표시된 위젯 설정 페이지"
+        },
+        "conversations": {
+          "title": "모든 대화를 보세요. 기회를 발견하세요.",
+          "description": "전체 대화 내역을 날짜·페이지·평가별로 필터링. 고객이 실제로 무엇을 묻는지 읽고, 답하지 못한 질문을 다음 FAQ, 다음 상품 업데이트, 다음 기능으로 만드세요.",
+          "imageAlt": "필터링된 대화 목록과 타임스탬프가 표시된 대화 기록 화면"
+        },
+        "integration": {
+          "title": "API 키부터 라이브까지 5분.",
+          "description": "스크립트 한 줄. 도메인 화이트리스트와 SDK 버전 관리는 기본 제공.",
+          "imageAlt": "API 키와 임베드 코드 스니펫이 보이는 연동 페이지"
+        }
+      },
+      "cta": {
+        "title": "추측은 그만. 개선을 시작하세요.",
+        "description": "상품 페이지 하나에 Pavy를 연결하고, 일주일 안에 첫 100건의 대화를 확인해보세요.",
+        "primary": "시작하기"
+      }
+    },
+    "chatbotSubpage": {
+      "title": "AI Chatbot — 최고의 영업사원처럼 답하는 AI",
+      "description": "Pavy는 모든 상품 페이지를 읽고, 망설임을 구매로 바꿉니다 — 200밀리초 안에.",
+      "hero": {
+        "eyebrow": "AI CHATBOT",
+        "title": "최고의 영업사원처럼 답하는 AI.",
+        "tagline": "Pavy는 모든 상품 페이지를 읽고, 망설임을 구매로 바꿉니다 — 200밀리초 안에."
+      },
+      "chapters": {
+        "ch01": {
+          "eyebrow": "01 · 정확성",
+          "title1": "당신 팀처럼",
+          "title2": "페이지를 읽습니다."
+        },
+        "ch02": {
+          "eyebrow": "02 · 속도",
+          "title1": "어떤 규모에서도,",
+          "title2": "어떤 언어로도 빠르게."
+        },
+        "ch03": {
+          "eyebrow": "03 · 어디서나",
+          "title1": "고객이 쇼핑하는",
+          "title2": "모든 곳에."
+        },
+        "ch04": {
+          "eyebrow": "04 · 셋업",
+          "title1": "붙여넣기에서 라이브까지,",
+          "title2": "1분 안에."
+        }
+      },
+      "cards": {
+        "hero": {
+          "caption": "어떤 상품 페이지에든, 코드 한 줄로 임베드.",
+          "imageAlt": "상품 상세 페이지에 임베드된 Pavy 챗봇 위젯",
+          "widgetAlt": "고객 대화가 표시된 Pavy 챗봇 위젯 패널"
+        },
+        "stat1": {
+          "value": "84%",
+          "label": "감소",
+          "sub": "사람 상담 의존도"
+        },
+        "stat2": {
+          "value": "<200ms",
+          "label": "응답 속도",
+          "sub": "평균"
+        },
+        "widget": {
+          "title": "근거 있는 답변, 매번.",
+          "description": "Pavy는 페이지에 실제로 있는 내용으로만 답합니다. 환각 없음, 오래된 정보 없음.",
+          "imageAlt": "위젯이 열려 인사말과 추천 질문을 보여주는 상품 페이지"
+        },
+        "multilingual": {
+          "title": "100+ 언어, 유창하게.",
+          "description": "방문자 언어를 자동 감지. 같은 정확도, 같은 속도.",
+          "languages": "EN · KO · JA · ZH · ES · FR · DE · IT · PT · NL · …",
+          "imageAlt": "고객 모국어로 응답 중인 Pavy 챗봇 위젯"
+        },
+        "mobile": {
+          "title": "기본이 모바일.",
+          "description": "엄지 도달 범위와 작은 뷰포트에 최적화 — 트래픽의 대부분이 실제로 쇼핑하는 곳.",
+          "imageAlt": "Pavy 위젯 런처가 있는 상품 페이지의 모바일 뷰"
+        },
+        "customize": {
+          "title": "당신의 디자인대로.",
+          "bullets": {
+            "colors": "브랜드에 맞춘 컬러와 아이콘",
+            "questions": "맞춤 추천 질문",
+            "rules": "URL 패턴별 트리거 규칙"
+          }
+        },
+        "qa": {
+          "title": "당신 팀처럼 페이지를 읽습니다.",
+          "question": "사이즈 정사이즈인가요?",
+          "answer": "네 — 고객 리뷰 247건 기준, 평소 사이즈 그대로가 맞습니다. 다만 소매 길이가 살짝 길다는 후기가 일부 있어요.",
+          "source": "출처: 고객 리뷰 · 247건 언급"
+        },
+        "shops": {
+          "fashion": {
+            "label": "패션",
+            "brand": "Atelier",
+            "alt": "Atelier 패션 상품 페이지에 임베드된 Pavy 챗봇"
+          },
+          "beauty": {
+            "label": "뷰티",
+            "brand": "Lumée",
+            "alt": "Lumée 스킨케어 상품 페이지에 임베드된 Pavy 챗봇"
+          },
+          "electronics": {
+            "label": "가전",
+            "brand": "Boltwave",
+            "alt": "Boltwave 오디오 상품 페이지에 임베드된 Pavy 챗봇"
+          },
+          "travel": {
+            "label": "여행",
+            "brand": "Havenstays",
+            "alt": "Havenstays 빌라 예약 페이지에 임베드된 Pavy 챗봇"
+          }
+        },
+        "setup": {
+          "title": "30초 셋업.",
+          "description": "스크립트 한 줄 붙여넣으면 끝. Pavy가 자동으로 상품을 감지해 답변을 시작합니다."
+        }
+      },
+      "cta": {
+        "title": "질문 때문에 고객을 잃지 마세요.",
+        "description": "상품 페이지 하나에 Pavy를 연결하고, 고객이 실제로 무엇을 묻는지 확인해보세요.",
+        "primary": "시작하기"
+      }
     },
     "userGuide": {
       "title": "이용 가이드",
@@ -804,8 +973,8 @@
       "description": "우리 비즈니스에 꼭 맞는 요금제를 선택하세요. 간결하고 투명한 가격 정책을 제공합니다."
     },
     "dashboard": {
-      "title": "관리자 대시보드 — AI 챗봇을 직접 관리하세요 | Pavy.ai",
-      "description": "AI 에이전트를 운영하고, 상담 내역을 검토하며, 자체 지식베이스로 학습시켜 보세요."
+      "title": "Pavy Admin — 대화를 매출로 복리화하세요",
+      "description": "모든 챗봇 지표, 지식 격차, 전환 기회를 한 화면에. 그로스·이커머스·CS 팀을 위한 관리자 대시보드."
     },
     "chatbot": {
       "title": "프로덕트 챗봇 — 자율형 AI 에이전트 | Pavy.ai",

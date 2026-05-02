@@ -476,8 +476,177 @@
       }
     },
     "productDashboard": {
-      "title": "Admin Dashboard Hub",
-      "description": "Manage your AI agents, review chat histories, and train on custom knowledge bases."
+      "title": "Admin — Turn conversations into compounding revenue",
+      "description": "Pavy's Admin turns chatbot conversations into the metrics, knowledge, and decisions that compound — on one screen.",
+      "pullQuote": {
+        "text1": "Every conversation",
+        "text2": "is a signal.",
+        "sub": "Pavy turns each one into a metric to track, a gap to fill, or a feature to build."
+      },
+      "workflow": {
+        "title": "Four steps from install to insight.",
+        "steps": {
+          "install": { "num": "01", "title": "Install", "description": "Paste one script tag in your <head>. Pavy is live in 30 seconds." },
+          "crawl": { "num": "02", "title": "Preprocessing", "description": "Add product URLs. Pavy crawls and indexes pricing, specs, returns automatically." },
+          "watch": { "num": "03", "title": "Watch", "description": "Customers ask. Pavy answers in under 200 ms — with sources cited." },
+          "improve": { "num": "04", "title": "Improve", "description": "Read what they ask. Update your KB, your FAQ, your roadmap." }
+        }
+      },
+      "hero": {
+        "eyebrow": "ADMIN",
+        "title": "Talking is just the start. Improving is the product.",
+        "tagline": "Every chatbot metric, knowledge gap, and conversion opportunity — on one screen."
+      },
+      "cards": {
+        "hero": {
+          "caption": "Every metric that matters, on one screen.",
+          "imageAlt": "Pavy Admin dashboard with KPI cards, conversion funnel, and engagement trends"
+        },
+        "statBig": {
+          "value": "+13.3%",
+          "label": "impressions",
+          "sub": "week over week"
+        },
+        "statTrio": {
+          "ctr": { "value": "11.8%", "label": "Widget CTR" },
+          "activation": { "value": "75%", "label": "Chat activation" },
+          "dismissal": { "value": "9.3%", "label": "Dismissal rate" }
+        },
+        "kb": {
+          "title": "Keep your AI accurate.",
+          "description": "Add a URL. Pavy crawls and indexes — and tells you when content goes stale.",
+          "imageAlt": "Knowledge Base management table with status badges across product URLs"
+        },
+        "widgetConfig": {
+          "title": "Tune everything live.",
+          "description": "Colors, copy, behavior, trigger rules — every edit reflected instantly in the live preview.",
+          "imageAlt": "Widget configuration page with live preview alongside settings"
+        },
+        "conversations": {
+          "title": "See every conversation. Find every opportunity.",
+          "description": "Full transcripts, filterable by date, page, and rating. Read what customers actually ask — and turn unanswered questions into the next FAQ, the next product update, the next feature.",
+          "imageAlt": "Conversation Logs with filtered transcript list and timestamps"
+        },
+        "integration": {
+          "title": "5 minutes from API key to live.",
+          "description": "One script tag. Domain whitelist and SDK versioning included.",
+          "imageAlt": "Integration page showing API keys and embed code snippet"
+        }
+      },
+      "cta": {
+        "title": "Stop guessing. Start improving.",
+        "description": "Plug Pavy into one product page and see your first 100 conversations within a week.",
+        "primary": "Get Started"
+      }
+    },
+    "chatbotSubpage": {
+      "title": "AI Chatbot — Answers like your best salesperson",
+      "description": "Pavy reads every product page and turns hesitation into purchase — in under 200 milliseconds.",
+      "hero": {
+        "eyebrow": "AI CHATBOT",
+        "title": "AI that answers like your best salesperson.",
+        "tagline": "Pavy reads every product page and turns hesitation into purchase — in under 200 milliseconds."
+      },
+      "chapters": {
+        "ch01": {
+          "eyebrow": "01 · Accuracy",
+          "title1": "Reads the page",
+          "title2": "like your team would."
+        },
+        "ch02": {
+          "eyebrow": "02 · Speed",
+          "title1": "Fast at every scale,",
+          "title2": "in every language."
+        },
+        "ch03": {
+          "eyebrow": "03 · Anywhere",
+          "title1": "Lives wherever",
+          "title2": "your customers shop."
+        },
+        "ch04": {
+          "eyebrow": "04 · Setup",
+          "title1": "From paste to live",
+          "title2": "in one minute."
+        }
+      },
+      "cards": {
+        "hero": {
+          "caption": "Embedded on any product page, in one line of code.",
+          "imageAlt": "Pavy chatbot widget on a product detail page",
+          "widgetAlt": "Pavy chat widget panel showing a customer conversation"
+        },
+        "stat1": {
+          "value": "84%",
+          "label": "reduction",
+          "sub": "in human-agent dependency"
+        },
+        "stat2": {
+          "value": "<200ms",
+          "label": "response time",
+          "sub": "average across queries"
+        },
+        "widget": {
+          "title": "Grounded answers, every time.",
+          "description": "Pavy reads the page and only answers from what's actually there. No hallucinations, no outdated facts.",
+          "imageAlt": "Pavy widget open on a product page showing greeting and suggested questions"
+        },
+        "multilingual": {
+          "title": "100+ languages, fluently.",
+          "description": "Auto-detects each visitor's language. Same accuracy, same speed.",
+          "languages": "EN · KO · JA · ZH · ES · FR · DE · IT · PT · NL · …",
+          "imageAlt": "Pavy chat widget responding in a customer's native language"
+        },
+        "mobile": {
+          "title": "Mobile-first by default.",
+          "description": "Optimized for thumb reach and small viewports — where most of your traffic actually shops.",
+          "imageAlt": "Mobile view of a product page with the Pavy widget launcher"
+        },
+        "customize": {
+          "title": "Yours by design.",
+          "bullets": {
+            "colors": "Brand-matched colors and icons",
+            "questions": "Custom suggested questions",
+            "rules": "Trigger rules per URL pattern"
+          }
+        },
+        "qa": {
+          "title": "Reads the page like your team would.",
+          "question": "Is this true to size?",
+          "answer": "Yes — based on 247 customer reviews, this fits true to size. A few mention the sleeves run slightly long.",
+          "source": "Source: Customer reviews · 247 mentions"
+        },
+        "shops": {
+          "fashion": {
+            "label": "Fashion",
+            "brand": "Atelier",
+            "alt": "Pavy chatbot embedded on Atelier fashion product page"
+          },
+          "beauty": {
+            "label": "Beauty",
+            "brand": "Lumée",
+            "alt": "Pavy chatbot embedded on Lumée skincare product page"
+          },
+          "electronics": {
+            "label": "Electronics",
+            "brand": "Boltwave",
+            "alt": "Pavy chatbot embedded on Boltwave audio product page"
+          },
+          "travel": {
+            "label": "Travel",
+            "brand": "Havenstays",
+            "alt": "Pavy chatbot embedded on Havenstays villa booking page"
+          }
+        },
+        "setup": {
+          "title": "30-second setup.",
+          "description": "Paste one script tag. Pavy auto-detects your products and starts answering."
+        }
+      },
+      "cta": {
+        "title": "Stop losing customers to questions.",
+        "description": "Plug Pavy into one product page and see what your customers actually ask.",
+        "primary": "Get Started"
+      }
     },
     "userGuide": {
       "title": "User Guide & Documentation",
@@ -849,8 +1018,8 @@
       "description": "Choose the perfect plan for your business. Simple, transparent pricing."
     },
     "dashboard": {
-      "title": "Admin Dashboard — Manage Your AI Chatbot | Pavy.ai",
-      "description": "Manage your AI agents, review chat histories, and train on custom knowledge bases."
+      "title": "Pavy Admin — Turn conversations into compounding revenue",
+      "description": "Surface every chatbot metric, knowledge gap, and conversion opportunity on one screen — built for growth, e-commerce, and CS teams."
     },
     "chatbot": {
       "title": "Product Chatbot — Autonomous AI Agent | Pavy.ai",
