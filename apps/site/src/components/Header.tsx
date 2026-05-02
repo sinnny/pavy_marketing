@@ -1,7 +1,7 @@
-import { motion, useScroll } from 'framer-motion';
+import { motion, useScroll, AnimatePresence } from 'framer-motion';
 import { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { ChevronDown } from 'lucide-react';
+import { ChevronDown, Menu, X } from 'lucide-react';
 import { useTranslation } from '@pavy/i18n';
 import { PavyLogo } from '@pavy/ui';
 import { useLocale } from '../hooks/useLocale';
@@ -12,6 +12,7 @@ import { getSignupUrl } from '../lib/signup';
 export default function Header() {
     const { scrollY } = useScroll();
     const [isScrolled, setIsScrolled] = useState(false);
+    const [isMobileOpen, setIsMobileOpen] = useState(false);
     const { t } = useTranslation('site');
     const { localePath } = useLocale();
     const location = useLocation();
@@ -21,6 +22,26 @@ export default function Header() {
             setIsScrolled(latest > 50);
         });
     }, [scrollY]);
+
+    // Close drawer when route changes (after a nav link click)
+    useEffect(() => {
+        setIsMobileOpen(false);
+    }, [location.pathname]);
+
+    // Lock body scroll while drawer is open + close on Escape
+    useEffect(() => {
+        if (!isMobileOpen) return;
+        const prevOverflow = document.body.style.overflow;
+        document.body.style.overflow = 'hidden';
+        const onKey = (e: KeyboardEvent) => {
+            if (e.key === 'Escape') setIsMobileOpen(false);
+        };
+        document.addEventListener('keydown', onKey);
+        return () => {
+            document.body.style.overflow = prevOverflow;
+            document.removeEventListener('keydown', onKey);
+        };
+    }, [isMobileOpen]);
 
     const isPricingActive = location.pathname.includes('/pricing');
     const isDocsActive = location.pathname.includes('/docs');
@@ -35,11 +56,11 @@ export default function Header() {
         <motion.header
             className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${isScrolled ? 'py-4 bg-white/80 backdrop-blur-md border-b border-slate-200 shadow-sm' : 'py-8 bg-transparent'
                 }`}
-            initial={{ y: -100, opacity: 0 }}
+            initial={{ y: -16, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
-            transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
+            transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
         >
-            <div className="max-w-[1400px] mx-auto px-10 flex items-center">
+            <div className="max-w-[1400px] mx-auto px-6 lg:px-10 flex items-center">
                 {/* Logo area */}
                 <div className="flex-1 flex justify-start">
                     <Link to={localePath('/')} className="flex items-center group cursor-pointer transition-transform duration-500 hover:scale-[1.02]">
@@ -47,7 +68,7 @@ export default function Header() {
                     </Link>
                 </div>
 
-                {/* Navigation */}
+                {/* Desktop Navigation */}
                 <nav className="hidden lg:flex items-center gap-10 text-[13px] uppercase tracking-[0.1em] font-bold text-slate-500">
                     <div className="relative group/nav py-4">
                         <button className="flex items-center gap-1 hover:text-brand-primary transition-colors duration-300 text-[13px] uppercase tracking-[0.1em] font-bold">
@@ -73,23 +94,175 @@ export default function Header() {
                 </nav>
 
                 {/* CTA area */}
-                <div className="flex-1 flex items-center justify-end gap-4">
-                    <LanguageSwitcher />
-                    <button 
+                <div className="flex-1 flex items-center justify-end gap-3 lg:gap-4">
+                    <div className="hidden sm:block">
+                        <LanguageSwitcher />
+                    </div>
+                    <button
                         onClick={() => handleCTAClick('Login')}
-                        className="hidden sm:block text-[13px] uppercase tracking-[0.2em] font-bold text-slate-500 hover:text-brand-primary transition-colors"
+                        className="hidden lg:block text-[13px] uppercase tracking-[0.2em] font-bold text-slate-500 hover:text-brand-primary transition-colors"
                     >
                         {t('header.cta.login')}
                     </button>
                     <a
                         href={getSignupUrl()}
                         onClick={() => handleCTAClick('Get Started')}
-                        className="bg-brand-primary text-white px-6 py-2.5 rounded-full text-[13px] uppercase tracking-[0.1em] font-extrabold hover:bg-indigo-700 transition-all duration-300 active:scale-95 shadow-md shadow-indigo-500/20"
+                        className="hidden sm:inline-flex bg-brand-primary text-white px-6 py-2.5 rounded-full text-[13px] uppercase tracking-[0.1em] font-extrabold hover:bg-indigo-700 transition-all duration-300 active:scale-95 shadow-md shadow-indigo-500/20"
                     >
                         {t('header.cta.getDemo')}
                     </a>
+                    {/* Mobile hamburger — visible below lg */}
+                    <button
+                        type="button"
+                        onClick={() => setIsMobileOpen(true)}
+                        className="lg:hidden p-2 -mr-2 text-slate-700 hover:text-brand-primary transition-colors"
+                        aria-label="Open menu"
+                        aria-expanded={isMobileOpen}
+                    >
+                        <Menu className="w-6 h-6" />
+                    </button>
                 </div>
             </div>
+
+            {/* Mobile drawer */}
+            <MobileDrawer
+                isOpen={isMobileOpen}
+                onClose={() => setIsMobileOpen(false)}
+                t={t}
+                localePath={localePath}
+                onCTAClick={handleCTAClick}
+            />
         </motion.header>
+    );
+}
+
+/* ─────────────────────────────────────────────
+   Mobile drawer — slides from right, full nav
+   ───────────────────────────────────────────── */
+
+function MobileDrawer({
+    isOpen,
+    onClose,
+    t,
+    localePath,
+    onCTAClick,
+}: {
+    isOpen: boolean;
+    onClose: () => void;
+    t: (key: string) => string;
+    localePath: (p: string) => string;
+    onCTAClick: (label: string) => void;
+}) {
+    return (
+        <AnimatePresence>
+            {isOpen && (
+                <>
+                    {/* Backdrop */}
+                    <motion.div
+                        className="fixed inset-0 bg-slate-900/50 backdrop-blur-sm z-[60] lg:hidden"
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: 1 }}
+                        exit={{ opacity: 0 }}
+                        transition={{ duration: 0.25 }}
+                        onClick={onClose}
+                    />
+                    {/* Drawer panel */}
+                    <motion.aside
+                        className="fixed top-0 right-0 bottom-0 z-[70] w-[88%] max-w-[400px] bg-white shadow-2xl lg:hidden flex flex-col"
+                        initial={{ x: '100%' }}
+                        animate={{ x: 0 }}
+                        exit={{ x: '100%' }}
+                        transition={{ duration: 0.35, ease: [0.16, 1, 0.3, 1] }}
+                        role="dialog"
+                        aria-modal="true"
+                    >
+                        {/* Drawer header */}
+                        <div className="flex items-center justify-between px-6 py-5 border-b border-slate-100">
+                            <PavyLogo variant="horizontal" size="sm" theme="light" />
+                            <button
+                                type="button"
+                                onClick={onClose}
+                                className="p-2 -mr-2 text-slate-500 hover:text-slate-900 transition-colors"
+                                aria-label="Close menu"
+                            >
+                                <X className="w-6 h-6" />
+                            </button>
+                        </div>
+
+                        {/* Drawer body — scrollable nav */}
+                        <div className="flex-1 overflow-y-auto px-6 py-6">
+                            <div className="text-[10px] uppercase tracking-[0.25em] font-bold text-slate-400 mb-3">
+                                {t('header.nav.products')}
+                            </div>
+                            <Link
+                                to={localePath('/product/chatbot')}
+                                className="block px-4 py-3 rounded-xl hover:bg-indigo-50 hover:text-brand-primary transition-colors mb-1"
+                            >
+                                <div className="font-bold text-slate-900">{t('header.nav.chatbot')}</div>
+                                <div className="text-[11px] text-slate-500 mt-0.5">{t('header.nav.chatbotDesc')}</div>
+                            </Link>
+                            <Link
+                                to={localePath('/product/dashboard')}
+                                className="block px-4 py-3 rounded-xl hover:bg-indigo-50 hover:text-brand-primary transition-colors mb-6"
+                            >
+                                <div className="font-bold text-slate-900">{t('header.nav.admin')}</div>
+                                <div className="text-[11px] text-slate-500 mt-0.5">{t('header.nav.adminDesc')}</div>
+                            </Link>
+
+                            <div className="border-t border-slate-100 pt-6 space-y-1">
+                                <Link
+                                    to={localePath('/pricing')}
+                                    className="block px-4 py-3 rounded-xl text-[15px] font-semibold text-slate-700 hover:bg-slate-50 hover:text-brand-primary transition-colors"
+                                >
+                                    {t('header.nav.pricing')}
+                                </Link>
+                                <Link
+                                    to={localePath('/customers')}
+                                    className="block px-4 py-3 rounded-xl text-[15px] font-semibold text-slate-700 hover:bg-slate-50 hover:text-brand-primary transition-colors"
+                                >
+                                    {t('header.nav.customers')}
+                                </Link>
+                                <Link
+                                    to={localePath('/blog')}
+                                    className="block px-4 py-3 rounded-xl text-[15px] font-semibold text-slate-700 hover:bg-slate-50 hover:text-brand-primary transition-colors"
+                                >
+                                    {t('header.nav.blog')}
+                                </Link>
+                                <Link
+                                    to={localePath('/docs/getting-started/quick-start')}
+                                    className="block px-4 py-3 rounded-xl text-[15px] font-semibold text-slate-700 hover:bg-slate-50 hover:text-brand-primary transition-colors"
+                                >
+                                    {t('header.nav.userGuide')}
+                                </Link>
+                            </div>
+
+                            <div className="border-t border-slate-100 mt-6 pt-6 sm:hidden">
+                                <LanguageSwitcher />
+                            </div>
+                        </div>
+
+                        {/* Drawer footer — CTAs */}
+                        <div className="border-t border-slate-100 px-6 py-5 space-y-3 bg-slate-50/50">
+                            <button
+                                onClick={() => {
+                                    onCTAClick('Login');
+                                    onClose();
+                                }}
+                                className="block w-full text-center text-[13px] uppercase tracking-[0.2em] font-bold text-slate-600 hover:text-brand-primary transition-colors py-2"
+                            >
+                                {t('header.cta.login')}
+                            </button>
+                            <a
+                                href={getSignupUrl()}
+                                onClick={() => onCTAClick('Get Started')}
+                                className="block w-full text-center bg-brand-primary text-white px-6 py-3.5 rounded-full text-[13px] uppercase tracking-[0.1em] font-extrabold hover:bg-indigo-700 transition-all active:scale-[0.98] shadow-md shadow-indigo-500/20"
+                            >
+                                {t('header.cta.getDemo')}
+                            </a>
+                        </div>
+                    </motion.aside>
+                </>
+            )}
+        </AnimatePresence>
     );
 }

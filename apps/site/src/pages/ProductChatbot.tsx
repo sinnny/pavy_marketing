@@ -559,7 +559,7 @@ function ReviewIntelligenceSection({ t }: { t: (key: string) => string }) {
                     viewport={{ once: true, margin: '-100px' }}
                     className="md:col-span-5 rounded-[32px] bg-brand-primary text-white p-12 flex flex-col justify-center gap-10 relative overflow-hidden h-[600px] shadow-xl shadow-indigo-500/10"
                 >
-                    <div className="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-20 mix-blend-overlay pointer-events-none" />
+                    <div className="absolute inset-0 bg-[url('/noise.svg')] opacity-20 mix-blend-overlay pointer-events-none" />
 
                     <div className="relative z-10">
                         <p className="text-xl text-indigo-100 leading-relaxed font-medium max-w-sm">
@@ -739,7 +739,7 @@ function FrictionReductionSection({ t }: { t: (key: string) => string }) {
                     viewport={{ once: true, margin: '-100px' }}
                     className="md:col-span-3 rounded-[32px] bg-brand-primary text-white p-10 flex flex-col justify-center items-center text-center relative overflow-hidden shadow-xl shadow-indigo-500/10"
                 >
-                    <div className="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-20 mix-blend-overlay pointer-events-none" />
+                    <div className="absolute inset-0 bg-[url('/noise.svg')] opacity-20 mix-blend-overlay pointer-events-none" />
 
                     <div className="relative z-10">
                         <motion.span
