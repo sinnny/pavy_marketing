@@ -12,6 +12,7 @@ import { usePageTracking } from "./hooks/use-page-tracking";
 import { useCookieConsent } from "./hooks/use-cookie-consent";
 
 const ProductChatbot = lazy(() => import("./pages/ProductChatbot"));
+const ChatbotPage = lazy(() => import("./pages/ChatbotPage"));
 const SalesDeck = lazy(() => import("./pages/SalesDeck"));
 const Pricing = lazy(() => import("./pages/Pricing"));
 const Blog = lazy(() => import("./pages/Blog"));
@@ -54,6 +55,12 @@ function App() {
   const location = useLocation();
   const navigate = useNavigate();
 
+  // Scroll to top on every route change so sub-page navigation feels like
+  // an actual page change, not a silent URL swap.
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: 'auto' });
+  }, [location.pathname]);
+
   useEffect(() => {
     // Capture UTM parameters on initial mount and search changes
     captureUTMParams(navigate);
@@ -94,7 +101,7 @@ function App() {
           <Route path="archive" element={<ArchivedLandingPage />} />
           <Route path="product/chatbot" element={
             <Suspense fallback={<div className="min-h-screen bg-slate-50" />}>
-              <ProductChatbot />
+              <ChatbotPage />
             </Suspense>
           } />
           <Route path="product/dashboard" element={<ProductDashboard />} />
